@@ -1,8 +1,10 @@
-import "./styles.scss";
+import React from "react";
+import Landing from './containers/Landing'
+import "./assets/styles.scss";
 
 const App = () => (
   <div>
-    <p>Hello World</p>
+    <Landing />
   </div>
 );
 export default App;
