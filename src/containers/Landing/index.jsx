@@ -4,7 +4,8 @@ import { Box, Grid } from '@mui/material';
 import Navbar from '../../components/navbar';
 import SectionCard from './card';
 import labels from '../../assets/labels';
-// import SwipeableTextMobileStepper from '../../components/temporaryCarousel';
+import SwipeableTextMobileStepper from '../../components/temporaryCarousel';
+import ScrollDemo from '../scrolling/demo';
 
 const Landing = () => (
   <Box>
@@ -33,7 +34,10 @@ const Landing = () => (
       </div> */}
       <div className="layout__line">
         <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
-        <div></div>
+        {/* <div style={{ display: 'flex', marginLeft: '36vw' }}> */}
+        {/* <div>
+          <ScrollDemo />
+        </div> */}
         <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>
         <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>

@@ -15,7 +15,7 @@ const SectionCard = () => (
         );
       })}
     </Grid>
-    <div
+    {/* <div
       style={{
         backgroundColor: '#ffd111',
         padding: '1em',
@@ -24,7 +24,7 @@ const SectionCard = () => (
       }}
     >
       <div>Yellow</div>
-    </div>
+    </div> */}
   </div>
 );
 
