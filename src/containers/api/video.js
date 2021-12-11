@@ -46,5 +46,17 @@ module.exports = [
     seen: 1,
     watched: 'Netflix',
     when: '2021 / 10 / 24'
+  },
+  {
+    id: 4,
+    name: 'Arcane',
+    type: 'series',
+    img: 'IMG/Arcane.jpg',
+    part: 1,
+    year: 2021,
+    commingSoon: 0,
+    seen: 1,
+    watched: 'Netflix',
+    when: '2021 / 11 / 29'
   }
 ];

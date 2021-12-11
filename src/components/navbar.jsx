@@ -1,25 +1,54 @@
 import React from 'react';
-import labels from '../assets/labels';
+import { A, usePath } from 'hookrouter';
 import Grid from '@mui/material/Grid';
+import labels from '../assets/labels';
+import PageNotFound from './page404';
 
-const Navbar = () => (
-  <nav>
-    <Grid container spacing={1}>
-      <Grid item xs={1} />
-      <Grid item xs={3}>
-        <h2>{labels.placeholderNavFilmy}</h2>
-      </Grid>
-      <Grid item xs={3}>
-        <h2>{labels.placeholderNavSeriale}</h2>
-      </Grid>
-      <Grid item xs={3}>
-        <h2>{labels.placeholderNavGry}</h2>
-      </Grid>
-      <Grid item xs={2}>
-        <h2>{labels.placeholderNavInne}</h2>
-      </Grid>
-    </Grid>
-  </nav>
+const CustomA = (props) => {
+  const path = usePath();
+  let { href, getProps, ...anchorProps } = props;
+  const isCurrent = path === href;
+  return <A href={href} {...getProps({ isCurrent })} {...anchorProps} />;
+};
+
+const NavLink = (props) => (
+  <CustomA
+    {...props}
+    getProps={({ isCurrent }) => ({
+      style: { color: isCurrent && '#ffed57' }
+    })}
+  />
 );
+
+const Navbar = ({ routeResult }) => {
+  return (
+    <nav>
+      <Grid container spacing={1}>
+        <Grid item xs={1} />
+        <Grid item xs={3}>
+          <NavLink href="/">
+            <h2 className="labels__navbar">{labels.placeholderNavSeriale}</h2>
+          </NavLink>
+        </Grid>
+        <Grid item xs={3}>
+          <NavLink href="/movies">
+            <h2 className="labels__navbar">{labels.placeholderNavFilmy}</h2>
+          </NavLink>
+        </Grid>
+        <Grid item xs={2}>
+          <NavLink href="/games">
+            <h2 className="labels__navbar">{labels.placeholderNavGry}</h2>
+          </NavLink>
+        </Grid>
+        <Grid item xs={2}>
+          <NavLink href="/inne">
+            <h2 className="labels__navbar">{labels.placeholderNavInne}</h2>
+          </NavLink>
+        </Grid>
+      </Grid>
+      {routeResult || <PageNotFound />}
+    </nav>
+  );
+};
 
 export default Navbar;

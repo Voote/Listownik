@@ -1,11 +1,10 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-// import { sections } from './sectionNames';
-import SectionCard from './card';
 import labels from '../../assets/labels';
 
-const Landing = () => (
+const Inne = () => (
   <Box>
+    <h1 style={{ textAlign: 'center', paddingTop: '1em' }}>PLACEHOLDEROWNIK</h1>
     <Grid
       container
       spacing={0}
@@ -13,7 +12,6 @@ const Landing = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Grid item xs={3}></Grid>
       <Grid item xs={1} className="layout__grid--central">
         <img
           className="image__logo--dimensions"
@@ -23,22 +21,14 @@ const Landing = () => (
       </Grid>
     </Grid>
     <div>
-      {/* <div className="layout__line">
-        {sections.map((item) => {
-          return <h1 key={item.id}>{item.name.toUpperCase()}</h1>;
-        })}
-      </div> */}
       <div className="layout__line">
         <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
         <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>
         <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
-        <div>
-          <SectionCard />
-        </div>
       </div>
     </div>
   </Box>
 );
 
-export default Landing;
+export default Inne;
