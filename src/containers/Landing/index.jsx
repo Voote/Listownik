@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-// import { sections } from './sectionNames';
-import SectionCard from './card';
+import SectionCard from '../../components/card';
 import labels from '../../assets/labels';
 
 const Landing = () => (
@@ -23,11 +22,6 @@ const Landing = () => (
       </Grid>
     </Grid>
     <div>
-      {/* <div className="layout__line">
-        {sections.map((item) => {
-          return <h1 key={item.id}>{item.name.toUpperCase()}</h1>;
-        })}
-      </div> */}
       <div className="layout__line">
         <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
         <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>

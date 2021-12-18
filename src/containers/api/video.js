@@ -7,9 +7,9 @@ module.exports = [
     part: 1,
     year: 2021,
     commingSoon: 1,
-    seen: 1,
+    seen: 2,
     watched: 'Netflix',
-    when: '2021 / 11 / 07'
+    date: 20211107
   },
   {
     id: 1,
@@ -19,9 +19,9 @@ module.exports = [
     part: 4,
     year: 2017,
     commingSoon: 0,
-    seen: 1,
+    seen: 2,
     watched: 'Disney+',
-    when: '2021 / 09 / 17'
+    date: 20210917
   },
   {
     id: 2,
@@ -31,9 +31,9 @@ module.exports = [
     part: 1,
     year: 2021,
     commingSoon: 1,
-    seen: 1,
+    seen: 2,
     watched: 'Cinema',
-    when: '2021 / 10 / 27'
+    date: 20211027
   },
   {
     id: 3,
@@ -43,9 +43,9 @@ module.exports = [
     part: 0,
     year: 2016,
     commingSoon: 0,
-    seen: 1,
+    seen: 2,
     watched: 'Netflix',
-    when: '2021 / 10 / 24'
+    date: 20211024
   },
   {
     id: 4,
@@ -55,8 +55,56 @@ module.exports = [
     part: 1,
     year: 2021,
     commingSoon: 0,
-    seen: 1,
+    seen: 2,
     watched: 'Netflix',
-    when: '2021 / 11 / 29'
+    date: 20211129
+  },
+  {
+    id: 5,
+    name: 'Warcraft',
+    type: 'movie',
+    img: 'IMG/Warcraft.jpg',
+    part: 0,
+    year: 2016,
+    commingSoon: 0,
+    seen: 2,
+    watched: 'Cinema',
+    date: 20160624
+  },
+  {
+    id: 6,
+    name: 'Chernobyl',
+    type: 'series',
+    img: 'IMG/Chernobyl.jpeg',
+    part: 0,
+    year: 2021,
+    commingSoon: 0,
+    seen: 2,
+    watched: 'HBO',
+    date: 20191020
+  },
+  {
+    id: 7,
+    name: 'Joker',
+    type: 'movie',
+    img: 'IMG/Joker.jpg',
+    part: 0,
+    year: 2021,
+    commingSoon: 0,
+    seen: 2,
+    watched: 'Amazon',
+    date: 20200614
+  },
+  {
+    id: 8,
+    name: 'The Boys',
+    type: 'series',
+    img: 'IMG/theboys.jpg',
+    part: 2,
+    year: 2021,
+    commingSoon: 0,
+    seen: 2,
+    watched: 'Amazon',
+    date: 20211211
   }
 ];
