@@ -24,6 +24,14 @@ a {
   text-align: center;
 }
 
+.design {
+  &__poster {
+    border-right: 2px solid yellow;
+    // border-bottom: 2px solid yellow;
+    padding-top: 0.1em;
+  }
+}
+
 .layout {
   &__grid {
     &--central {
@@ -47,7 +55,6 @@ a {
   &__logo {
     &--dimensions {
       max-width: 80vw;
-      padding-top: 0.1em;
     }
   }
   &__tiles {
@@ -89,7 +96,7 @@ a {
 @media (min-width: 1200px) {
   .image {
     &__tiles {
-      max-height: 34vw;
+      max-height: 32.8vw;
     }
   }
 

@@ -3,6 +3,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import video from '../containers/api/video';
+import games from '../containers/api/games';
+
+const seen = [...video, ...games];
 
 const settings = {
   infinite: true,
@@ -37,7 +40,7 @@ const settings = {
   ]
 };
 
-const seen = video
+const data = seen
   .sort((a, b) => a.date - b.date)
   .reverse()
   .slice(0, 7);
@@ -45,7 +48,7 @@ const seen = video
 const SectionCard = () => (
   <div className="layout__slider">
     <Slider {...settings}>
-      {seen.map((item) => {
+      {data.map((item) => {
         const date = item.date.toString();
         const year = date.slice(0, 4);
         const month = date.slice(4, 6);
@@ -60,10 +63,13 @@ const SectionCard = () => (
               style={{ display: 'inline' }}
               //cant change .slick-slide img display: block
             />
-            <h3>{item.name}</h3>
-            <h3>
-              Seen {day}.{month}.{year}
-            </h3>
+            {/* <div className="design__poster"> */}
+            <div>
+              <h3>{item.name}</h3>
+              <h3>
+                Seen {day}.{month}.{year}
+              </h3>
+            </div>
           </div>
         );
       })}
