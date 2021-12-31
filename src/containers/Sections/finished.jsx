@@ -22,6 +22,7 @@ const SectionFinished = () => (
         const year = date.slice(0, 4);
         const month = date.slice(4, 6);
         const day = date.slice(6, 8);
+        const seen = date != 0 ? `Seen ${day}.${month}.${year}` : `^^`;
 
         return (
           <div key={item.id}>
@@ -35,9 +36,7 @@ const SectionFinished = () => (
             {/* <div className="design__poster"> */}
             <div>
               <h3>{item.name}</h3>
-              <h3>
-                Seen {day}.{month}.{year}
-              </h3>
+              <h3>{seen}</h3>
             </div>
           </div>
         );
