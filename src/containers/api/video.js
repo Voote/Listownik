@@ -138,10 +138,10 @@ module.exports = [
     img: 'IMG/AmericanGods.jpg',
     part: 3,
     year: 2017,
-    commingSoon: 0,
-    finished: 1,
+    commingSoon: 1,
+    finished: 2,
     watched: 'Amazon',
-    date: 20212122
+    date: 20211222
   },
   {
     id: 112,
@@ -202,5 +202,17 @@ module.exports = [
     finished: 2,
     watched: 'Cinema',
     date: 20211108
+  },
+  {
+    id: 117,
+    name: `Dont look up`,
+    type: 'movie',
+    img: 'IMG/DontLookUp.png',
+    part: 0,
+    year: 2021,
+    commingSoon: 0,
+    finished: 2,
+    watched: 'Netflix',
+    date: 20211230
   }
 ];

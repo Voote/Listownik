@@ -6,7 +6,6 @@ import video from '../api/video';
 import games from '../api/games';
 import settings from './settings';
 
-// const seen = [...video];
 const api = [...video, ...games];
 const data = api
   .filter((item) => item.finished === 2)
