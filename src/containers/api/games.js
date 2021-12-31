@@ -66,7 +66,7 @@ module.exports = [
     img: 'IMG/ZeldaBotW.jpg',
     part: 1,
     year: 2017,
-    commingSoon: 2022,
+    commingSoon: 1,
     finished: 1,
     watched: 'NS',
     date: 20211223

@@ -138,8 +138,8 @@ module.exports = [
     img: 'IMG/AmericanGods.jpg',
     part: 3,
     year: 2017,
-    commingSoon: 0,
-    finished: 1,
+    commingSoon: 1,
+    finished: 2,
     watched: 'Amazon',
     date: 20212122
   },

@@ -5,14 +5,17 @@ import 'slick-carousel/slick/slick-theme.css';
 import video from '../api/video';
 import games from '../api/games';
 import settings from './settings';
+import lastCard from './lastCard';
 
 // const seen = [...video];
 const api = [...video, ...games];
-const data = api
+const collection = api
   .filter((item) => item.finished === 2)
   .sort((a, b) => a.date - b.date)
   .reverse()
   .slice(0, 7);
+
+const data = [...collection, lastCard];
 
 const SectionFinished = () => (
   <div className="layout__slider">
@@ -22,6 +25,7 @@ const SectionFinished = () => (
         const year = date.slice(0, 4);
         const month = date.slice(4, 6);
         const day = date.slice(6, 8);
+        const seen = date != 0 ? `Seen ${day}.${month}.${year}` : `^^`;
 
         return (
           <div key={item.id}>
@@ -35,9 +39,7 @@ const SectionFinished = () => (
             {/* <div className="design__poster"> */}
             <div>
               <h3>{item.name}</h3>
-              <h3>
-                Seen {day}.{month}.{year}
-              </h3>
+              <h3>{seen}</h3>
             </div>
           </div>
         );

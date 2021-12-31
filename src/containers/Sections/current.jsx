@@ -5,13 +5,16 @@ import 'slick-carousel/slick/slick-theme.css';
 import video from '../api/video';
 import games from '../api/games';
 import settings from './settings';
+import lastCard from './lastCard';
 
 const api = [...video, ...games];
-const data = api
-  .filter((item) => item.commingSoon === 0 && item.finished === 1)
+const collection = api
+  .filter((item) => item.finished === 1)
   .sort((a, b) => a.date - b.date)
   .reverse()
   .slice(0, 7);
+
+const data = [...collection, lastCard];
 
 const SectionCurrent = () => (
   <div className="layout__slider">
