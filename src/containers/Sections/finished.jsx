@@ -25,7 +25,7 @@ const SectionFinished = () => (
         const year = date.slice(0, 4);
         const month = date.slice(4, 6);
         const day = date.slice(6, 8);
-        const seen = date != 0 ? `Seen ${day}.${month}.${year}` : `^^`;
+        const seen = item.date !== 0 ? `Seen ${day}.${month}.${year}` : `^^`;
 
         return (
           <div key={item.id}>

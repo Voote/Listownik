@@ -9,7 +9,7 @@ import lastCard from './lastCard';
 
 const api = [...video, ...games];
 const collection = api
-  .filter((item) => item.commingSoon === 0 && item.finished === 0)
+  .filter((item) => item.finished === 0)
   .sort((a, b) => a.year - b.year)
   .slice(0, 7);
 
