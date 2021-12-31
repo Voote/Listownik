@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-import SectionCard from '../../components/card';
+import SectionCurrent from '../Sections/current';
+import SectionFinished from '../Sections/finished';
+import SectionToDo from '../Sections/todo';
 import labels from '../../assets/labels';
 
 const Landing = () => (
@@ -24,11 +26,17 @@ const Landing = () => (
     <div>
       <div className="layout__line">
         <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
+        <div>
+          <SectionToDo />
+        </div>
         <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>
+        <div>
+          <SectionCurrent />
+        </div>
         <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
         <div>
-          <SectionCard />
+          <SectionFinished />
         </div>
       </div>
     </div>

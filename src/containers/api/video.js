@@ -130,5 +130,77 @@ module.exports = [
     finished: 2,
     watched: 'DVD',
     date: 20211101
+  },
+  {
+    id: 111,
+    name: 'American Gods',
+    type: 'series',
+    img: 'IMG/AmericanGods.jpg',
+    part: 3,
+    year: 2017,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'Amazon',
+    date: 20212122
+  },
+  {
+    id: 112,
+    name: 'Witcher',
+    type: 'series',
+    img: 'IMG/witcher2.jpg',
+    part: 2,
+    year: 2019,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'Netflix',
+    date: 20212123
+  },
+  {
+    id: 113,
+    name: ' La casa de papel',
+    type: 'series',
+    img: 'IMG/CasaDePapel.jpg',
+    part: 1,
+    year: 2017,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'Netflix',
+    date: 20212121
+  },
+  {
+    id: 114,
+    name: `JoJo's Bizarre Adventure`,
+    type: 'series',
+    img: 'IMG/JoJo.jpg',
+    part: 1,
+    year: 2012,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'Netflix',
+    date: 20212124
+  },
+  {
+    id: 115,
+    name: `Attack on Titan`,
+    type: 'series',
+    img: 'IMG/AttackOnTitan.jpg',
+    part: 3,
+    year: 2012,
+    commingSoon: 1,
+    finished: 1,
+    watched: 'Amazon',
+    date: 20220106
+  },
+  {
+    id: 116,
+    name: `No time to die`,
+    type: 'movie',
+    img: 'IMG/BondNTtD.jpg',
+    part: 3,
+    year: 2021,
+    commingSoon: 0,
+    finished: 2,
+    watched: 'Cinema',
+    date: 20211108
   }
 ];

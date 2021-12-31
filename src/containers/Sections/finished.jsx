@@ -2,50 +2,19 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import video from '../containers/api/video';
-import games from '../containers/api/games';
+import video from '../api/video';
+import games from '../api/games';
+import settings from './settings';
 
-const seen = [...video, ...games];
-
-const settings = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  initialSlide: 0,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-};
-
-const data = seen
+// const seen = [...video];
+const api = [...video, ...games];
+const data = api
+  .filter((item) => item.finished === 2)
   .sort((a, b) => a.date - b.date)
   .reverse()
   .slice(0, 7);
 
-const SectionCard = () => (
+const SectionFinished = () => (
   <div className="layout__slider">
     <Slider {...settings}>
       {data.map((item) => {
@@ -77,4 +46,4 @@ const SectionCard = () => (
   </div>
 );
 
-export default SectionCard;
+export default SectionFinished;

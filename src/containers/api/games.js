@@ -58,5 +58,101 @@ module.exports = [
     finished: 2,
     watched: 'PS4',
     date: 20211111
+  },
+  {
+    id: 205,
+    name: 'Zelda: Breath of the Wild',
+    type: 'action',
+    img: 'IMG/ZeldaBotW.jpg',
+    part: 1,
+    year: 2017,
+    commingSoon: 2022,
+    finished: 1,
+    watched: 'NS',
+    date: 20211223
+  },
+  {
+    id: 206,
+    name: 'Remnant: From the Ashes',
+    type: 'fps',
+    img: 'IMG/Remnant.jpg',
+    part: 1,
+    year: 2019,
+    commingSoon: 0,
+    finished: 2,
+    watched: 'PS4',
+    date: 20211112
+  },
+  {
+    id: 207,
+    name: 'Witcher 3 Blood and Wine',
+    type: 'rpg',
+    img: 'IMG/BloodAndWine.jpg',
+    part: 3,
+    year: 2016,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'PS4',
+    date: 20211225
+  },
+  {
+    id: 208,
+    name: 'The Last of Us',
+    type: 'action',
+    img: 'IMG/TLoU.png',
+    part: 1,
+    year: 2013,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS4',
+    date: 20211223
+  },
+  {
+    id: 209,
+    name: 'Bloodborne',
+    type: 'arpg',
+    img: 'IMG/BloodborneTOH.jpg',
+    part: 1,
+    year: 2015,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS4',
+    date: 20211222
+  },
+  {
+    id: 210,
+    name: 'Dark Souls II',
+    type: 'arpg',
+    img: 'IMG/DarkSouls2.jpg',
+    part: 2,
+    year: 2014,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'PS4',
+    date: 20211222
+  },
+  {
+    id: 211,
+    name: 'Cyberpunk2077',
+    type: 'rpg',
+    img: 'IMG/Cyberpunk2077.jpg',
+    part: 1,
+    year: 2020,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'STI',
+    date: 20211221
+  },
+  {
+    id: 212,
+    name: 'God of War',
+    type: 'action',
+    img: 'IMG/GodOfWar.jpg',
+    part: 4,
+    year: 2018,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS4',
+    date: 20211227
   }
 ];
