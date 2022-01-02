@@ -27,7 +27,7 @@ const Navbar = ({ routeResult }) => {
         <Grid item xs={1} />
         <Grid item xs={3}>
           <NavLink href="/">
-            <h2 className="labels__navbar">{labels.placeholderNavSeriale}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavHome}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={3}>

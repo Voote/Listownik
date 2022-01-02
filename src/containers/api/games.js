@@ -66,7 +66,7 @@ module.exports = [
     img: 'IMG/ZeldaBotW.jpg',
     part: 1,
     year: 2017,
-    commingSoon: 2022,
+    commingSoon: 1,
     finished: 1,
     watched: 'NS',
     date: 20211223
@@ -129,7 +129,7 @@ module.exports = [
     commingSoon: 0,
     finished: 1,
     watched: 'PS4',
-    date: 20211222
+    date: 20210222
   },
   {
     id: 211,
@@ -141,7 +141,7 @@ module.exports = [
     commingSoon: 0,
     finished: 1,
     watched: 'STI',
-    date: 20211221
+    date: 20211207
   },
   {
     id: 212,
@@ -154,5 +154,17 @@ module.exports = [
     finished: 0,
     watched: 'PS4',
     date: 20211227
+  },
+  {
+    id: 213,
+    name: 'Assasins Creed: Black Flag',
+    type: 'action',
+    img: 'IMG/BlackFlag.jpg',
+    part: 4,
+    year: 2013,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'STI',
+    date: 20220101
   }
 ];
