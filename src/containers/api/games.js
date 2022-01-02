@@ -129,7 +129,7 @@ module.exports = [
     commingSoon: 0,
     finished: 1,
     watched: 'PS4',
-    date: 20211222
+    date: 20210222
   },
   {
     id: 211,
@@ -141,7 +141,7 @@ module.exports = [
     commingSoon: 0,
     finished: 1,
     watched: 'STI',
-    date: 20211221
+    date: 20211207
   },
   {
     id: 212,

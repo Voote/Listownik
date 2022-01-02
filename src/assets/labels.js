@@ -1,5 +1,6 @@
 module.exports = {
   placeholderNavSeriale: 'seriale',
+  placeholderNavHome: 'home',
   placeholderNavFilmy: 'filmy',
   placeholderNavGry: 'gry',
   placeholderNavInne: 'inne',
