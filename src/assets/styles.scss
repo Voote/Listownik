@@ -4,8 +4,11 @@ $green: #8bd89b;
 $yellow: #fae12c;
 $grey: #606569;
 $text: #fff;
+$darkText: #000;
 $seriale: $green;
 $filmy: $yellow;
+$sideDistanceMobile: 7vw;
+$sideDistanceDesktop: 37vw;
 
 html,
 body {
@@ -69,6 +72,16 @@ a {
   &__navbar {
     text-align: center;
   }
+  &__dark {
+    color: black;
+    background-color: $yellow;
+    padding-top: 0.4rem;
+    margin-left: $sideDistanceMobile;
+    margin-right: $sideDistanceMobile;
+    & h1 {
+      font-size: 1vh !important;
+    }
+  }
 }
 
 @media (min-width: 900px) {
@@ -93,6 +106,13 @@ a {
       margin-left: 2em;
     }
   }
+
+  .labels {
+    &__dark {
+      margin-left: $sideDistanceDesktop;
+      margin-right: $sideDistanceDesktop;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -106,6 +126,16 @@ a {
     &__slider {
       max-width: 93.7vw;
       margin-left: 2em;
+    }
+  }
+
+  .labels {
+    &__dark {
+      margin-left: $sideDistanceDesktop;
+      margin-right: $sideDistanceDesktop;
+      & h1 {
+        font-size: 3.4vh;
+      }
     }
   }
 }

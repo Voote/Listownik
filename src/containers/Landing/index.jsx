@@ -26,19 +26,27 @@ const Landing = () => (
     </Grid>
     <div>
       <div className="layout__line">
-        <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
+        <h1 className="labels__dark">
+          {labels.placeholderNavNadrobic.toUpperCase()}
+        </h1>
         <div>
           <SectionToDo />
         </div>
-        <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>
+        <h1 className="labels__dark">
+          {labels.placeholderNavAktualne.toUpperCase()}
+        </h1>
         <div>
           <SectionCurrent />
         </div>
-        <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
+        <h1 className="labels__dark">
+          {labels.placeholderNavCommingSoon.toUpperCase()}
+        </h1>
         <div>
           <SectionComming />
         </div>
-        <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
+        <h1 className="labels__dark">
+          {labels.placeholderNavUkonczone.toUpperCase()}
+        </h1>
         <div>
           <SectionFinished />
         </div>

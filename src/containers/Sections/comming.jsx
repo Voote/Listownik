@@ -9,7 +9,7 @@ import settings from './settings';
 const api = [...video, ...games];
 const data = api
   .filter((item) => item.commingSoon === 1)
-  .sort((a, b) => a.year - b.year)
+  .sort((a, b) => a.seen - b.seen)
   .slice(0, 7);
 
 const SectionComming = () => (

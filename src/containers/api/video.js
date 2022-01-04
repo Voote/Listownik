@@ -153,7 +153,7 @@ module.exports = [
     commingSoon: 1,
     finished: 2,
     watched: 'Netflix',
-    date: 20212123
+    date: 20220103
   },
   {
     id: 1013,
@@ -249,7 +249,7 @@ module.exports = [
     commingSoon: 1,
     finished: 2,
     watched: 'Netflix',
-    date: 20220103
+    date: 20210103
   },
   {
     id: 1021,
