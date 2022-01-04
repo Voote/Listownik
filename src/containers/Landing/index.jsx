@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
+import SectionComming from '../Sections/comming';
 import SectionCurrent from '../Sections/current';
 import SectionFinished from '../Sections/finished';
 import SectionToDo from '../Sections/todo';
@@ -34,6 +35,9 @@ const Landing = () => (
           <SectionCurrent />
         </div>
         <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
+        <div>
+          <SectionComming />
+        </div>
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
         <div>
           <SectionFinished />

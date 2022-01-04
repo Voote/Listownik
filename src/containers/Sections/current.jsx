@@ -8,7 +8,7 @@ import settings from './settings';
 
 const api = [...video, ...games];
 const data = api
-  .filter((item) => item.commingSoon === 0 && item.finished === 1)
+  .filter((item) => item.finished === 1)
   .sort((a, b) => a.date - b.date)
   .reverse()
   .slice(0, 7);

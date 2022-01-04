@@ -1,6 +1,6 @@
 module.exports = [
   {
-    id: 100,
+    id: 1000,
     name: 'Alice in Borderlands',
     type: 'series',
     img: 'IMG/AliceInBorderlands.jpg',
@@ -12,7 +12,7 @@ module.exports = [
     date: 20211107
   },
   {
-    id: 101,
+    id: 1001,
     name: 'Star Wars: Rebels',
     type: 'series',
     img: 'IMG/Rebels.jpg',
@@ -24,7 +24,7 @@ module.exports = [
     date: 20210917
   },
   {
-    id: 102,
+    id: 1002,
     name: 'Dune',
     type: 'movie',
     img: 'IMG/Dune.jpg',
@@ -36,7 +36,7 @@ module.exports = [
     date: 20211027
   },
   {
-    id: 103,
+    id: 1003,
     name: 'Arrival',
     type: 'movie',
     img: 'IMG/Arrival.jpg',
@@ -48,7 +48,7 @@ module.exports = [
     date: 20211024
   },
   {
-    id: 104,
+    id: 1004,
     name: 'Arcane',
     type: 'series',
     img: 'IMG/Arcane.jpg',
@@ -60,7 +60,7 @@ module.exports = [
     date: 20211129
   },
   {
-    id: 105,
+    id: 1005,
     name: 'Warcraft',
     type: 'movie',
     img: 'IMG/Warcraft.jpg',
@@ -72,7 +72,7 @@ module.exports = [
     date: 20160624
   },
   {
-    id: 106,
+    id: 1006,
     name: 'Chernobyl',
     type: 'series',
     img: 'IMG/Chernobyl.jpeg',
@@ -84,7 +84,7 @@ module.exports = [
     date: 20191020
   },
   {
-    id: 107,
+    id: 1007,
     name: 'Joker',
     type: 'movie',
     img: 'IMG/Joker.jpg',
@@ -96,7 +96,7 @@ module.exports = [
     date: 20200614
   },
   {
-    id: 108,
+    id: 1008,
     name: 'The Boys',
     type: 'series',
     img: 'IMG/theboys.jpg',
@@ -108,7 +108,7 @@ module.exports = [
     date: 20211211
   },
   {
-    id: 109,
+    id: 1009,
     name: 'Solar Opposites',
     type: 'series',
     img: 'IMG/SolarOpposites.jpg',
@@ -120,7 +120,7 @@ module.exports = [
     date: 20211217
   },
   {
-    id: 110,
+    id: 1010,
     name: 'Dragon Ball',
     type: 'series',
     img: 'IMG/DragonBall.jpg',
@@ -132,7 +132,7 @@ module.exports = [
     date: 20211101
   },
   {
-    id: 111,
+    id: 1011,
     name: 'American Gods',
     type: 'series',
     img: 'IMG/AmericanGods.jpg',
@@ -144,19 +144,19 @@ module.exports = [
     date: 20211222
   },
   {
-    id: 112,
+    id: 1012,
     name: 'Witcher',
     type: 'series',
     img: 'IMG/witcher2.jpg',
     part: 2,
     year: 2019,
-    commingSoon: 0,
-    finished: 1,
+    commingSoon: 1,
+    finished: 2,
     watched: 'Netflix',
     date: 20212123
   },
   {
-    id: 113,
+    id: 1013,
     name: ' La casa de papel',
     type: 'series',
     img: 'IMG/CasaDePapel.jpg',
@@ -168,7 +168,7 @@ module.exports = [
     date: 20212121
   },
   {
-    id: 114,
+    id: 1014,
     name: `JoJo's Bizarre Adventure`,
     type: 'series',
     img: 'IMG/JoJo.jpg',
@@ -180,7 +180,7 @@ module.exports = [
     date: 20201124
   },
   {
-    id: 115,
+    id: 1015,
     name: `Attack on Titan`,
     type: 'series',
     img: 'IMG/AttackOnTitan.jpg',
@@ -192,7 +192,7 @@ module.exports = [
     date: 20210506
   },
   {
-    id: 116,
+    id: 1016,
     name: `No time to die`,
     type: 'movie',
     img: 'IMG/BondNTtD.jpg',
@@ -204,7 +204,7 @@ module.exports = [
     date: 20211108
   },
   {
-    id: 117,
+    id: 1017,
     name: `Dont look up`,
     type: 'movie',
     img: 'IMG/DontLookUp.png',
@@ -214,5 +214,53 @@ module.exports = [
     finished: 2,
     watched: 'Netflix',
     date: 20211230
+  },
+  {
+    id: 1018,
+    name: `El Camino`,
+    type: 'movie',
+    img: 'IMG/ElCamino.jpg',
+    part: 0,
+    year: 2019,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'Amazon',
+    date: 20220103
+  },
+  {
+    id: 1019,
+    name: `Mr Robot`,
+    type: 'series',
+    img: 'IMG/MrRobot.png',
+    part: 4,
+    year: 2015,
+    commingSoon: 0,
+    finished: 2,
+    watched: 'Amazon',
+    date: 20201002
+  },
+  {
+    id: 1020,
+    name: `Peaky Blinders`,
+    type: 'series',
+    img: 'IMG/PeakyBlinders.jpg',
+    part: 5,
+    year: 2013,
+    commingSoon: 1,
+    finished: 2,
+    watched: 'Netflix',
+    date: 20220103
+  },
+  {
+    id: 1021,
+    name: `Shameless`,
+    type: 'series',
+    img: 'IMG/Shameless.jpg',
+    part: 11,
+    year: 2011,
+    commingSoon: 1,
+    finished: 2,
+    watched: 'Netflix',
+    date: 20210720
   }
 ];

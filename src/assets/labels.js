@@ -1,9 +1,9 @@
 module.exports = {
-  placeholderNavSeriale: 'seriale',
+  placeholderNavSeries: 'seriale',
   placeholderNavHome: 'home',
-  placeholderNavFilmy: 'filmy',
-  placeholderNavGry: 'gry',
-  placeholderNavInne: 'inne',
+  placeholderNavMovies: 'filmy',
+  placeholderNavGames: 'gry',
+  placeholderNavRest: 'inne',
   placeholderNavAktualne: 'aktualne',
   placeholderNavNadrobic: 'kupka wstydu',
   placeholderNavCommingSoon: 'comming soon',

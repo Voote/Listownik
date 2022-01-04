@@ -15,7 +15,7 @@ const NavLink = (props) => (
   <CustomA
     {...props}
     getProps={({ isCurrent }) => ({
-      style: { color: isCurrent && '#ffed57' }
+      style: { color: isCurrent ? '#fae12c' : '#000' }
     })}
   />
 );
@@ -32,17 +32,17 @@ const Navbar = ({ routeResult }) => {
         </Grid>
         <Grid item xs={3}>
           <NavLink href="/movies">
-            <h2 className="labels__navbar">{labels.placeholderNavFilmy}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavMovies}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/games">
-            <h2 className="labels__navbar">{labels.placeholderNavGry}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavGames}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/inne">
-            <h2 className="labels__navbar">{labels.placeholderNavInne}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavRest}</h2>
           </NavLink>
         </Grid>
       </Grid>
