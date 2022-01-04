@@ -3,12 +3,13 @@ $red: #da563c;
 $green: #8bd89b;
 $yellow: #fae12c;
 $grey: #606569;
+$greyDark: #505458;
 $text: #fff;
-$darkText: #000;
+$blackText: #000;
 $seriale: $green;
 $filmy: $yellow;
-$sideDistanceMobile: 7vw;
-$sideDistanceDesktop: 37vw;
+$sideDistanceMobile: 0vw;
+$sideDistanceDesktop: 0vw;
 
 html,
 body {
@@ -34,6 +35,20 @@ a {
     border-right: 2px solid yellow;
     // border-bottom: 2px solid yellow;
     padding-top: 0.1em;
+  }
+}
+
+.navbar {
+  background-color: $grey;
+  position: fixed;
+  top: -0.7vh;
+  z-index: 1;
+  &--inactive {
+    color: $blackText;
+  }
+  &--active {
+    color: $yellow;
+    text-decoration: underline;
   }
 }
 

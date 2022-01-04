@@ -15,15 +15,15 @@ const NavLink = (props) => (
   <CustomA
     {...props}
     getProps={({ isCurrent }) => ({
-      style: { color: isCurrent ? '#fae12c' : '#000' }
+      className: isCurrent ? 'navbar--active' : 'navbar--inactive'
     })}
   />
 );
 
 const Navbar = ({ routeResult }) => {
   return (
-    <nav>
-      <Grid container spacing={1}>
+    <nav style={{ paddingTop: '11vh' }}>
+      <Grid container spacing={1} className="navbar">
         <Grid item xs={1} />
         <Grid item xs={3}>
           <NavLink href="/">
