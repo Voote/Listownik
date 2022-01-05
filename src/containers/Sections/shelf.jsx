@@ -2,17 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import video from '../api/video';
-import games from '../api/games';
-import settings from './settings';
+import settings from '../../components/settings';
 
-const api = [...video, ...games];
-const data = api
-  .filter((item) => item.finished === 0)
-  .sort((a, b) => a.year - b.year)
-  .slice(0, 7);
-
-const SectionToDo = () => (
+const SectionShelf = ({ data }) => (
   <div className="layout__slider">
     <Slider {...settings}>
       {data.map((item) => (
@@ -33,4 +25,4 @@ const SectionToDo = () => (
   </div>
 );
 
-export default SectionToDo;
+export default SectionShelf;

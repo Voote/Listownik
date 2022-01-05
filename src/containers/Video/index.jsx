@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-import allCommingApi from './comming';
-import allCurrentApi from './current';
-import allFinishedApi from './finished';
-import allToDoApi from './todo';
-import SectionFinished from '../Sections/finished';
+import videoCommingApi from './comming';
+import videoCurrentApi from './current';
+import videoFinishedApi from './finished';
+import videoToDoApi from './todo';
 import SectionShelf from '../Sections/shelf';
+import SectionFinished from '../Sections/finished';
 import labels from '../../assets/labels';
 
-const Landing = () => (
+const Movies = () => (
   <Box>
     <Grid
       container
@@ -32,29 +32,29 @@ const Landing = () => (
           {labels.placeholderNavCatchUp.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={allToDoApi} />
+          <SectionShelf data={videoToDoApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavAktualne.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={allCurrentApi} />
+          <SectionShelf data={videoCurrentApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavCommingSoon.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={allCommingApi} />
+          <SectionShelf data={videoCommingApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavUkonczone.toUpperCase()}
         </h1>
         <div>
-          <SectionFinished data={allFinishedApi} />
+          <SectionFinished data={videoFinishedApi} />
         </div>
       </div>
     </div>
   </Box>
 );
 
-export default Landing;
+export default Movies;

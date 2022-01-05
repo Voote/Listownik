@@ -163,7 +163,7 @@ module.exports = [
     part: 1,
     year: 2017,
     commingSoon: 0,
-    finished: 0,
+    finished: 1,
     watched: 'Netflix',
     date: 20212121
   },
@@ -262,5 +262,41 @@ module.exports = [
     finished: 2,
     watched: 'Netflix',
     date: 20210720
+  },
+  {
+    id: 1022,
+    name: `Dragon Ball Heroes`,
+    type: 'series',
+    img: 'IMG/DBHeroes.jpg',
+    part: 5,
+    year: 2018,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'DVD',
+    date: 20210404
+  },
+  {
+    id: 1023,
+    name: `Boba Fett`,
+    type: 'series',
+    img: 'IMG/BobaFett.jpg',
+    part: 1,
+    year: 2021,
+    commingSoon: 1,
+    finished: 0,
+    watched: 'Disney',
+    date: 20220105
+  },
+  {
+    id: 1024,
+    name: `Placeholder1`,
+    type: 'movies',
+    img: 'IMG/VeriPeri.png',
+    part: 0,
+    year: 2021,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'DVD',
+    date: 20200001
   }
 ];

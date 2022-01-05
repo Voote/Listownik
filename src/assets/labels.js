@@ -1,11 +1,11 @@
 module.exports = {
   placeholderNavSeries: 'seriale',
   placeholderNavHome: 'home',
-  placeholderNavMovies: 'filmy',
+  placeholderNavVideo: 'video',
   placeholderNavGames: 'gry',
   placeholderNavRest: 'inne',
   placeholderNavAktualne: 'aktualne',
-  placeholderNavNadrobic: 'kupka wstydu',
+  placeholderNavCatchUp: 'kupka wstydu',
   placeholderNavCommingSoon: 'comming soon',
   placeholderNavUkonczone: 'ukonczone'
 };

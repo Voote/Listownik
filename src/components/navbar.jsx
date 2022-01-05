@@ -31,8 +31,8 @@ const Navbar = ({ routeResult }) => {
           </NavLink>
         </Grid>
         <Grid item xs={3}>
-          <NavLink href="/movies">
-            <h2 className="labels__navbar">{labels.placeholderNavMovies}</h2>
+          <NavLink href="/video">
+            <h2 className="labels__navbar">{labels.placeholderNavVideo}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
