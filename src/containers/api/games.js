@@ -1,6 +1,6 @@
 module.exports = [
   {
-    id: 200,
+    id: 7000,
     name: 'Uncharted',
     type: 'action',
     img: 'IMG/Uncharted4.jpg',
@@ -12,7 +12,7 @@ module.exports = [
     date: 20210907
   },
   {
-    id: 201,
+    id: 7001,
     name: 'Dark Souls Remaster',
     type: 'arpg',
     img: 'IMG/DarkSouls.jpg',
@@ -24,7 +24,7 @@ module.exports = [
     date: 20200702
   },
   {
-    id: 202,
+    id: 7002,
     name: 'Dead Cells',
     type: 'rogalik',
     img: 'IMG/DeadCells.jpg',
@@ -36,7 +36,7 @@ module.exports = [
     date: 20200702
   },
   {
-    id: 203,
+    id: 7003,
     name: 'Shovel Knight',
     type: 'platformer',
     img: 'IMG/ShovelKnight.jpg',
@@ -48,7 +48,7 @@ module.exports = [
     date: 20191021
   },
   {
-    id: 204,
+    id: 7004,
     name: 'Borderlands 2',
     type: 'fps',
     img: 'IMG/Borderlands2.jpg',
@@ -60,7 +60,7 @@ module.exports = [
     date: 20211111
   },
   {
-    id: 205,
+    id: 7005,
     name: 'Zelda: Breath of the Wild',
     type: 'action',
     img: 'IMG/ZeldaBotW.jpg',
@@ -72,7 +72,7 @@ module.exports = [
     date: 20211223
   },
   {
-    id: 206,
+    id: 7006,
     name: 'Remnant: From the Ashes',
     type: 'fps',
     img: 'IMG/Remnant.jpg',
@@ -84,7 +84,7 @@ module.exports = [
     date: 20211112
   },
   {
-    id: 207,
+    id: 7007,
     name: 'Witcher 3 Blood and Wine',
     type: 'rpg',
     img: 'IMG/BloodAndWine.jpg',
@@ -96,7 +96,7 @@ module.exports = [
     date: 20211225
   },
   {
-    id: 208,
+    id: 7008,
     name: 'The Last of Us',
     type: 'action',
     img: 'IMG/TLoU.png',
@@ -108,7 +108,7 @@ module.exports = [
     date: 20211223
   },
   {
-    id: 209,
+    id: 7009,
     name: 'Bloodborne',
     type: 'arpg',
     img: 'IMG/BloodborneTOH.jpg',
@@ -120,7 +120,7 @@ module.exports = [
     date: 20211222
   },
   {
-    id: 210,
+    id: 7010,
     name: 'Dark Souls II',
     type: 'arpg',
     img: 'IMG/DarkSouls2.jpg',
@@ -132,7 +132,7 @@ module.exports = [
     date: 20210222
   },
   {
-    id: 211,
+    id: 7011,
     name: 'Cyberpunk2077',
     type: 'rpg',
     img: 'IMG/Cyberpunk2077.jpg',
@@ -144,7 +144,7 @@ module.exports = [
     date: 20211207
   },
   {
-    id: 212,
+    id: 7012,
     name: 'God of War',
     type: 'action',
     img: 'IMG/GodOfWar.jpg',
@@ -154,5 +154,29 @@ module.exports = [
     finished: 0,
     watched: 'PS4',
     date: 20211227
+  },
+  {
+    id: 7013,
+    name: 'Assasins Creed: Black Flag',
+    type: 'action',
+    img: 'IMG/BlackFlag.jpg',
+    part: 4,
+    year: 2013,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'STI',
+    date: 20220101
+  },
+  {
+    id: 7014,
+    name: 'Frostpunk',
+    type: 'strategy',
+    img: 'IMG/Frostpunk.jpg',
+    part: 1,
+    year: 2018,
+    commingSoon: 1,
+    finished: 2,
+    watched: 'PS4',
+    date: 20210227
   }
 ];

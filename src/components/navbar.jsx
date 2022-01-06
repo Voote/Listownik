@@ -15,34 +15,34 @@ const NavLink = (props) => (
   <CustomA
     {...props}
     getProps={({ isCurrent }) => ({
-      style: { color: isCurrent && '#ffed57' }
+      className: isCurrent ? 'navbar--active' : 'navbar--inactive'
     })}
   />
 );
 
 const Navbar = ({ routeResult }) => {
   return (
-    <nav>
-      <Grid container spacing={1}>
+    <nav style={{ paddingTop: '11vh' }}>
+      <Grid container spacing={1} className="navbar">
         <Grid item xs={1} />
         <Grid item xs={3}>
           <NavLink href="/">
-            <h2 className="labels__navbar">{labels.placeholderNavSeriale}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavHome}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={3}>
-          <NavLink href="/movies">
-            <h2 className="labels__navbar">{labels.placeholderNavFilmy}</h2>
+          <NavLink href="/video">
+            <h2 className="labels__navbar">{labels.placeholderNavVideo}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/games">
-            <h2 className="labels__navbar">{labels.placeholderNavGry}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavGames}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/inne">
-            <h2 className="labels__navbar">{labels.placeholderNavInne}</h2>
+            <h2 className="labels__navbar">{labels.placeholderNavRest}</h2>
           </NavLink>
         </Grid>
       </Grid>
