@@ -1,7 +1,6 @@
-import video from '../api/video';
-import games from '../api/games';
+import wholeApi from '../api/whole';
 
-const allFinishedApi = [...video, ...games]
+const allFinishedApi = [...wholeApi]
   .filter((item) => item.finished === 2)
   .sort((a, b) => a.date - b.date)
   .reverse()

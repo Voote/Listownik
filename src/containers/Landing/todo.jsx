@@ -1,7 +1,6 @@
-import video from '../api/video';
-import games from '../api/games';
+import wholeApi from '../api/whole';
 
-const allToDoApi = [...video, ...games]
+const allToDoApi = [...wholeApi]
   .filter((item) => item.finished === 0)
   .sort((a, b) => a.year - b.year)
   .slice(0, 7);

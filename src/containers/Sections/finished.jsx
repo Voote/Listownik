@@ -6,7 +6,7 @@ import settings from '../../components/settings';
 import lastCard from './lastCard';
 
 const SectionFinished = ({ data }) => {
-  const collection = [...data, lastCard];
+  const collection = [...data];
   return (
     <div className="layout__slider">
       <Slider {...settings}>
@@ -34,6 +34,18 @@ const SectionFinished = ({ data }) => {
             </div>
           );
         })}
+        <div>
+          <img
+            src={lastCard.img}
+            alt={lastCard.name}
+            className="image__tiles"
+            style={{ display: 'inline' }}
+            //cant change .slick-slide img display: block
+          />
+          <div>
+            <h3>{lastCard.name}</h3>
+          </div>
+        </div>
       </Slider>
     </div>
   );
