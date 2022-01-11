@@ -19,13 +19,7 @@ const SectionFinished = ({ data }) => {
 
           return (
             <div key={item.id}>
-              <img
-                src={item.img}
-                alt={item.name}
-                className="image__tiles"
-                style={{ display: 'inline' }}
-                //cant change .slick-slide img display: block
-              />
+              <img src={item.img} alt={item.name} className="image__tiles" />
               {/* <div className="design__poster"> */}
               <div>
                 <h3>{item.name}</h3>
@@ -39,8 +33,6 @@ const SectionFinished = ({ data }) => {
             src={lastCard.img}
             alt={lastCard.name}
             className="image__tiles"
-            style={{ display: 'inline' }}
-            //cant change .slick-slide img display: block
           />
           <div>
             <h3>{lastCard.name}</h3>

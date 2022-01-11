@@ -6,7 +6,7 @@ import settings from '../../components/settings';
 import lastCard from './lastCard';
 
 const SectionShelf = ({ data }) => {
-  const collection = [...data, lastCard];
+  const collection = [...data];
   return (
     <div className="layout__slider">
       <Slider {...settings}>
@@ -16,14 +16,22 @@ const SectionShelf = ({ data }) => {
               src={item.img}
               alt={item.name}
               className="image__tiles"
-              style={{ display: 'inline' }}
-              //cant change .slick-slide img display: block
             />
             <div>
               <h3>{item.name}</h3>
             </div>
           </div>
         ))}
+        <div>
+          <img
+            src={lastCard.img}
+            alt={lastCard.name}
+            className="image__tiles"
+          />
+          <div>
+            <h3>{lastCard.name}</h3>
+          </div>
+        </div>
       </Slider>
     </div>
   );

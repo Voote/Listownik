@@ -68,6 +68,9 @@ a {
   &__slider {
     max-width: 82vw;
     margin-left: 2em;
+    .slick-slide img {
+      display: inline;
+    }
   }
 }
 
