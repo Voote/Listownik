@@ -1,12 +1,19 @@
 import React from 'react';
-import Modal from '@mui/material';
+import { Grid, Modal } from '@mui/material';
 
 const SectionModal = ({ open, handleClose }) => (
   <Modal open={open} onClose={handleClose}>
-    <div>
-      <img src="IMG/VeriPeri.png" alt="veri peri" />
-      <div></div>
-    </div>
+    <Grid container>
+      <Grid item lg={2}>
+        <img src="IMG/VeriPeri.png" alt="veri peri" />
+      </Grid>
+      <Grid item lg={2}>
+        <div>Jakis tekst</div>
+        <button className="button" onClick={handleClose}>
+          CLOSE ME
+        </button>
+      </Grid>
+    </Grid>
   </Modal>
 );
 

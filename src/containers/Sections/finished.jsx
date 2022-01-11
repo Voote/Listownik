@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import settings from '../../components/settings';
 import lastCard from './lastCard';
+import SectionModal from './modal';
 
 const SectionFinished = ({ data }) => {
+  const [openCollectionModal, setOpen] = useState(false);
+
+  const handleOpenCollectionModal = () => setOpen(true);
+
+  const handleCloseCollectionModal = () => setOpen(false);
+
   const collection = [...data];
   return (
     <div className="layout__slider">
+      <SectionModal
+        open={openCollectionModal}
+        handleClose={handleCloseCollectionModal}
+      />
       <Slider {...settings}>
         {collection.map((item) => {
           const date = item.date.toString();
           const year = date.slice(0, 4);
           const month = date.slice(4, 6);
           const day = date.slice(6, 8);
-          const seen = item.date !== 0 ? `Seen ${day}.${month}.${year}` : `^^`;
+          const seen = item.date !== 0 ? `Seen ${day}.${month}.${year}` : `:<`;
 
           return (
             <div key={item.id}>
@@ -28,7 +39,7 @@ const SectionFinished = ({ data }) => {
             </div>
           );
         })}
-        <div>
+        <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}
             alt={lastCard.name}

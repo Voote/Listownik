@@ -10,6 +10,7 @@ $seriale: $green;
 $filmy: $yellow;
 $sideDistanceMobile: 0vw;
 $sideDistanceDesktop: 0vw;
+$minElement: 2rem;
 
 html,
 body {
@@ -102,6 +103,11 @@ a {
   }
 }
 
+.button {
+  min-width: $minElement;
+  min-height: $minElement;
+}
+
 @media (min-width: 900px) {
   .image {
     &__logo {
@@ -143,7 +149,6 @@ a {
   .layout {
     &__slider {
       max-width: 93.7vw;
-      margin-left: 2em;
     }
   }
 
