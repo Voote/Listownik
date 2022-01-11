@@ -178,5 +178,17 @@ module.exports = [
     finished: 2,
     watched: 'PS4',
     date: 20210227
+  },
+  {
+    id: 7014,
+    name: 'Deep Rock Galactic',
+    type: 'Action',
+    img: 'IMG/DeepRock.jpg',
+    part: 0,
+    year: 2018,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'PS4',
+    date: 20220110
   }
 ];

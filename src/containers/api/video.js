@@ -112,10 +112,10 @@ module.exports = [
     name: 'Solar Opposites',
     type: 'series',
     img: 'IMG/SolarOpposites.jpg',
-    part: 1,
+    part: 2,
     year: 2020,
     commingSoon: 1,
-    finished: 1,
+    finished: 2,
     watched: 'Hulu',
     date: 20211217
   },
@@ -289,14 +289,26 @@ module.exports = [
   },
   {
     id: 1024,
-    name: `Placeholder1`,
-    type: 'movies',
-    img: 'IMG/VeriPeri.png',
-    part: 0,
-    year: 2021,
+    name: `Modern Family`,
+    type: 'series',
+    img: 'IMG/ModernFamily.jpg',
+    part: 11,
+    year: 2009,
     commingSoon: 0,
     finished: 1,
-    watched: 'DVD',
-    date: 20200001
-  }
+    watched: 'Disney',
+    date: 20220111
+  },
+  {
+    id: 1025,
+    name: `The Crown`,
+    type: 'series',
+    img: 'IMG/TheCrown.jpg',
+    part: 5,
+    year: 2016,
+    commingSoon: 1,
+    finished: 1,
+    watched: 'Netflix',
+    date: 20220110
+  },
 ];
