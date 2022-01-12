@@ -11,6 +11,8 @@ $filmy: $yellow;
 $sideDistanceMobile: 0vw;
 $sideDistanceDesktop: 0vw;
 $minElement: 2rem;
+$extremeMargin: 5vh;
+$gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
 
 html,
 body {
@@ -100,6 +102,20 @@ a {
     & h1 {
       font-size: 1vh !important;
     }
+  }
+}
+
+.modal {
+  display: flex;
+  overflow-y: scroll;
+  &--placeholder {
+    background: $gradientVeryPeri;
+    padding: 10vh 10vw;
+  }
+  &__exit {
+    position: fixed;
+    top: $extremeMargin;
+    right: $extremeMargin;
   }
 }
 

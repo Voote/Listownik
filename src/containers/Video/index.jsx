@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-import videoCommingApi from './comming';
-import videoCurrentApi from './current';
-import videoFinishedApi from './finished';
-import videoToDoApi from './todo';
+import { videoCommingApi, videoCommingCollection } from './comming';
+import { videoCurrentApi, videoCurrentCollection } from './current';
+import { videoFinishedApi, videoFinishedCollection } from './finished';
+import { videoToDoApi, videoToDoCollection } from './todo';
 import SectionShelf from '../Sections/shelf';
 import SectionFinished from '../Sections/finished';
 import labels from '../../assets/labels';
@@ -32,25 +32,28 @@ const Movies = () => (
           {labels.placeholderNavCatchUp.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={videoToDoApi} />
+          <SectionShelf data={videoToDoCollection} api={videoToDoApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavAktualne.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={videoCurrentApi} />
+          <SectionShelf data={videoCurrentCollection} api={videoCurrentApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavCommingSoon.toUpperCase()}
         </h1>
         <div>
-          <SectionShelf data={videoCommingApi} />
+          <SectionShelf data={videoCommingCollection} api={videoCommingApi} />
         </div>
         <h1 className="labels__dark">
           {labels.placeholderNavUkonczone.toUpperCase()}
         </h1>
         <div>
-          <SectionFinished data={videoFinishedApi} />
+          <SectionFinished
+            data={videoFinishedCollection}
+            api={videoFinishedApi}
+          />
         </div>
       </div>
     </div>

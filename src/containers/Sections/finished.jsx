@@ -6,22 +6,21 @@ import settings from '../../components/settings';
 import lastCard from './lastCard';
 import SectionModal from './modal';
 
-const SectionFinished = ({ data }) => {
+const SectionFinished = ({ api, data }) => {
   const [openCollectionModal, setOpen] = useState(false);
-
   const handleOpenCollectionModal = () => setOpen(true);
-
   const handleCloseCollectionModal = () => setOpen(false);
 
-  const collection = [...data];
   return (
     <div className="layout__slider">
       <SectionModal
         open={openCollectionModal}
         handleClose={handleCloseCollectionModal}
+        data={api || data}
       />
+
       <Slider {...settings}>
-        {collection.map((item) => {
+        {data.map((item) => {
           const date = item.date.toString();
           const year = date.slice(0, 4);
           const month = date.slice(4, 6);
@@ -39,6 +38,7 @@ const SectionFinished = ({ data }) => {
             </div>
           );
         })}
+
         <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}

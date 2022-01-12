@@ -1,28 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import settings from '../../components/settings';
 import lastCard from './lastCard';
+import SectionModal from './modal';
 
-const SectionShelf = ({ data }) => {
-  const collection = [...data];
+const SectionShelf = ({ api, data }) => {
+  const [openCollectionModal, setOpen] = useState(false);
+  const handleOpenCollectionModal = () => setOpen(true);
+  const handleCloseCollectionModal = () => setOpen(false);
+
   return (
     <div className="layout__slider">
+      <SectionModal
+        open={openCollectionModal}
+        handleClose={handleCloseCollectionModal}
+        data={api}
+      />
       <Slider {...settings}>
-        {collection.map((item) => (
+        {data.map((item) => (
           <div key={item.id}>
-            <img
-              src={item.img}
-              alt={item.name}
-              className="image__tiles"
-            />
+            <img src={item.img} alt={item.name} className="image__tiles" />
             <div>
               <h3>{item.name}</h3>
             </div>
           </div>
         ))}
-        <div>
+        <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}
             alt={lastCard.name}

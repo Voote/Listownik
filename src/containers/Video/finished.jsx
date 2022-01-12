@@ -1,9 +1,8 @@
 import video from '../api/video';
 
-const videoFinishedApi = [...video]
+export const videoFinishedApi = [...video]
   .filter((item) => item.finished === 2)
   .sort((a, b) => a.date - b.date)
-  .reverse()
-  .slice(0, 7);
+  .reverse();
 
-export default videoFinishedApi;
+export const videoFinishedCollection = [...videoFinishedApi].slice(0, 7);

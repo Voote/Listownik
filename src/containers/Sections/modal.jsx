@@ -1,17 +1,22 @@
 import React from 'react';
 import { Grid, Modal } from '@mui/material';
 
-const SectionModal = ({ open, handleClose }) => (
-  <Modal open={open} onClose={handleClose}>
+const SectionModal = ({ open, handleClose, data }) => (
+  <Modal open={open} onClose={handleClose} className="modal modal--placeholder">
     <Grid container>
-      <Grid item lg={2}>
-        <img src="IMG/VeriPeri.png" alt="veri peri" />
-      </Grid>
+      <button className="modal__exit" onClick={handleClose}>
+        CLOSE MODAL
+      </button>
+      {data.map((item) => (
+        <Grid item key={item.id} sm={10} md={6} lg={4}>
+          <img src={item.img} alt={item.name} className="image__tiles" />
+          <div>
+            <h3>{item.name}</h3>
+          </div>
+        </Grid>
+      ))}
       <Grid item lg={2}>
         <div>Jakis tekst</div>
-        <button className="button" onClick={handleClose}>
-          CLOSE ME
-        </button>
       </Grid>
     </Grid>
   </Modal>

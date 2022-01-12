@@ -1,8 +1,7 @@
 import video from '../api/video';
 
-const videoToDoApi = [...video]
+export const videoToDoApi = [...video]
   .filter((item) => item.finished === 0)
-  .sort((a, b) => a.year - b.year)
-  .slice(0, 7);
+  .sort((a, b) => a.year - b.year);
 
-export default videoToDoApi;
+export const videoToDoCollection = [...videoToDoApi].slice(0, 7);
