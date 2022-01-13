@@ -16,7 +16,7 @@ const SectionFinished = ({ api, data }) => {
       <SectionModal
         open={openCollectionModal}
         handleClose={handleCloseCollectionModal}
-        data={api || data}
+        api={api || data}
       />
 
       <Slider {...settings}>

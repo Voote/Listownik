@@ -16,7 +16,7 @@ const SectionShelf = ({ api, data }) => {
       <SectionModal
         open={openCollectionModal}
         handleClose={handleCloseCollectionModal}
-        data={api}
+        api={api}
       />
       <Slider {...settings}>
         {data.map((item) => (

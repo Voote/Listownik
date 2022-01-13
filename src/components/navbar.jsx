@@ -22,7 +22,7 @@ const NavLink = (props) => (
 
 const Navbar = ({ routeResult }) => {
   return (
-    <nav style={{ paddingTop: '11vh' }}>
+    <nav className="navbar__gap">
       <Grid container spacing={1} className="navbar">
         <Grid item xs={1} />
         <Grid item xs={3}>

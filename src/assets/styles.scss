@@ -12,6 +12,7 @@ $sideDistanceMobile: 0vw;
 $sideDistanceDesktop: 0vw;
 $minElement: 2rem;
 $extremeMargin: 5vh;
+$responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
 
 html,
@@ -44,7 +45,7 @@ a {
 .navbar {
   background-color: $grey;
   position: fixed;
-  top: -0.7vh;
+  top: -0.1vh;
   z-index: 1;
   &--inactive {
     color: $blackText;
@@ -52,6 +53,9 @@ a {
   &--active {
     color: $yellow;
     // text-decoration: underline;
+  }
+  &__gap {
+    padding-top: $responsiveHeightMargin;
   }
 }
 
@@ -99,9 +103,6 @@ a {
     padding-top: 0.4rem;
     margin-left: $sideDistanceMobile;
     margin-right: $sideDistanceMobile;
-    & h1 {
-      font-size: 1vh !important;
-    }
   }
 }
 
@@ -110,7 +111,7 @@ a {
   overflow-y: scroll;
   &--placeholder {
     background: $gradientVeryPeri;
-    padding: 10vh 10vw;
+    padding: $responsiveHeightMargin 10vw;
   }
   &__exit {
     position: fixed;

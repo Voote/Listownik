@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Modal } from '@mui/material';
 
-const SectionModal = ({ open, handleClose, data }) => (
+const SectionModal = ({ open, handleClose, api }) => (
   <Modal open={open} onClose={handleClose} className="modal modal--placeholder">
     <Grid container>
       <button className="modal__exit" onClick={handleClose}>
         CLOSE MODAL
       </button>
-      {data.map((item) => (
+      {api.map((item) => (
         <Grid item key={item.id} sm={10} md={6} lg={4}>
           <img src={item.img} alt={item.name} className="image__tiles" />
           <div>
