@@ -190,5 +190,17 @@ module.exports = [
     finished: 1,
     watched: 'PS4',
     date: 20220110
+  },
+  {
+    id: 7015,
+    name: 'Red Dead Redemption 2',
+    type: 'Action',
+    img: 'IMG/RedDeadR2.jpg',
+    part: 2,
+    year: 2018,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS4',
+    date: 20200100
   }
 ];

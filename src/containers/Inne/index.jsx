@@ -22,7 +22,7 @@ const Inne = () => (
     </Grid>
     <div>
       <div className="layout__line">
-        <h1>{labels.placeholderNavNadrobic.toUpperCase()}</h1>
+        <h1>{labels.placeholderNavCatchUp.toUpperCase()}</h1>
         <h1>{labels.placeholderNavAktualne.toUpperCase()}</h1>
         <h1>{labels.placeholderNavCommingSoon.toUpperCase()}</h1>
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
