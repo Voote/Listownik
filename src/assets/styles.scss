@@ -35,6 +35,7 @@ a {
 }
 
 .design {
+  //Nie wykorzystuje nigdzie
   &__poster {
     border-right: 2px solid yellow;
     // border-bottom: 2px solid yellow;
@@ -52,7 +53,6 @@ a {
   }
   &--active {
     color: $yellow;
-    // text-decoration: underline;
   }
   &__gap {
     padding-top: $responsiveHeightMargin;
@@ -89,7 +89,6 @@ a {
   }
   &__tiles {
     max-height: 47vh;
-    // overflow-x: auto;
   }
 }
 

@@ -202,5 +202,29 @@ module.exports = [
     finished: 0,
     watched: 'PS4',
     date: 20200100
+  },
+  {
+    id: 7016,
+    name: 'Horizon Zero Dawn',
+    type: 'Action',
+    img: 'IMG/Horizon.jpg',
+    part: 1,
+    year: 2017,
+    commingSoon: 1,
+    finished: 0,
+    watched: 'PS4',
+    date: 20201100
+  },
+  {
+    id: 7017,
+    name: 'Gran Turismo',
+    type: 'Racing',
+    img: 'IMG/GranTurismo.jpg',
+    part: 7,
+    year: 2022,
+    commingSoon: 1,
+    finished: 0,
+    watched: 'PS4',
+    date: 20220310
   }
 ];
