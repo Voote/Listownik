@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
 import labels from '../../assets/labels';
+import AddButton from '../../components/add';
 
 const Inne = () => (
   <Box>
@@ -28,6 +29,7 @@ const Inne = () => (
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
       </div>
     </div>
+    <AddButton />
   </Box>
 );
 

@@ -205,10 +205,10 @@ module.exports = [
   },
   {
     id: 7016,
-    name: 'Horizon Zero Dawn',
+    name: 'Horizon 2',
     type: 'Action',
     img: 'IMG/Horizon.jpg',
-    part: 1,
+    part: 2,
     year: 2017,
     commingSoon: 1,
     finished: 0,
@@ -226,5 +226,17 @@ module.exports = [
     finished: 0,
     watched: 'PS4',
     date: 20220310
+  },
+  {
+    id: 7016,
+    name: 'Horizon Zero Dawn',
+    type: 'Action',
+    img: 'IMG/Horizon.jpg',
+    part: 1,
+    year: 2017,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS4',
+    date: 20201100
   }
 ];
