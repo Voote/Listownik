@@ -2,7 +2,9 @@ $black: #111;
 $red: #da563c;
 $green: #8bd89b;
 $yellow: #fae12c;
+$darkYellow: #e9d11bde;
 $grey: #606569;
+$lightGrey: #71767a;
 $greyDark: #505458;
 $text: #fff;
 $blackText: #000;
@@ -14,6 +16,7 @@ $minElement: 2rem;
 $extremeMargin: 5vh;
 $responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
+$gradientForm: linear-gradient(to left top, $lightGrey, $yellow);
 
 html,
 body {
@@ -108,9 +111,15 @@ a {
 .modal {
   display: flex;
   overflow-y: scroll;
+  padding: $responsiveHeightMargin 15vw;
   &--placeholder {
     background: $gradientVeryPeri;
-    padding: $responsiveHeightMargin 10vw;
+  }
+  &--second {
+    background: $gradientForm;
+  }
+  &__size {
+    height: 40vh;
   }
   &__exit {
     position: fixed;
@@ -122,6 +131,11 @@ a {
 .button {
   min-width: $minElement;
   min-height: $minElement;
+  &__position {
+    position: fixed;
+    right: 4em;
+    bottom: 7em;
+  }
 }
 
 @media (min-width: 900px) {
@@ -175,6 +189,15 @@ a {
       & h1 {
         font-size: 3.4vh;
       }
+    }
+  }
+
+  .modal {
+    padding: $responsiveHeightMargin 10vw;
+    &__exit {
+      position: fixed;
+      top: $extremeMargin;
+      right: $extremeMargin;
     }
   }
 }

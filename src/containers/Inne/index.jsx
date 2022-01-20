@@ -29,7 +29,9 @@ const Inne = () => (
         <h1>{labels.placeholderNavUkonczone.toUpperCase()}</h1>
       </div>
     </div>
-    <AddButton />
+    <div className="button__position">
+      <AddButton />
+    </div>
   </Box>
 );
 
