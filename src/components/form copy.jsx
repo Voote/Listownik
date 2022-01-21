@@ -10,15 +10,24 @@ import {
   MenuItem,
   Modal,
   NativeSelect,
+  Radio,
   Select,
   TextField,
   Typography
 } from '@mui/material/';
+import {
+  AdapterDateFns,
+  DatePicker,
+  LocalizationProvider,
+  Stack
+} from '@mui/lab/';
+import DateAdapter from '@mui/lab/AdapterDayjs';
 import { partOptions } from './partOptions';
 
 const ModalForm = ({ open, handleClose }) => {
   const [posterType, setPosterType] = useState('');
   const [partNumber, setPartNumber] = useState('1');
+  const [value, setValue] = useState(new Date());
 
   const handlePosterType = (event) => setPosterType(event.target.value);
   const handlePartNumber = (event) => setPartNumber(event.target.value);
@@ -83,6 +92,22 @@ const ModalForm = ({ open, handleClose }) => {
             </FormControl>
           </div>
 
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <Stack spacing={3}>
+              <DatePicker
+                views={['year']}
+                label="Year only"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue);
+                }}
+                renderInput={(params) => (
+                  <TextField {...params} helperText={null} />
+                )}
+              />
+            </Stack>
+          </LocalizationProvider>
+
           <Typography>
             well meaning and kindly.
             <br />
@@ -101,27 +126,39 @@ const ModalForm = ({ open, handleClose }) => {
 
 export default ModalForm;
 
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import DatePicker from '@mui/lab/DatePicker';
-// import Stack from '@mui/material/Stack';
+import { pink } from '@mui/material/colors';
+import Radio from '@mui/material/Radio';
 
-// export default function ViewsDatePicker() {
-//   const [value, setValue] = React.useState(new Date());
+export const ColorRadioButtons = () => {
+  const [selectedValue, setSelectedValue] = React.useState('a');
 
-//   return (
-//     <LocalizationProvider dateAdapter={AdapterDateFns}>
-//       <Stack spacing={3}>
-//         <DatePicker
-//           views={['year']}
-//           label="Year only"
-//           value={value}
-//           onChange={(newValue) => {
-//             setValue(newValue);
-//           }}
-//           renderInput={(params) => <TextField {...params} helperText={null} />}
-//         />
-//       </Stack>
-//     </LocalizationProvider>
-//   );
-// }
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const controlProps = (item) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: 'color-radio-button-demo',
+    inputProps: { 'aria-label': item }
+  });
+
+  return (
+    <div>
+      <Radio {...controlProps('a')} />
+      <Radio {...controlProps('b')} color="secondary" />
+      <Radio {...controlProps('c')} color="success" />
+      <Radio {...controlProps('d')} color="default" />
+      <Radio
+        {...controlProps('e')}
+        sx={{
+          color: pink[800],
+          '&.Mui-checked': {
+            color: pink[600]
+          }
+        }}
+      />
+    </div>
+  );
+};

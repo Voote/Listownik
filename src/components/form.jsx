@@ -6,22 +6,34 @@ import {
   CardActions,
   CardContent,
   FormControl,
+  FormControlLabel,
+  FormLabel,
   InputLabel,
   MenuItem,
   Modal,
   NativeSelect,
+  Radio,
+  RadioGroup,
   Select,
   TextField,
   Typography
 } from '@mui/material/';
-import { partOptions } from './partOptions';
+import { partOptions, yearOptions } from './partOptions';
 
 const ModalForm = ({ open, handleClose }) => {
   const [posterType, setPosterType] = useState('');
+  const [platform, setPlatform] = useState('');
   const [partNumber, setPartNumber] = useState('1');
+  const [year, setYear] = useState('2022');
+  const [date, setDate] = useState('2022');
+  const [progress, setProgress] = useState('');
 
   const handlePosterType = (event) => setPosterType(event.target.value);
   const handlePartNumber = (event) => setPartNumber(event.target.value);
+  const handlePlatformType = (event) => setPlatform(event.target.value);
+  const handleYearChange = (event) => setYear(event.target.value);
+  const handleDateChange = (event) => setDate(event.target.value);
+  const handleProgressType = (event) => setProgress(event.target.value);
 
   return (
     <Modal open={open} className="modal">
@@ -82,16 +94,84 @@ const ModalForm = ({ open, handleClose }) => {
               </NativeSelect>
             </FormControl>
           </div>
-
-          <Typography>
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
+          <div>
+            <FormControl sx={{ minWidth: 110, mb: 1 }}>
+              <InputLabel id="platform-select-label">Platform</InputLabel>
+              <Select
+                labelId="platform-select-label"
+                id="platform-select"
+                value={platform}
+                onChange={handlePlatformType}
+                autoWidth
+                label="platform"
+              >
+                <MenuItem value={'PS4'}>PS4</MenuItem>
+                <MenuItem value={'NS'}>Switch</MenuItem>
+                <MenuItem value={'STI'}>Stadia</MenuItem>
+                <MenuItem value={'EMU'}>Emulator</MenuItem>
+                <MenuItem value={'PC'}>PC</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl sx={{ minWidth: 50, mb: 1, ml: 4 }}>
+              <InputLabel id="year-select-label">Year</InputLabel>
+              <NativeSelect
+                inputProps={{
+                  name: 'Year',
+                  id: 'year-select'
+                }}
+                value={year}
+                onChange={handleYearChange}
+              >
+                {yearOptions.reverse().map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </NativeSelect>
+            </FormControl>
+          </div>
+          <FormControl>
+            <FormLabel id="progress-radio-buttons-group-label">
+              Progress
+            </FormLabel>
+            <RadioGroup
+              row
+              aria-labelledby="progress-radio-buttons-group-label"
+              name="progress-buttons-group"
+            >
+              <FormControlLabel value="seen" control={<Radio />} label="Seen" />
+              <FormControlLabel value="now" control={<Radio />} label="Now" />
+              <FormControlLabel value="todo" control={<Radio />} label="ToDo" />
+            </RadioGroup>
+          </FormControl>
+          <div>
+            {/* <FormControl sx={{ minWidth: 50, mb: 1 }}>
+              <InputLabel id="date-select-label">Date</InputLabel>
+              <NativeSelect
+                inputProps={{
+                  name: 'Date',
+                  id: 'date-select'
+                }}
+                value={date}
+                onChange={handleDateChange}
+              >
+                {yearOptions.reverse().map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </NativeSelect>
+            </FormControl> */}
+          </div>
         </CardContent>
         <CardActions>
-          <Button size="small" onClick={handleClose}>
-            Hello World
+          <Button
+            sx={{ ml: 4 }}
+            variant="contained"
+            color="primary"
+            onClick={handleClose}
+          >
+            Click here to close
           </Button>
         </CardActions>
       </Card>

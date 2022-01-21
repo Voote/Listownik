@@ -37,6 +37,10 @@ a {
   text-align: center;
 }
 
+.flexbox {
+  display: flex;
+}
+
 .design {
   //Nie wykorzystuje nigdzie
   &__poster {
@@ -119,7 +123,7 @@ a {
     background: $gradientForm;
   }
   &__size {
-    height: 40vh;
+    height: 52vh;
   }
   &__exit {
     position: fixed;
