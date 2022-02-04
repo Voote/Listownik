@@ -18,7 +18,8 @@ import {
   TextField,
   Typography
 } from '@mui/material/';
-import { partOptions, yearOptions } from './partOptions';
+import { partOptions, yearOptions } from '../../components/partOptions';
+// import PosterType from './posterType';
 
 const ModalForm = ({ open, handleClose }) => {
   const [partNumber, setPartNumber] = useState('1');
@@ -35,7 +36,7 @@ const ModalForm = ({ open, handleClose }) => {
   const handleYearChange = (event) => setYear(event.target.value);
   //   const handleDateChange = (event) => setDate(event.target.value);
 
-  let newPposter = {
+  let newPoster = {
     id: 123,
     posterType: posterType,
     platform: platform,
@@ -44,7 +45,7 @@ const ModalForm = ({ open, handleClose }) => {
     date: '',
     progress: progress
   };
-  const showObject = () => console.log(newPposter);
+  const showObject = () => console.log(newPoster);
 
   return (
     <Modal open={open} className="modal">

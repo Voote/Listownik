@@ -91,9 +91,9 @@ module.exports = [
     part: 3,
     year: 2016,
     commingSoon: 0,
-    finished: 1,
+    finished: 2,
     watched: 'PS4',
-    date: 20211225
+    date: 20220129
   },
   {
     id: 7008,
@@ -180,7 +180,7 @@ module.exports = [
     date: 20210227
   },
   {
-    id: 7014,
+    id: 7015,
     name: 'Deep Rock Galactic',
     type: 'Action',
     img: 'IMG/DeepRock.jpg',
@@ -192,7 +192,7 @@ module.exports = [
     date: 20220110
   },
   {
-    id: 7015,
+    id: 7016,
     name: 'Red Dead Redemption 2',
     type: 'Action',
     img: 'IMG/RedDeadR2.jpg',
@@ -204,7 +204,7 @@ module.exports = [
     date: 20200100
   },
   {
-    id: 7016,
+    id: 7017,
     name: 'Horizon 2',
     type: 'Action',
     img: 'IMG/Horizon.jpg',
@@ -216,7 +216,7 @@ module.exports = [
     date: 20201100
   },
   {
-    id: 7017,
+    id: 7018,
     name: 'Gran Turismo',
     type: 'Racing',
     img: 'IMG/GranTurismo.jpg',
@@ -228,7 +228,7 @@ module.exports = [
     date: 20220310
   },
   {
-    id: 7016,
+    id: 7019,
     name: 'Horizon Zero Dawn',
     type: 'Action',
     img: 'IMG/Horizon.jpg',
@@ -238,5 +238,17 @@ module.exports = [
     finished: 0,
     watched: 'PS4',
     date: 20201100
+  },
+  {
+    id: 7020,
+    name: 'Astros Playroom',
+    type: 'Platform',
+    img: 'IMG/AstroPlayroom.png',
+    part: 1,
+    year: 2020,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'PS5',
+    date: 20220129
   }
 ];
