@@ -20,7 +20,7 @@ module.exports = [
     year: 2017,
     commingSoon: 0,
     finished: 2,
-    watched: 'Disney+',
+    watched: 'Disney',
     date: 20210917
   },
   {

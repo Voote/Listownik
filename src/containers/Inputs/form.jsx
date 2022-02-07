@@ -5,45 +5,38 @@ import {
   Card,
   CardActions,
   CardContent,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  InputLabel,
-  MenuItem,
   Modal,
-  NativeSelect,
-  Radio,
-  RadioGroup,
-  Select,
   TextField,
   Typography
 } from '@mui/material/';
-import { partOptions, yearOptions } from '../../components/partOptions';
-// import PosterType from './posterType';
+import ProgressType from './progressType';
+import PlatformType from './platformType';
+import PosterType from './posterType';
+import PartNumber from './partNumber';
+import Year from './year';
 
 const ModalForm = ({ open, handleClose }) => {
+  const [progressType, setProgressType] = useState('');
   const [partNumber, setPartNumber] = useState('1');
   const [posterType, setPosterType] = useState('');
   const [platform, setPlatform] = useState('');
-  const [progress, setProgress] = useState('');
   const [year, setYear] = useState('2022');
   //   const [date, setDate] = useState('2022');
-
-  const handlePartNumber = (event) => setPartNumber(event.target.value);
+  const handleProgressType = (event) => setProgressType(event.target.value);
   const handlePosterType = (event) => setPosterType(event.target.value);
+  const handlePartNumber = (event) => setPartNumber(event.target.value);
   const handlePlatformType = (event) => setPlatform(event.target.value);
-  const handleProgressType = (event) => setProgress(event.target.value);
   const handleYearChange = (event) => setYear(event.target.value);
   //   const handleDateChange = (event) => setDate(event.target.value);
 
   let newPoster = {
     id: 123,
+    progressType: progressType,
+    partNumber: partNumber,
     posterType: posterType,
     platform: platform,
-    partNumber: partNumber,
     year: year,
-    date: '',
-    progress: progress
+    date: ''
   };
   const showObject = () => console.log(newPoster);
 
@@ -58,7 +51,6 @@ const ModalForm = ({ open, handleClose }) => {
           >
             Add new Poster
           </Typography>
-
           <Box
             component="form"
             sx={{
@@ -69,95 +61,28 @@ const ModalForm = ({ open, handleClose }) => {
           >
             <TextField id="basic-form" label="Title" variant="filled" />
           </Box>
-
           <div>
-            <FormControl sx={{ minWidth: 100, mb: 1 }}>
-              <InputLabel id="type-select-label">Type</InputLabel>
-              <Select
-                labelId="type-select-label"
-                id="type-select"
-                value={posterType}
-                onChange={handlePosterType}
-                autoWidth
-                label="type"
-              >
-                <MenuItem value={10}>Game</MenuItem>
-                <MenuItem value={20}>Movie</MenuItem>
-                <MenuItem value={21}>Series</MenuItem>
-                <MenuItem value={30}>Book</MenuItem>
-                <MenuItem value={31}>Comics</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl sx={{ minWidth: 50, mb: 1, ml: 7 }}>
-              <InputLabel id="part-select-label">Part</InputLabel>
-              <NativeSelect
-                inputProps={{
-                  name: 'Party',
-                  id: 'part-select'
-                }}
-                value={partNumber}
-                onChange={handlePartNumber}
-              >
-                {partOptions.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </NativeSelect>
-            </FormControl>
+            <PosterType
+              handleChange={handlePosterType}
+              posterType={posterType}
+            />
+            <PartNumber
+              handleChange={handlePartNumber}
+              partNumber={partNumber}
+            />
           </div>
           <div>
-            <FormControl sx={{ minWidth: 110, mb: 1 }}>
-              <InputLabel id="platform-select-label">Platform</InputLabel>
-              <Select
-                labelId="platform-select-label"
-                id="platform-select"
-                value={platform}
-                onChange={handlePlatformType}
-                autoWidth
-                label="platform"
-              >
-                <MenuItem value={'PS4'}>PS4</MenuItem>
-                <MenuItem value={'NS'}>Switch</MenuItem>
-                <MenuItem value={'STI'}>Stadia</MenuItem>
-                <MenuItem value={'EMU'}>Emulator</MenuItem>
-                <MenuItem value={'PC'}>PC</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl sx={{ minWidth: 50, mb: 1, ml: 4 }}>
-              <InputLabel id="year-select-label">Year</InputLabel>
-              <NativeSelect
-                inputProps={{
-                  name: 'Year',
-                  id: 'year-select'
-                }}
-                value={year}
-                onChange={handleYearChange}
-              >
-                {yearOptions.reverse().map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </NativeSelect>
-            </FormControl>
+            <PlatformType
+              handleChange={handlePlatformType}
+              posterType={posterType}
+              platform={platform}
+            />
+            <Year handleChange={handleYearChange} year={year} />
           </div>
-          <FormControl>
-            <FormLabel id="progress-radio-buttons-group-label">
-              Progress
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="progress-radio-buttons-group-label"
-              name="progress-buttons-group"
-              value={progress}
-              onChange={handleProgressType}
-            >
-              <FormControlLabel value="seen" control={<Radio />} label="Seen" />
-              <FormControlLabel value="now" control={<Radio />} label="Now" />
-              <FormControlLabel value="todo" control={<Radio />} label="ToDo" />
-            </RadioGroup>
-          </FormControl>
+          <ProgressType
+            handleChange={handleProgressType}
+            progressType={progressType}
+          />
           <div>
             {/* <FormControl sx={{ minWidth: 50, mb: 1 }}>
               <InputLabel id="date-select-label">Date</InputLabel>
