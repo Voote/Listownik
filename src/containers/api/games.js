@@ -224,31 +224,43 @@ module.exports = [
     year: 2022,
     commingSoon: 1,
     finished: 0,
-    watched: 'PS4',
+    watched: 'PS5',
     date: 20220310
   },
   {
     id: 7019,
     name: 'Horizon Zero Dawn',
     type: 'Action',
-    img: 'IMG/Horizon.jpg',
+    img: 'IMG/HorizonZD.jpg',
     part: 1,
     year: 2017,
-    commingSoon: 0,
-    finished: 0,
-    watched: 'PS4',
-    date: 20201100
+    commingSoon: 1,
+    finished: 1,
+    watched: 'PS5',
+    date: 20220207
   },
   {
     id: 7020,
     name: 'Astros Playroom',
     type: 'Platform',
     img: 'IMG/AstroPlayroom.png',
-    part: 1,
+    part: 0,
     year: 2020,
     commingSoon: 0,
-    finished: 1,
+    finished: 2,
     watched: 'PS5',
-    date: 20220129
+    date: 20220203
+  },
+  {
+    id: 7021,
+    name: 'Death Stranding',
+    type: 'Platform',
+    img: 'IMG/DeathStranding.jpg',
+    part: 0,
+    year: 2019,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS5',
+    date: 20220101
   }
 ];
