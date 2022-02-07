@@ -20,7 +20,7 @@ module.exports = [
     year: 2017,
     commingSoon: 0,
     finished: 2,
-    watched: 'Disney+',
+    watched: 'Disney',
     date: 20210917
   },
   {
@@ -283,9 +283,9 @@ module.exports = [
     part: 1,
     year: 2021,
     commingSoon: 1,
-    finished: 0,
+    finished: 1,
     watched: 'Disney',
-    date: 20220105
+    date: 20220201
   },
   {
     id: 1024,
@@ -311,4 +311,28 @@ module.exports = [
     watched: 'Netflix',
     date: 20220110
   },
+  {
+    id: 1026,
+    name: `Matrix`,
+    type: 'movie',
+    img: 'IMG/Matrix4.jpg',
+    part: 4,
+    year: 2021,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'Cinema',
+    date: 20220114
+  },
+  {
+    id: 1027,
+    name: `Vox Machina`,
+    type: 'series',
+    img: 'IMG/VoxMachina.jpg',
+    part: 1,
+    year: 2022,
+    commingSoon: 0,
+    finished: 1,
+    watched: 'Amazon',
+    date: 20220206
+  }
 ];
