@@ -334,5 +334,29 @@ module.exports = [
     finished: 1,
     watched: 'Amazon',
     date: 20220206
+  },
+  {
+    id: 1028,
+    name: `Loki`,
+    type: 'series',
+    img: 'IMG/Loki.jpg',
+    part: 1,
+    year: 2021,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'Disney',
+    date: 20220101
+  },
+  {
+    id: 1029,
+    name: `Sandman`,
+    type: 'series',
+    img: 'IMG/SandmanNetflix.jpg',
+    part: 1,
+    year: 2022,
+    commingSoon: 1,
+    finished: 0,
+    watched: 'Netflix',
+    date: 20220101
   }
 ];
