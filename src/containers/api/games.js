@@ -250,5 +250,17 @@ module.exports = [
     finished: 2,
     watched: 'PS5',
     date: 20220203
+  },
+  {
+    id: 7021,
+    name: 'Death Stranding',
+    type: 'action',
+    img: 'IMG/DeathStranding.jpg',
+    part: 0,
+    year: 2019,
+    commingSoon: 0,
+    finished: 0,
+    watched: 'PS5',
+    date: 20220101
   }
 ];
