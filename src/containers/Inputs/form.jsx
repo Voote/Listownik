@@ -9,6 +9,7 @@ import {
   TextField,
   Typography
 } from '@mui/material/';
+import PosterIdSelector from './posterIdSelector';
 import ProgressType from './progressType';
 import PlatformType from './platformType';
 import PosterType from './posterType';
@@ -23,14 +24,14 @@ const ModalForm = ({ open, handleClose }) => {
   const [year, setYear] = useState('2022');
   //   const [date, setDate] = useState('2022');
   const handleProgressType = (event) => setProgressType(event.target.value);
+  const handlePlatformType = (event) => setPlatform(event.target.value);
   const handlePosterType = (event) => setPosterType(event.target.value);
   const handlePartNumber = (event) => setPartNumber(event.target.value);
-  const handlePlatformType = (event) => setPlatform(event.target.value);
   const handleYearChange = (event) => setYear(event.target.value);
   //   const handleDateChange = (event) => setDate(event.target.value);
 
-  let newPoster = {
-    id: 123,
+  const newPoster = {
+    id: PosterIdSelector(posterType),
     progressType: progressType,
     partNumber: partNumber,
     posterType: posterType,
@@ -38,7 +39,7 @@ const ModalForm = ({ open, handleClose }) => {
     year: year,
     date: ''
   };
-  const showObject = () => console.log(newPoster);
+  const showObject = () => console.log(newPoster, PosterIdSelector(posterType));
 
   return (
     <Modal open={open} className="modal">

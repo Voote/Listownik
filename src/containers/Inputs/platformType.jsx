@@ -5,7 +5,7 @@ const PlatformType = ({ handleChange, posterType, platform }) => {
   return (
     <FormControl sx={{ minWidth: 110, mb: 1 }}>
       <InputLabel id="platform-select-label">Platform</InputLabel>
-      {(posterType === (10 || 20) && (
+      {(posterType === 'game' && (
         <Select
           labelId="platform-select-label"
           id="platform-select"
@@ -41,11 +41,11 @@ const PlatformType = ({ handleChange, posterType, platform }) => {
             autoWidth
             label="platform"
           >
-            <MenuItem value={'PS4'}>Amazon</MenuItem>
-            <MenuItem value={'NS'}>Netflix</MenuItem>
-            <MenuItem value={'STI'}>Cinema</MenuItem>
-            <MenuItem value={'EMU'}>Disney</MenuItem>
-            <MenuItem value={'PC'}>HBO</MenuItem>
+            <MenuItem value={'Ama'}>Amazon</MenuItem>
+            <MenuItem value={'Ntfx'}>Netflix</MenuItem>
+            <MenuItem value={'Cin'}>Cinema</MenuItem>
+            <MenuItem value={'Dis'}>Disney</MenuItem>
+            <MenuItem value={'HBO'}>HBO</MenuItem>
             <MenuItem value={'Hulu'}>Hulu</MenuItem>
             <MenuItem value={'DVD'}>DVD</MenuItem>
           </Select>

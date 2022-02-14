@@ -13,11 +13,11 @@ const PosterType = ({ handleChange, posterType }) => {
         autoWidth
         label="type"
       >
-        <MenuItem value={10}>Game</MenuItem>
-        <MenuItem value={20}>Movie</MenuItem>
-        <MenuItem value={21}>Series</MenuItem>
-        <MenuItem value={30}>Book</MenuItem>
-        <MenuItem value={31}>Comics</MenuItem>
+        <MenuItem value={'game'}>Game</MenuItem>
+        <MenuItem value={'movie'}>Movie</MenuItem>
+        <MenuItem value={'series'}>Series</MenuItem>
+        <MenuItem value={'book'}>Book</MenuItem>
+        <MenuItem value={'comics'}>Comics</MenuItem>
       </Select>
     </FormControl>
   );
