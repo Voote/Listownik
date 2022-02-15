@@ -9,6 +9,7 @@ import {
   TextField,
   Typography
 } from '@mui/material/';
+import DatePicker from '@mui/lab/DatePicker';
 import PosterIdSelector from './posterIdSelector';
 import ProgressType from './progressType';
 import PlatformType from './platformType';
@@ -17,14 +18,16 @@ import PartNumber from './partNumber';
 import Year from './year';
 
 const ModalForm = ({ open, handleClose }) => {
+  const [date, setDate] = useState(null);
   const [progressType, setProgressType] = useState('');
   const [partNumber, setPartNumber] = useState('1');
   const [posterType, setPosterType] = useState('');
   const [posterName, setPosterName] = useState('');
   const [platform, setPlatform] = useState('');
-  const [year, setYear] = useState('2022');
+  const [releaseYear, setYear] = useState('2022');
   //   const [date, setDate] = useState('2022');
   const handleProgressType = (event) => setProgressType(event.target.value);
+  const handleDateChange = (newValue) => setDate(newValue);
   const handlePlatformType = (event) => setPlatform(event.target.value);
   const handlePosterType = (event) => setPosterType(event.target.value);
   const handlePosterName = (event) => setPosterName(event.target.value);
@@ -39,8 +42,8 @@ const ModalForm = ({ open, handleClose }) => {
     posterName: posterName,
     posterType: posterType,
     platform: platform,
-    year: year,
-    date: ''
+    releaseYear: releaseYear,
+    date: date ? date.format('L') : date
   };
   const showObject = () => console.log(newPoster);
 
@@ -86,30 +89,30 @@ const ModalForm = ({ open, handleClose }) => {
               posterType={posterType}
               platform={platform}
             />
-            <Year handleChange={handleYearChange} year={year} />
+            <Year handleChange={handleYearChange} year={releaseYear} />
           </div>
           <ProgressType
             handleChange={handleProgressType}
             progressType={progressType}
           />
           <div>
-            {/* <FormControl sx={{ minWidth: 50, mb: 1 }}>
-              <InputLabel id="date-select-label">Date</InputLabel>
-              <NativeSelect
-                inputProps={{
-                  name: 'Date',
-                  id: 'date-select'
-                }}
-                value={date}
-                onChange={handleDateChange}
-              >
-                {yearOptions.reverse().map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </NativeSelect>
-            </FormControl> */}
+            <DatePicker
+              label="Basic example"
+              value={date}
+              onChange={handleDateChange}
+              renderInput={(params) => <TextField {...params} />}
+            />
+            {/* <DatePicker
+              views={['year']}
+              label="Year only"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => (
+                <TextField {...params} helperText={null} />
+              )}
+            /> */}
           </div>
         </CardContent>
         <CardActions>

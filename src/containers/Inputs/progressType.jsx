@@ -12,8 +12,10 @@ const ProgressType = ({ handleChange, progressType }) => (
     <FormLabel
       id="progress-radio-buttons-group-label"
       className="labels__center--left"
+      sx={{ fontSize: 18 }}
+      color="primary"
     >
-      <b>Progress</b>
+      Progress
     </FormLabel>
     <RadioGroup
       row
