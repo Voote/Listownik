@@ -27,22 +27,22 @@ const Navbar = ({ routeResult }) => {
         <Grid item xs={1} />
         <Grid item xs={3}>
           <NavLink href="/">
-            <h2 className="labels__navbar">{labels.placeholderNavHome}</h2>
+            <h2 className="labels__center">{labels.placeholderNavHome}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={3}>
           <NavLink href="/video">
-            <h2 className="labels__navbar">{labels.placeholderNavVideo}</h2>
+            <h2 className="labels__center">{labels.placeholderNavVideo}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/games">
-            <h2 className="labels__navbar">{labels.placeholderNavGames}</h2>
+            <h2 className="labels__center">{labels.placeholderNavGames}</h2>
           </NavLink>
         </Grid>
         <Grid item xs={2}>
           <NavLink href="/inne">
-            <h2 className="labels__navbar">{labels.placeholderNavRest}</h2>
+            <h2 className="labels__center">{labels.placeholderNavRest}</h2>
           </NavLink>
         </Grid>
       </Grid>

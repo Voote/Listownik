@@ -9,7 +9,12 @@ import {
 
 const ProgressType = ({ handleChange, progressType }) => (
   <FormControl>
-    <FormLabel id="progress-radio-buttons-group-label">Progress</FormLabel>
+    <FormLabel
+      id="progress-radio-buttons-group-label"
+      className="labels__center--left"
+    >
+      <b>Progress</b>
+    </FormLabel>
     <RadioGroup
       row
       aria-labelledby="progress-radio-buttons-group-label"

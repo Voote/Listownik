@@ -100,8 +100,11 @@ a {
 }
 
 .labels {
-  &__navbar {
+  &__center {
     text-align: center;
+    &--left {
+      margin-left: 1vw;
+    }
   }
   &__dark {
     color: black;
@@ -116,6 +119,11 @@ a {
   display: flex;
   overflow-y: scroll;
   padding: $responsiveHeightMargin 15vw;
+  &__centered {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
   &--placeholder {
     background: $gradientVeryPeri;
   }

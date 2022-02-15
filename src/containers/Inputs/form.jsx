@@ -20,12 +20,14 @@ const ModalForm = ({ open, handleClose }) => {
   const [progressType, setProgressType] = useState('');
   const [partNumber, setPartNumber] = useState('1');
   const [posterType, setPosterType] = useState('');
+  const [posterName, setPosterName] = useState('');
   const [platform, setPlatform] = useState('');
   const [year, setYear] = useState('2022');
   //   const [date, setDate] = useState('2022');
   const handleProgressType = (event) => setProgressType(event.target.value);
   const handlePlatformType = (event) => setPlatform(event.target.value);
   const handlePosterType = (event) => setPosterType(event.target.value);
+  const handlePosterName = (event) => setPosterName(event.target.value);
   const handlePartNumber = (event) => setPartNumber(event.target.value);
   const handleYearChange = (event) => setYear(event.target.value);
   //   const handleDateChange = (event) => setDate(event.target.value);
@@ -34,15 +36,16 @@ const ModalForm = ({ open, handleClose }) => {
     id: PosterIdSelector(posterType),
     progressType: progressType,
     partNumber: partNumber,
+    posterName: posterName,
     posterType: posterType,
     platform: platform,
     year: year,
     date: ''
   };
-  const showObject = () => console.log(newPoster, PosterIdSelector(posterType));
+  const showObject = () => console.log(newPoster);
 
   return (
-    <Modal open={open} className="modal">
+    <Modal open={open} className="modal modal__centered">
       <Card className="modal__size modal--second">
         <CardContent>
           <Typography
@@ -60,7 +63,12 @@ const ModalForm = ({ open, handleClose }) => {
             noValidate
             autoComplete="off"
           >
-            <TextField id="basic-form" label="Title" variant="filled" />
+            <TextField
+              id="basic-form"
+              label="Title"
+              variant="filled"
+              onChange={handlePosterName}
+            />
           </Box>
           <div>
             <PosterType
@@ -114,7 +122,7 @@ const ModalForm = ({ open, handleClose }) => {
             color="primary"
             onClick={handleClose}
           >
-            Click here to close
+            Close form
           </Button>
         </CardActions>
       </Card>
