@@ -2,10 +2,10 @@ import React from 'react';
 import { FormControl, InputLabel, NativeSelect } from '@mui/material/';
 import { partOptions } from '../../components/partOptions';
 
-const PartNumber = ({ handleChange, partNumber }) => {
+const PartNumber = ({ handleChange, partNumber, label }) => {
   return (
-    <FormControl sx={{ minWidth: 50, mb: 1, ml: 7 }}>
-      <InputLabel id="part-select-label">Part</InputLabel>
+    <FormControl sx={{ minWidth: 50, mb: 1, ml: 3 }}>
+      <InputLabel id="part-select-label">{label}</InputLabel>
       <NativeSelect
         inputProps={{
           name: 'Party',

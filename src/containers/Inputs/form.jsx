@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 import {
   Box,
   Button,
@@ -15,25 +16,23 @@ import ProgressType from './progressType';
 import PlatformType from './platformType';
 import PosterType from './posterType';
 import PartNumber from './partNumber';
-import Year from './year';
+import labels from '../../assets/labels';
 
 const ModalForm = ({ open, handleClose }) => {
-  const [date, setDate] = useState(null);
   const [progressType, setProgressType] = useState('');
   const [partNumber, setPartNumber] = useState('1');
   const [posterType, setPosterType] = useState('');
   const [posterName, setPosterName] = useState('');
+  const [releaseYear, setYear] = useState(null);
   const [platform, setPlatform] = useState('');
-  const [releaseYear, setYear] = useState('2022');
-  //   const [date, setDate] = useState('2022');
+  const [date, setDate] = useState(null);
   const handleProgressType = (event) => setProgressType(event.target.value);
-  const handleDateChange = (newValue) => setDate(newValue);
   const handlePlatformType = (event) => setPlatform(event.target.value);
   const handlePosterType = (event) => setPosterType(event.target.value);
   const handlePosterName = (event) => setPosterName(event.target.value);
   const handlePartNumber = (event) => setPartNumber(event.target.value);
-  const handleYearChange = (event) => setYear(event.target.value);
-  //   const handleDateChange = (event) => setDate(event.target.value);
+  const handleYearChange = (newValue) => setYear(newValue);
+  const handleDateChange = (newValue) => setDate(newValue);
 
   const newPoster = {
     id: PosterIdSelector(posterType),
@@ -42,8 +41,8 @@ const ModalForm = ({ open, handleClose }) => {
     posterName: posterName,
     posterType: posterType,
     platform: platform,
-    releaseYear: releaseYear,
-    date: date ? date.format('L') : date
+    releaseYear: releaseYear ? releaseYear.format('YYYY') : '',
+    date: date ? date.format('L') : ''
   };
   const showObject = () => console.log(newPoster);
 
@@ -56,12 +55,12 @@ const ModalForm = ({ open, handleClose }) => {
             color="primary"
             gutterBottom
           >
-            Add new Poster
+            {labels.formModalHeader}
           </Typography>
           <Box
             component="form"
             sx={{
-              '& > :not(style)': { width: '24ch', mb: 2 }
+              '& > :not(style)': { width: '25ch', mb: 2 }
             }}
             noValidate
             autoComplete="off"
@@ -77,47 +76,54 @@ const ModalForm = ({ open, handleClose }) => {
             <PosterType
               handleChange={handlePosterType}
               posterType={posterType}
+              label={labels.formSectionType}
             />
-            <PartNumber
-              handleChange={handlePartNumber}
-              partNumber={partNumber}
-            />
-          </div>
-          <div>
             <PlatformType
               handleChange={handlePlatformType}
               posterType={posterType}
               platform={platform}
+              label={labels.formSectionPlatform}
             />
-            <Year handleChange={handleYearChange} year={releaseYear} />
+          </div>
+          <div>
+            <DatePicker
+              views={['year']}
+              label={labels.formSectionReleaseYear}
+              value={releaseYear}
+              minDate={moment('1950')}
+              maxDate={moment('2025')}
+              onChange={handleYearChange}
+              renderInput={(params) => (
+                <TextField {...params} sx={{ width: '12.5vw' }} />
+              )}
+            />
+            <PartNumber
+              handleChange={handlePartNumber}
+              partNumber={partNumber}
+              label={labels.formSectionPart}
+            />
           </div>
           <ProgressType
             handleChange={handleProgressType}
             progressType={progressType}
+            label={labels.formSectionProgress}
           />
           <div>
             <DatePicker
-              label="Basic example"
+              label={labels.formSectionInteraction}
               value={date}
+              minDate={moment('2007')}
+              maxDate={moment('2025')}
               onChange={handleDateChange}
-              renderInput={(params) => <TextField {...params} />}
-            />
-            {/* <DatePicker
-              views={['year']}
-              label="Year only"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
               renderInput={(params) => (
-                <TextField {...params} helperText={null} />
+                <TextField {...params} sx={{ width: '19.5vw' }} />
               )}
-            /> */}
+            />
           </div>
         </CardContent>
         <CardActions>
           <Button variant="outlined" color="primary" onClick={showObject}>
-            Show
+            {labels.formShowButton}
           </Button>
           <Button
             sx={{ ml: 4 }}
@@ -125,7 +131,7 @@ const ModalForm = ({ open, handleClose }) => {
             color="primary"
             onClick={handleClose}
           >
-            Close form
+            {labels.formCloseButton}
           </Button>
         </CardActions>
       </Card>

@@ -1,25 +1,15 @@
 import React from 'react';
-import { FormControl, InputLabel, NativeSelect } from '@mui/material/';
-import { yearOptions } from '../../components/partOptions';
+import { TextField } from '@mui/material/';
+import DatePicker from '@mui/lab/DatePicker';
 
 const Year = ({ handleChange, year }) => (
-  <FormControl sx={{ minWidth: 50, mb: 1, ml: 4 }}>
-    <InputLabel id="year-select-label">Year</InputLabel>
-    <NativeSelect
-      inputProps={{
-        name: 'Year',
-        id: 'year-select'
-      }}
-      value={year}
-      onChange={handleChange}
-    >
-      {yearOptions.reverse().map((item) => (
-        <option key={item} value={item}>
-          {item}
-        </option>
-      ))}
-    </NativeSelect>
-  </FormControl>
+  <DatePicker
+    views={['year']}
+    label="Release year"
+    value={year}
+    onChange={handleChange}
+    renderInput={(params) => <TextField sx={{ width: '12.5vw' }} {...params} />}
+  />
 );
 
 export default Year;
