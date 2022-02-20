@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material/';
 
-const PosterType = ({ handleChange, posterType }) => {
+const PosterType = ({ handleChange, posterType, label }) => {
   return (
     <FormControl sx={{ minWidth: 100, mb: 1 }}>
-      <InputLabel id="type-select-label">Type</InputLabel>
+      <InputLabel id="type-select-label">{label}</InputLabel>
       <Select
         labelId="type-select-label"
         id="type-select"

@@ -7,15 +7,15 @@ import {
   RadioGroup
 } from '@mui/material/';
 
-const ProgressType = ({ handleChange, progressType }) => (
+const ProgressType = ({ handleChange, progressType, label }) => (
   <FormControl>
     <FormLabel
       id="progress-radio-buttons-group-label"
       className="labels__center--left"
-      sx={{ fontSize: 18 }}
+      sx={{ fontSize: 18, marginTop: '0.4em' }}
       color="primary"
     >
-      Progress
+      {label}
     </FormLabel>
     <RadioGroup
       row
@@ -26,7 +26,7 @@ const ProgressType = ({ handleChange, progressType }) => (
     >
       <FormControlLabel value="seen" control={<Radio />} label="Seen" />
       <FormControlLabel value="now" control={<Radio />} label="Now" />
-      <FormControlLabel value="todo" control={<Radio />} label="ToDo" />
+      <FormControlLabel value="soon" control={<Radio />} label="Soon" />
     </RadioGroup>
   </FormControl>
 );
