@@ -86,6 +86,7 @@ const ModalForm = ({ open, handleClose }) => {
           </div>
           <div>
             <DatePicker
+              className="input__autofill"
               views={['year']}
               label={labels.formSectionReleaseYear}
               value={releaseYear}

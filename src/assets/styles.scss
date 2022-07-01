@@ -150,6 +150,12 @@ a {
   }
 }
 
+.input {
+  &__autofill .MuiAutocomplete-inputRoot {
+    background-color: gray;
+  }
+}
+
 @media (min-width: 900px) {
   .image {
     &__logo {
