@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
 import { videoCommingApi, videoCommingCollection } from './comming';
 import { videoCurrentApi, videoCurrentCollection } from './current';
-import { videoFinishedApi } from './finished';
-import { videoToDoApi } from './todo';
 import { ApiContext } from '../../APIValidation';
 // import { videoFinishedApi, videoFinishedCollection } from './finished';
 // import { videoToDoApi, videoToDoCollection } from './todo';
@@ -12,9 +10,12 @@ import SectionShelf from '../Sections/shelf';
 import labels from '../../assets/labels';
 import ShelfCMS from '../Sections/shelfCms';
 import FinishedCMS from '../Sections/finishedCms';
+import { useToDoApi } from './videoData';
 
 const Movies = () => {
-  const { video6 } = useContext(ApiContext);
+  const { videoApi } = useContext(ApiContext);
+
+  console.log(useToDoApi(videoApi));
 
   return (
     <Box>
@@ -40,7 +41,7 @@ const Movies = () => {
             {labels.placeholderNavCatchUp.toUpperCase()}
           </h1>
           <div>
-            <ShelfCMS data={video6} api={videoToDoApi} />
+            <ShelfCMS api={videoApi} />
             {/* <SectionShelf data={videoToDoCollection} api={videoToDoApi} /> */}
           </div>
           <h1 className="labels__dark">
@@ -59,7 +60,7 @@ const Movies = () => {
             {labels.placeholderNavUkonczone.toUpperCase()}
           </h1>
           <div>
-            <FinishedCMS data={video6} api={videoFinishedApi} />
+            <FinishedCMS api={videoApi} />
             {/* <SectionFinished
               data={videoFinishedCollection}
               api={videoFinishedApi}

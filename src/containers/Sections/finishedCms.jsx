@@ -6,21 +6,23 @@ import settings from './settings';
 import lastCard from './lastCard';
 import SectionModal from './modal';
 
-const FinishedCMS = ({ api, data }) => {
+const FinishedCMS = ({ api }) => {
   const [openCollectionModal, setOpen] = useState(false);
   const handleOpenCollectionModal = () => setOpen(true);
   const handleCloseCollectionModal = () => setOpen(false);
+
+  const sliderItems = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
       <SectionModal
         open={openCollectionModal}
         handleClose={handleCloseCollectionModal}
-        api={api || data}
+        api={api}
       />
 
       <Slider {...settings}>
-        {data.map((item) => {
+        {sliderItems.map((item) => {
           const date = item.when.toString();
           const year = date.slice(0, 4);
           const month = date.slice(5, 7);

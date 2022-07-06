@@ -6,10 +6,12 @@ import settings from './settings';
 import lastCard from './lastCard';
 import SectionModal from './modal';
 
-const ShelfCMS = ({ api, data }) => {
+const ShelfCMS = ({ api }) => {
   const [openCollectionModal, setOpen] = useState(false);
   const handleOpenCollectionModal = () => setOpen(true);
   const handleCloseCollectionModal = () => setOpen(false);
+
+  const sliderItems = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
@@ -19,7 +21,7 @@ const ShelfCMS = ({ api, data }) => {
         api={api}
       />
       <Slider {...settings}>
-        {data.map((item) => {
+        {sliderItems.map((item) => {
           const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
           return (
             <div key={item.id}>

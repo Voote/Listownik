@@ -27,7 +27,7 @@ const APIValidation = () => {
 
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi, video6 }}>
-      {console.log(data.allVideos, data.allGames)}
+      {/* {console.log(data.allVideos, data.allGames)} */}
       <Navbar routeResult={routeResult} />
       <Footer />
     </ApiContext.Provider>

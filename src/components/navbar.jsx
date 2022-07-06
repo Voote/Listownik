@@ -30,21 +30,21 @@ const Navbar = ({ routeResult }) => {
             <h2 className="labels__center">{labels.placeholderNavHome}</h2>
           </NavLink>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <NavLink href="/video">
             <h2 className="labels__center">{labels.placeholderNavVideo}</h2>
           </NavLink>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <NavLink href="/games">
             <h2 className="labels__center">{labels.placeholderNavGames}</h2>
           </NavLink>
         </Grid>
-        <Grid item xs={2}>
+        {/* <Grid item xs={2}>
           <NavLink href="/inne">
             <h2 className="labels__center">{labels.placeholderNavRest}</h2>
           </NavLink>
-        </Grid>
+        </Grid> */}
       </Grid>
       {routeResult || <PageNotFound />}
     </nav>
