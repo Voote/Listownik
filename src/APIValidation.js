@@ -10,7 +10,7 @@ import './assets/styles.scss';
 
 export const ApiContext = createContext();
 
-const APIValidation = () => {
+const ApiValidation = () => {
   const routeResult = useRoutes(routes);
 
   const { loading, error, data } = useQuery(query, {
@@ -35,4 +35,4 @@ const APIValidation = () => {
   );
 };
 
-export default APIValidation;
+export default ApiValidation;

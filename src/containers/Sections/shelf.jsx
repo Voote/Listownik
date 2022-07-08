@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import settings from './settings';
 import lastCard from './lastCard';
-import SectionModal from './modal';
+import SectionModal from '../Modal';
 
 const Shelf = ({ api }) => {
   const [openCollectionModal, setOpen] = useState(false);

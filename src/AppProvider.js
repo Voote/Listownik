@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { ClientContext, GraphQLClient } from 'graphql-hooks';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateAdapter from '@mui/lab/AdapterMoment';
-import APIValidation from './APIValidation';
+import ApiValidation from './ApiValidation';
 import myTheme from './assets/theme';
 import './assets/styles.scss';
 
@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
     <ClientContext.Provider value={client}>
       <LocalizationProvider dateAdapter={DateAdapter}>
         <ThemeProvider theme={myTheme}>
-          <APIValidation />
+          <ApiValidation />
           {children}
         </ThemeProvider>
       </LocalizationProvider>
