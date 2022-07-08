@@ -1,60 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
-import { allCommingApi, allCommingCollection } from './comming';
-import { allCurrentApi, allCurrentCollection } from './current';
-import { allFinishedApi, allFinishedCollection } from './finished';
-import { allToDoApi, allToDoCollection } from './todo';
-import SectionFinished from '../Sections/finished';
-import SectionShelf from '../Sections/shelf';
+import { ApiContext } from '../../APIValidation';
+import {
+  useCommingSoonApi,
+  useCurrentApi,
+  useToDoApi
+} from '../api/apiReducers';
+import FinishedSection from '../Sections/finishedSection';
+import Shelf from '../Sections/shelf';
+import Logo from '../Sections/logo';
 import labels from '../../assets/labels';
 
-const Landing = () => (
-  <Box>
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Grid item xs={3}></Grid>
-      <Grid item xs={1} className="layout__grid--central">
-        <img
-          className="image__logo--dimensions"
-          src="./IMG/Listownik-Placeholder04.png"
-          alt="LISTOWNIK"
-        />
-      </Grid>
-    </Grid>
-    <div>
-      <div className="layout__line">
-        <h1 className="labels__dark">
-          {labels.placeholderNavCatchUp.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={allToDoCollection} api={allToDoApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavAktualne.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={allCurrentCollection} api={allCurrentApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavCommingSoon.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={allCommingCollection} api={allCommingApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavUkonczone.toUpperCase()}
-        </h1>
-        <div>
-          <SectionFinished data={allFinishedCollection} api={allFinishedApi} />
+const Landing = () => {
+  const { gamesApi, videoApi } = useContext(ApiContext);
+  const combinedApi = gamesApi.concat(videoApi);
+
+  return (
+    <Box>
+      <Logo />
+      <div>
+        <div className="layout__line">
+          <h1 className="labels__dark">
+            {labels.placeholderNavCatchUp.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useToDoApi(combinedApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavAktualne.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useCurrentApi(combinedApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavCommingSoon.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useCommingSoonApi(combinedApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavUkonczone.toUpperCase()}
+          </h1>
+          <div>
+            <FinishedSection api={combinedApi} />
+          </div>
         </div>
       </div>
-    </div>
-  </Box>
-);
+    </Box>
+  );
+};
 
 export default Landing;

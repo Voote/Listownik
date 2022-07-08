@@ -6,31 +6,33 @@ import settings from './settings';
 import lastCard from './lastCard';
 import SectionModal from './modal';
 
-const SectionFinished = ({ api, data }) => {
+const FinishedSection = ({ api }) => {
   const [openCollectionModal, setOpen] = useState(false);
   const handleOpenCollectionModal = () => setOpen(true);
   const handleCloseCollectionModal = () => setOpen(false);
+
+  const sliderItems = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
       <SectionModal
         open={openCollectionModal}
         handleClose={handleCloseCollectionModal}
-        api={api || data}
+        api={api}
       />
 
       <Slider {...settings}>
-        {data.map((item) => {
-          const date = item.date.toString();
+        {sliderItems.map((item) => {
+          const date = item.when;
           const year = date.slice(0, 4);
           const month = date.slice(4, 6);
           const day = date.slice(6, 8);
-          const seen = item.date !== 0 ? `Seen ${day}.${month}.${year}` : `:<`;
+          const seen = date !== 0 ? `Seen ${day}.${month}.${year}` : `:<`;
+          const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
 
           return (
             <div key={item.id}>
-              <img src={item.img} alt={item.name} className="image__tiles" />
-              {/* <div className="design__poster"> */}
+              <img src={isCover} alt={item.name} className="image__tiles" />
               <div>
                 <h3>{item.name}</h3>
                 <h3>{seen}</h3>
@@ -54,4 +56,4 @@ const SectionFinished = ({ api, data }) => {
   );
 };
 
-export default SectionFinished;
+export default FinishedSection;

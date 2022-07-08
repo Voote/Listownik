@@ -1,63 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
-import { gamesCommingApi, gamesCommingCollection } from './comming';
-import { gamesCurrentApi, gamesCurrentCollection } from './current';
-import { gamesFinishedApi, gamesFinishedCollection } from './finished';
-import { gamesToDoApi, gamesToDoCollection } from './todo';
-import SectionFinished from '../Sections/finished';
-import SectionShelf from '../Sections/shelf';
+import { ApiContext } from '../../APIValidation';
+import {
+  useCommingSoonApi,
+  useCurrentApi,
+  useFinishedApi,
+  useToDoApi
+} from '../api/apiReducers';
+import FinishedSection from '../Sections/finishedSection';
+import Shelf from '../Sections/shelf';
+import Logo from '../Sections/logo';
 import labels from '../../assets/labels';
 
-const Games = () => (
-  <Box>
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Grid item xs={3}></Grid>
-      <Grid item xs={1} className="layout__grid--central">
-        <img
-          className="image__logo--dimensions"
-          src="./IMG/Listownik-Placeholder04.png"
-          alt="LISTOWNIK"
-        />
-      </Grid>
-    </Grid>
-    <div>
-      <div className="layout__line">
-        <h1 className="labels__dark">
-          {labels.placeholderNavCatchUp.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={gamesToDoCollection} api={gamesToDoApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavAktualne.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={gamesCurrentCollection} api={gamesCurrentApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavCommingSoon.toUpperCase()}
-        </h1>
-        <div>
-          <SectionShelf data={gamesCommingCollection} api={gamesCommingApi} />
-        </div>
-        <h1 className="labels__dark">
-          {labels.placeholderNavUkonczone.toUpperCase()}
-        </h1>
-        <div>
-          <SectionFinished
-            data={gamesFinishedCollection}
-            api={gamesFinishedApi}
-          />
+const Games = () => {
+  const { gamesApi } = useContext(ApiContext);
+
+  return (
+    <Box>
+      <Logo />
+      <div>
+        <div className="layout__line">
+          <h1 className="labels__dark">
+            {labels.placeholderNavCatchUp.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useToDoApi(gamesApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavAktualne.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useCurrentApi(gamesApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavCommingSoon.toUpperCase()}
+          </h1>
+          <div>
+            <Shelf api={useCommingSoonApi(gamesApi)} />
+          </div>
+          <h1 className="labels__dark">
+            {labels.placeholderNavUkonczone.toUpperCase()}
+          </h1>
+          <div>
+            <FinishedSection api={useFinishedApi(gamesApi)} />
+          </div>
         </div>
       </div>
-    </div>
-  </Box>
-);
+    </Box>
+  );
+};
 
 export default Games;

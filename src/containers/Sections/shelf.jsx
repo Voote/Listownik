@@ -6,10 +6,12 @@ import settings from './settings';
 import lastCard from './lastCard';
 import SectionModal from './modal';
 
-const SectionShelf = ({ api, data }) => {
+const Shelf = ({ api }) => {
   const [openCollectionModal, setOpen] = useState(false);
   const handleOpenCollectionModal = () => setOpen(true);
   const handleCloseCollectionModal = () => setOpen(false);
+
+  const sliderItems = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
@@ -19,14 +21,17 @@ const SectionShelf = ({ api, data }) => {
         api={api}
       />
       <Slider {...settings}>
-        {data.map((item) => (
-          <div key={item.id}>
-            <img src={item.img} alt={item.name} className="image__tiles" />
-            <div>
-              <h3>{item.name}</h3>
+        {sliderItems.map((item) => {
+          const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
+          return (
+            <div key={item.id}>
+              <img src={isCover} alt={item.name} className="image__tiles" />
+              <div>
+                <h3>{item.name}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
         <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}
@@ -42,4 +47,4 @@ const SectionShelf = ({ api, data }) => {
   );
 };
 
-export default SectionShelf;
+export default Shelf;

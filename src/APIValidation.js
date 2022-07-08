@@ -1,11 +1,12 @@
 import React, { createContext } from 'react';
 import { useRoutes } from 'hookrouter';
 import { useQuery } from 'graphql-hooks';
+import { query } from './containers/api/query';
+import { reduceHyphenses } from './components/helpers';
+import Navigation from './containers/Navigation';
 import routes from './components/router';
-import Navbar from './components/navbar';
 import Footer from './components/footer';
 import './assets/styles.scss';
-import { query } from './containers/api/query';
 
 export const ApiContext = createContext();
 
@@ -18,21 +19,17 @@ const APIValidation = () => {
     }
   });
 
-  if (loading) return 'Loading...';
+  if (loading) return 'Loading, please wait...';
   if (error) return 'Something Bad Happened';
 
-  const videoApiWithHyphens = data.allVideos;
-  const videoApi = [...videoApiWithHyphens].map((item) => {
-    item.when = item.when.replaceAll('-', '');
-    return item;
-  });
-  const gamesApi = data.allGames;
-  const video6 = [...videoApi].slice(0, 7);
+  const initialGamesApi = data.allGames;
+  const initinalVideoApi = data.allVideos;
+  const gamesApi = reduceHyphenses(initialGamesApi);
+  const videoApi = reduceHyphenses(initinalVideoApi);
 
   return (
-    <ApiContext.Provider value={{ gamesApi, videoApi, video6 }}>
-      {/* {console.log(data.allVideos, data.allGames)} */}
-      <Navbar routeResult={routeResult} />
+    <ApiContext.Provider value={{ gamesApi, videoApi }}>
+      <Navigation routeResult={routeResult} />
       <Footer />
     </ApiContext.Provider>
   );
