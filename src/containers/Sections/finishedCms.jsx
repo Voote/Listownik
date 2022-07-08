@@ -23,11 +23,11 @@ const FinishedCMS = ({ api }) => {
 
       <Slider {...settings}>
         {sliderItems.map((item) => {
-          const date = item.when.toString();
+          const date = item.when;
           const year = date.slice(0, 4);
-          const month = date.slice(5, 7);
-          const day = date.slice(8, 10);
-          const seen = item.when !== 0 ? `Seen ${day}.${month}.${year}` : `:<`;
+          const month = date.slice(4, 6);
+          const day = date.slice(6, 8);
+          const seen = date !== 0 ? `Seen ${day}.${month}.${year}` : `:<`;
           const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
 
           return (

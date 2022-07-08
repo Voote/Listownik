@@ -21,7 +21,11 @@ const APIValidation = () => {
   if (loading) return 'Loading...';
   if (error) return 'Something Bad Happened';
 
-  const videoApi = data.allVideos;
+  const videoApiWithHyphens = data.allVideos;
+  const videoApi = [...videoApiWithHyphens].map((item) => {
+    item.when = item.when.replaceAll('-', '');
+    return item;
+  });
   const gamesApi = data.allGames;
   const video6 = [...videoApi].slice(0, 7);
 

@@ -9,7 +9,13 @@ const SectionModal = ({ open, handleClose, api }) => (
       </button>
       {api.map((item) => (
         <Grid item key={item.id} sm={10} md={6} lg={4}>
-          <img src={item.img} alt={item.name} className="image__tiles" />
+          <img
+            src={
+              item.img || (item.cover ? item.cover.url : 'IMG/Placeholder.png')
+            }
+            alt={item.name}
+            className="image__tiles"
+          />
           <div>
             <h3>{item.name}</h3>
           </div>
