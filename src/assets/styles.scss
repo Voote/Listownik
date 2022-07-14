@@ -13,7 +13,7 @@ $filmy: $yellow;
 $sideDistanceMobile: 0vw;
 $sideDistanceDesktop: 0vw;
 $minElement: 2rem;
-$extremeMargin: 5vh;
+$extremeMargin: 10vh;
 $responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
 $gradientForm: linear-gradient(to left top, $lightGrey, $yellow);
@@ -118,24 +118,37 @@ a {
 .modal {
   display: flex;
   overflow-y: scroll;
-  padding: $responsiveHeightMargin 15vw;
+  // padding: $responsiveHeightMargin 15vw;
+  color: $darkYellow;
+  &--placeholder {
+    background: $gradientVeryPeri;
+    padding: $responsiveHeightMargin 15vw;
+  }
+  &--second {
+    background: $gradientForm;
+  }
+  &--background{    
+    background: $grey;
+    opacity: 0.95;
+  }
+  
   &__centered {
     align-items: center;
     justify-content: center;
     margin: auto;
   }
-  &--placeholder {
-    background: $gradientVeryPeri;
-  }
-  &--second {
-    background: $gradientForm;
+  &__card{
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0rem;
+    padding: 7rem 0.7vh;
   }
   &__size {
     height: 62vh;
   }
   &__exit {
     position: fixed;
-    top: $extremeMargin;
+    top: 12vh;
     right: $extremeMargin;
   }
 }
@@ -185,6 +198,14 @@ a {
       margin-right: $sideDistanceDesktop;
     }
   }
+
+  // .modal {
+  //   &__exit {
+  //     position: fixed;
+  //     top: 12vh;
+  //     right: $extremeMargin;
+  //   }
+  // }
 }
 
 @media (min-width: 1200px) {
@@ -211,11 +232,8 @@ a {
   }
 
   .modal {
-    padding: $responsiveHeightMargin 10vw;
-    &__exit {
-      position: fixed;
-      top: $extremeMargin;
-      right: $extremeMargin;
+    &--placeholder {
+      padding: $responsiveHeightMargin 10vw;
     }
   }
 }

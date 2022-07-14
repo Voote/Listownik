@@ -3,15 +3,22 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import settings from './settings';
-import lastCard from './lastCard';
-import SectionModal from '../Modal';
+import lastCard from '../../components/lastCard';
+import SectionModal from '../Modal/sectionModal';
+import ShelfCard from './shelfCard';
 
-const Shelf = ({ api }) => {
-  const [openCollectionModal, setOpen] = useState(false);
-  const handleOpenCollectionModal = () => setOpen(true);
-  const handleCloseCollectionModal = () => setOpen(false);
-
+const Shelf = ({ api, finished }) => {
+  const [openCollectionModal, setOpenCollectionModal] = useState(false);
+  const handleOpenCollectionModal = () => setOpenCollectionModal(true);
+  const handleCloseCollectionModal = () => setOpenCollectionModal(false);
   const sliderItems = api.slice(0, 7);
+
+  const mapOfApi = sliderItems.map((item) => (
+    <ShelfCard item={item} key={item.id} />
+  ));
+  const mapOfApiFinished = sliderItems.map((item) => (
+    <ShelfCard item={item} date={item.when} key={item.id} />
+  ));
 
   return (
     <div className="layout__slider">
@@ -21,17 +28,8 @@ const Shelf = ({ api }) => {
         api={api}
       />
       <Slider {...settings}>
-        {sliderItems.map((item) => {
-          const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
-          return (
-            <div key={item.id}>
-              <img src={isCover} alt={item.name} className="image__tiles" />
-              <div>
-                <h3>{item.name}</h3>
-              </div>
-            </div>
-          );
-        })}
+        {finished ? mapOfApiFinished : mapOfApi}
+
         <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}
