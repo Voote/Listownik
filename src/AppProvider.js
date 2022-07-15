@@ -5,7 +5,6 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateAdapter from '@mui/lab/AdapterMoment';
 import ApiValidation from './ApiValidation';
 import myTheme from './assets/theme';
-import './assets/styles.scss';
 
 const API_TOKEN_DATO = '07b49703bf60130695f727dff41a2c';
 

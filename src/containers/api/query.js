@@ -1,4 +1,19 @@
 export const query = `{
+    allGames {
+        id
+        when
+        releaseYear
+        progress
+        platform
+        name
+        part
+        wiki
+        dateNext
+        commingSoon
+        cover {
+          url
+        }
+    }
     allVideos {
         id
         when
@@ -13,19 +28,5 @@ export const query = `{
           url
         }
         commingSoon
-      }
-      allGames {
-        id
-        when
-        releaseYear
-        progress
-        platform
-        name
-        part
-        dateNext
-        commingSoon
-        cover {
-          url
-        }
       }
     }`;

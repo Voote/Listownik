@@ -11,14 +11,7 @@ const Shelf = ({ api, finished }) => {
   const [openCollectionModal, setOpenCollectionModal] = useState(false);
   const handleOpenCollectionModal = () => setOpenCollectionModal(true);
   const handleCloseCollectionModal = () => setOpenCollectionModal(false);
-  const sliderItems = api.slice(0, 7);
-
-  const mapOfApi = sliderItems.map((item) => (
-    <ShelfCard item={item} key={item.id} />
-  ));
-  const mapOfApiFinished = sliderItems.map((item) => (
-    <ShelfCard item={item} date={item.when} key={item.id} />
-  ));
+  const sliderReducedApi = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
@@ -28,7 +21,13 @@ const Shelf = ({ api, finished }) => {
         api={api}
       />
       <Slider {...settings}>
-        {finished ? mapOfApiFinished : mapOfApi}
+        {sliderReducedApi.map((item) => (
+          <ShelfCard
+            item={item}
+            key={item.id}
+            seen={finished ? item.when : false}
+          />
+        ))}
 
         <div onClick={handleOpenCollectionModal}>
           <img

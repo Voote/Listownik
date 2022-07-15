@@ -4,15 +4,16 @@ $green: #8bd89b;
 $yellow: #fae12c;
 $darkYellow: #e9d11bde;
 $grey: #606569;
+$greyWithOpacity: rgb(96, 101, 105, 0.9);
 $lightGrey: #71767a;
 $greyDark: #505458;
 $text: #fff;
 $blackText: #000;
 $seriale: $green;
 $filmy: $yellow;
-$sideDistanceMobile: 0vw;
-$sideDistanceDesktop: 0vw;
+$smallResponsiveGap: 5vh;
 $minElement: 2rem;
+$smallDistance: 5rem;
 $extremeMargin: 10vh;
 $responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
@@ -96,6 +97,12 @@ a {
   }
   &__tiles {
     max-height: 47vh;
+    &--modal{
+      max-height: 60vh;
+      display: block;
+      margin: auto;
+      opacity: 2;
+    }
   }
 }
 
@@ -106,19 +113,21 @@ a {
       margin-left: 1vw;
     }
   }
-  &__dark {
+  &--dark {
     color: black;
     background-color: $yellow;
     padding-top: 0.4rem;
-    margin-left: $sideDistanceMobile;
-    margin-right: $sideDistanceMobile;
+    margin: inherit 0;
+  }
+  &__link {
+    text-decoration: underline;
+    color: $red;
   }
 }
 
 .modal {
   display: flex;
   overflow-y: scroll;
-  // padding: $responsiveHeightMargin 15vw;
   color: $darkYellow;
   &--placeholder {
     background: $gradientVeryPeri;
@@ -128,28 +137,26 @@ a {
     background: $gradientForm;
   }
   &--background{    
-    background: $grey;
-    opacity: 0.95;
+    background: $greyWithOpacity;
   }
   
-  &__centered {
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
   &__card{
-    align-items: center;
     justify-content: center;
-    margin: 5rem 0rem;
-    padding: 7rem 0.7vh;
+    margin-top: $smallDistance;
+    padding: $smallDistance 0.7vh;
+    height: fit-content;
+  }
+  &__content {
+    padding-top: $smallResponsiveGap;
+    text-align: center;
   }
   &__size {
-    height: 62vh;
+    height: 52vh;
   }
   &__exit {
     position: fixed;
     top: 12vh;
-    right: $extremeMargin;
+    right: $smallResponsiveGap;
   }
 }
 
@@ -169,6 +176,18 @@ a {
   }
 }
 
+@media (min-width: 600px) {
+
+  .modal {
+    &__content {
+      text-align: right;
+    }
+    &__exit {
+      top: 17vh;
+      right: $extremeMargin;
+    }
+  }
+}
 @media (min-width: 900px) {
   .image {
     &__logo {
@@ -188,24 +207,16 @@ a {
   .layout {
     &__slider {
       max-width: 93vw;
-      margin-left: 2em;
     }
   }
 
-  .labels {
-    &__dark {
-      margin-left: $sideDistanceDesktop;
-      margin-right: $sideDistanceDesktop;
+  .modal {
+    &__card{
+      margin: $smallDistance 0rem;
+      padding: 7rem 0.7vh;
+      height: auto;
     }
   }
-
-  // .modal {
-  //   &__exit {
-  //     position: fixed;
-  //     top: 12vh;
-  //     right: $extremeMargin;
-  //   }
-  // }
 }
 
 @media (min-width: 1200px) {
@@ -223,8 +234,6 @@ a {
 
   .labels {
     &__dark {
-      margin-left: $sideDistanceDesktop;
-      margin-right: $sideDistanceDesktop;
       & h1 {
         font-size: 3.4vh;
       }
