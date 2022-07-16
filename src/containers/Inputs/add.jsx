@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Fab } from '@mui/material/';
 import AddIcon from '@mui/icons-material/Add';
-import ModalForm from '../containers/Inputs/form';
+import ModalForm from './form';
 
 const AddButton = () => {
   const [opennModal, setOpen] = useState(false);

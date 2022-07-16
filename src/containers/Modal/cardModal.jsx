@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Modal } from '@mui/material';
-
-export const bigFirstLetter = (word) => word[0].toUpperCase() + word.slice(1);
+import { bigFirstLetter } from '../../components/helpers';
+import labels from '../../assets/labels';
 
 const CardModal = ({ open, handleClose, item }) => {
   const isImg =
@@ -18,7 +18,10 @@ const CardModal = ({ open, handleClose, item }) => {
       <h4>{wikiLabel.toUpperCase()}</h4>
     </a>
   ) : (
-    <p>No wiki for{item.name}</p>
+    <p>
+      {labels.modalNoWiki}
+      {item.name}
+    </p>
   );
 
   return (
@@ -30,7 +33,7 @@ const CardModal = ({ open, handleClose, item }) => {
     >
       <Grid container className="modal__card modal--background">
         <button className="modal__exit" onClick={handleClose}>
-          CLOSE MODAL
+          {labels.modalCloseButton}
         </button>
         <Grid item xs={12} sm={7} md={4} className="layout__grid--central">
           <img src={isImg} alt={item.name} className="image__tiles--modal" />
@@ -38,18 +41,22 @@ const CardModal = ({ open, handleClose, item }) => {
         <Grid item xs={6} sm={4} className="modal__content">
           <h2>{item.name}</h2>
           <h3>
-            Relased {item.releaseYear} on {bigFirstLetter(item.platform)}
+            {labels.modalReleased}
+            {item.releaseYear} on {bigFirstLetter(item.platform)}
           </h3>
           <h3>
-            Seen at {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
+            {labels.modalSeenAt}
+            {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
             {item.when.slice(0, 4)}
           </h3>
           <h2>{item.name}</h2>
           <h3>
-            Relased {item.releaseYear} on {bigFirstLetter(item.platform)}
+            {labels.modalReleased}
+            {item.releaseYear} on {bigFirstLetter(item.platform)}
           </h3>
           <h3>
-            Seen at {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
+            {labels.modalSeenAt}
+            {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
             {item.when.slice(0, 4)}
           </h3>
           {isWiki}

@@ -16,5 +16,9 @@ module.exports = {
   formSectionPlatform: 'Platform',
   formSectionType: 'Type',
   formSectionReleaseYear: 'Release year',
-  formSectionInteraction: 'Interaction date'
+  formSectionInteraction: 'Interaction date',
+  modalNoWiki: 'No wiki for ',
+  modalCloseButton: 'CLOSE MODAL',
+  modalReleased: 'Relased ',
+  modalSeenAt: 'Seen at '
 };

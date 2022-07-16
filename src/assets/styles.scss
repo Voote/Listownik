@@ -154,7 +154,7 @@ a {
     height: 52vh;
   }
   &__exit {
-    position: fixed;
+    position: absolute;
     top: 12vh;
     right: $smallResponsiveGap;
   }

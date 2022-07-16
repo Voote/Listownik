@@ -13,8 +13,6 @@ const ShelfCard = ({ item, seen }) => {
     day: seen.slice(6, 8)
   };
   const dateOfViewing = `Seen ${when.day}.${when.month}.${when.year}`;
-  // const dateOfViewing =
-  //   seen !== 0 ? `Seen ${when.day}.${when.month}.${when.year}` : `:<`;
 
   return (
     <div key={item.id}>

@@ -22,6 +22,7 @@ export const query = `{
         progress
         platform
         part
+        wiki
         name
         dateNext
         cover {

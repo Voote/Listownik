@@ -22,6 +22,7 @@ const ShelfComponent = ({ api }) => (
     <SingleShelf
       data={useFinishedApi(api)}
       label={labels.placeholderNavUkonczone}
+      finished
     />
   </div>
 );
