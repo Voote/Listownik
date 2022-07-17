@@ -1,18 +1,7 @@
 import React from 'react';
-import { useRoutes } from 'hookrouter';
-import routes from './components/router';
 import './assets/styles.scss';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import AppProvider from './AppProvider';
 
-const App = () => {
-  const routeResult = useRoutes(routes);
-  return (
-    <div>
-      <Navbar routeResult={routeResult} />
-      <Footer />
-    </div>
-  );
-};
+const App = () => <AppProvider />;
 
 export default App;
