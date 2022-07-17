@@ -8,14 +8,8 @@ This project is currently in development. Visitors can check current posters of 
 >
 > - Tests
 >
-> - Adding posters for user
->
->   > form for adding
->   >
->   > adding button
->   >
->   > save button
->
+> - Adding posters in app 
+> 
 > - protection against too low amount in collection (<3)
 >
 > - sitemap
@@ -29,6 +23,8 @@ This project is currently in development. Visitors can check current posters of 
 > - design upgrade
 
 ## Available Scripts
+
+### <b>`Node.js`</b> <u>required for all scripts!</u>
 
 In the project directory, you can run scripts:
 

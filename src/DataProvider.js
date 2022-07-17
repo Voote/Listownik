@@ -9,7 +9,7 @@ import Footer from './components/footer';
 
 export const ApiContext = createContext();
 
-const ApiValidation = () => {
+const DataProvider = () => {
   const routeResult = useRoutes(routes);
 
   const { loading, error, data } = useQuery(query, {
@@ -34,4 +34,4 @@ const ApiValidation = () => {
   );
 };
 
-export default ApiValidation;
+export default DataProvider;
