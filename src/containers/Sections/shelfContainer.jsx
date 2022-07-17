@@ -8,12 +8,12 @@ import {
 import labels from '../../assets/labels';
 import SingleShelf from './singleShelf';
 
-const ShelfComponent = ({ api }) => (
+const ShelfContainer = ({ api }) => (
   <div className="layout__line">
     <SingleShelf data={useToDoApi(api)} label={labels.placeholderNavCatchUp} />
     <SingleShelf
       data={useCurrentApi(api)}
-      label={labels.placeholderNavCommingSoon}
+      label={labels.placeholderNavAktualne}
     />
     <SingleShelf
       data={useCommingSoonApi(api)}
@@ -27,4 +27,4 @@ const ShelfComponent = ({ api }) => (
   </div>
 );
 
-export default ShelfComponent;
+export default ShelfContainer;

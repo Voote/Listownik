@@ -6,7 +6,6 @@ import { reduceHyphenses } from './components/helpers';
 import Navigation from './containers/Navigation';
 import routes from './components/router';
 import Footer from './components/footer';
-import './assets/styles.scss';
 
 export const ApiContext = createContext();
 

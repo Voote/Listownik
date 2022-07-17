@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 import { ApiContext } from '../../ApiValidation';
-import ShelfComponent from '../Sections/shelfComponent';
+import ShelfContainer from '../Sections/shelfContainer';
 import Logo from '../Sections/logo';
 
 const Landing = () => {
@@ -11,7 +11,7 @@ const Landing = () => {
   return (
     <Box>
       <Logo />
-      <ShelfComponent api={combinedApi} />
+      <ShelfContainer api={combinedApi} />
     </Box>
   );
 };

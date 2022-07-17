@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 import { ApiContext } from '../../ApiValidation';
-import ShelfComponent from '../Sections/shelfComponent';
+import ShelfContainer from '../Sections/shelfContainer';
 import Logo from '../Sections/logo';
 
 const Games = () => {
@@ -10,7 +10,7 @@ const Games = () => {
   return (
     <Box>
       <Logo />
-      <ShelfComponent api={gamesApi} />
+      <ShelfContainer api={gamesApi} />
     </Box>
   );
 };

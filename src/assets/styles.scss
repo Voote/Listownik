@@ -4,7 +4,7 @@ $green: #8bd89b;
 $yellow: #fae12c;
 $darkYellow: #e9d11bde;
 $grey: #606569;
-$greyWithOpacity: rgb(96, 101, 105, 0.9);
+$greyRGBWithOpacity: rgb(96, 101, 105, 0.92);
 $lightGrey: #71767a;
 $greyDark: #505458;
 $text: #fff;
@@ -137,7 +137,7 @@ a {
     background: $gradientForm;
   }
   &--background{    
-    background: $greyWithOpacity;
+    background: $greyRGBWithOpacity;
   }
   
   &__card{

@@ -20,5 +20,6 @@ module.exports = {
   modalNoWiki: 'No wiki for ',
   modalCloseButton: 'CLOSE MODAL',
   modalReleased: 'Relased ',
-  modalSeenAt: 'Seen at '
+  modalSeenAt: 'You seen it ',
+  modalItsPart: `It's part `
 };

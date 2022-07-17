@@ -4,11 +4,8 @@ import { bigFirstLetter } from '../../components/helpers';
 import labels from '../../assets/labels';
 
 const CardModal = ({ open, handleClose, item }) => {
-  const isImg =
-    item.img || (item.cover ? item.cover.url : 'IMG/Placeholder.png');
-
   const wikiLabel = `${item.name} wiki`;
-  const isWiki = item.wiki ? (
+  const wikiALink = (
     <a
       href={item.wiki}
       className="labels__link"
@@ -17,11 +14,23 @@ const CardModal = ({ open, handleClose, item }) => {
     >
       <h4>{wikiLabel.toUpperCase()}</h4>
     </a>
-  ) : (
+  );
+  const noWiki = (
     <p>
       {labels.modalNoWiki}
       {item.name}
     </p>
+  );
+
+  const isWiki = item.wiki ? wikiALink : noWiki;
+  const isImg =
+    item.img || (item.cover ? item.cover.url : 'IMG/Placeholder.png');
+
+  const isPart = item.part && (
+    <h3>
+      {labels.modalItsPart}
+      {item.part}
+    </h3>
   );
 
   return (
@@ -40,6 +49,7 @@ const CardModal = ({ open, handleClose, item }) => {
         </Grid>
         <Grid item xs={6} sm={4} className="modal__content">
           <h2>{item.name}</h2>
+          {isPart}
           <h3>
             {labels.modalReleased}
             {item.releaseYear} on {bigFirstLetter(item.platform)}
