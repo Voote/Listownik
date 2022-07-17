@@ -5,6 +5,14 @@ const settings = {
   slidesToScroll: 1,
   initialSlide: 0,
   responsive: [
+    // {
+    //   breakpoint: 2400,
+    //   settings: {
+    //     slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     infinite: true
+    //   }
+    // },
     {
       breakpoint: 1200,
       settings: {

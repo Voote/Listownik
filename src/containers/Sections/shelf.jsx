@@ -3,13 +3,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import settings from './settings';
-import lastCard from './lastCard';
-import SectionModal from './modal';
+import lastCard from '../../components/lastCard';
+import SectionModal from '../Modal/sectionModal';
+import ShelfCard from './shelfCard';
 
-const SectionShelf = ({ api, data }) => {
-  const [openCollectionModal, setOpen] = useState(false);
-  const handleOpenCollectionModal = () => setOpen(true);
-  const handleCloseCollectionModal = () => setOpen(false);
+const Shelf = ({ api, finished }) => {
+  const [openCollectionModal, setOpenCollectionModal] = useState(false);
+  const handleOpenCollectionModal = () => setOpenCollectionModal(true);
+  const handleCloseCollectionModal = () => setOpenCollectionModal(false);
+  const sliderReducedApi = api.slice(0, 7);
 
   return (
     <div className="layout__slider">
@@ -19,14 +21,14 @@ const SectionShelf = ({ api, data }) => {
         api={api}
       />
       <Slider {...settings}>
-        {data.map((item) => (
-          <div key={item.id}>
-            <img src={item.img} alt={item.name} className="image__tiles" />
-            <div>
-              <h3>{item.name}</h3>
-            </div>
-          </div>
+        {sliderReducedApi.map((item) => (
+          <ShelfCard
+            item={item}
+            key={item.id}
+            seen={finished ? item.when : false}
+          />
         ))}
+
         <div onClick={handleOpenCollectionModal}>
           <img
             src={lastCard.img}
@@ -42,4 +44,4 @@ const SectionShelf = ({ api, data }) => {
   );
 };
 
-export default SectionShelf;
+export default Shelf;

@@ -2,18 +2,22 @@ $black: #111;
 $red: #da563c;
 $green: #8bd89b;
 $yellow: #fae12c;
+$darkYellow: #e9d11bde;
 $grey: #606569;
+$greyRGBWithOpacity: rgb(96, 101, 105, 0.92);
+$lightGrey: #71767a;
 $greyDark: #505458;
 $text: #fff;
 $blackText: #000;
 $seriale: $green;
 $filmy: $yellow;
-$sideDistanceMobile: 0vw;
-$sideDistanceDesktop: 0vw;
+$smallResponsiveGap: 5vh;
 $minElement: 2rem;
-$extremeMargin: 5vh;
+$smallDistance: 5rem;
+$extremeMargin: 10vh;
 $responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
+$gradientForm: linear-gradient(to left top, $lightGrey, $yellow);
 
 html,
 body {
@@ -32,6 +36,10 @@ a {
 
 .App {
   text-align: center;
+}
+
+.flexbox {
+  display: flex;
 }
 
 .design {
@@ -89,41 +97,97 @@ a {
   }
   &__tiles {
     max-height: 47vh;
+    &--modal{
+      max-height: 60vh;
+      display: block;
+      margin: auto;
+      opacity: 2;
+    }
   }
 }
 
 .labels {
-  &__navbar {
+  &__center {
     text-align: center;
+    &--left {
+      margin-left: 1vw;
+    }
   }
-  &__dark {
+  &--dark {
     color: black;
     background-color: $yellow;
     padding-top: 0.4rem;
-    margin-left: $sideDistanceMobile;
-    margin-right: $sideDistanceMobile;
+    margin: inherit 0;
+  }
+  &__link {
+    text-decoration: underline;
+    color: $red;
   }
 }
 
 .modal {
   display: flex;
   overflow-y: scroll;
+  color: $darkYellow;
   &--placeholder {
     background: $gradientVeryPeri;
-    padding: $responsiveHeightMargin 10vw;
+    padding: $responsiveHeightMargin 15vw;
+  }
+  &--second {
+    background: $gradientForm;
+  }
+  &--background{    
+    background: $greyRGBWithOpacity;
+  }
+  
+  &__card{
+    justify-content: center;
+    margin-top: $smallDistance;
+    padding: $smallDistance 0.7vh;
+    height: fit-content;
+  }
+  &__content {
+    padding-top: $smallResponsiveGap;
+    text-align: center;
+  }
+  &__size {
+    height: 52vh;
   }
   &__exit {
-    position: fixed;
-    top: $extremeMargin;
-    right: $extremeMargin;
+    position: absolute;
+    top: 12vh;
+    right: $smallResponsiveGap;
   }
 }
 
 .button {
   min-width: $minElement;
   min-height: $minElement;
+  &__position {
+    position: fixed;
+    right: 4em;
+    bottom: 7em;
+  }
 }
 
+.input {
+  &__autofill .MuiAutocomplete-inputRoot {
+    background-color: gray;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .modal {
+    &__content {
+      text-align: right;
+    }
+    &__exit {
+      top: 17vh;
+      right: $extremeMargin;
+    }
+  }
+}
 @media (min-width: 900px) {
   .image {
     &__logo {
@@ -143,14 +207,14 @@ a {
   .layout {
     &__slider {
       max-width: 93vw;
-      margin-left: 2em;
     }
   }
 
-  .labels {
-    &__dark {
-      margin-left: $sideDistanceDesktop;
-      margin-right: $sideDistanceDesktop;
+  .modal {
+    &__card{
+      margin: $smallDistance 0rem;
+      padding: 7rem 0.7vh;
+      height: auto;
     }
   }
 }
@@ -170,11 +234,15 @@ a {
 
   .labels {
     &__dark {
-      margin-left: $sideDistanceDesktop;
-      margin-right: $sideDistanceDesktop;
       & h1 {
         font-size: 3.4vh;
       }
+    }
+  }
+
+  .modal {
+    &--placeholder {
+      padding: $responsiveHeightMargin 10vw;
     }
   }
 }
