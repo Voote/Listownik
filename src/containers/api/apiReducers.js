@@ -19,14 +19,19 @@ export const useCurrentApi = (data) => {
 export const useCommingSoonApi = (data) => {
   const commingSoonApi = [...data]
     .filter((item) => item.commingSoon === '1')
-    .sort((a, b) => a.when - b.when);
+    .sort(
+      (a, b) =>
+        (a.dateNext !== null ? a.dateNext : a.when) -
+        (b.dateNext !== null ? b.dateNext : b.when)
+    );
+  // .sort((a, b) => a.dateNext - b.dateNext);
 
   return commingSoonApi;
 };
 
 export const useFinishedApi = (data) => {
   const finishedApi = [...data]
-    .filter((item) => item.progress === 'seen')
+    .filter((item) => item.progress === 'done')
     .sort((a, b) => a.when - b.when)
     .reverse();
 

@@ -5,6 +5,8 @@ import labels from '../../assets/labels';
 
 const CardModal = ({ open, handleClose, item }) => {
   const wikiLabel = `${item.name} wiki`;
+  const itemDate = `${item.when.slice(6, 8)}/${item.when.slice(4, 6)}/
+  ${item.when.slice(0, 4)}`;
   const wikiALink = (
     <a
       href={item.wiki}
@@ -25,10 +27,9 @@ const CardModal = ({ open, handleClose, item }) => {
   const isWiki = item.wiki ? wikiALink : noWiki;
   const isImg =
     item.img || (item.cover ? item.cover.url : 'IMG/Placeholder.png');
-
   const isPart = item.part && (
     <h3>
-      {labels.modalItsPart}
+      {item.videoType === 'series' ? labels.itemSeason : labels.itemPart}
       {item.part}
     </h3>
   );
@@ -41,7 +42,7 @@ const CardModal = ({ open, handleClose, item }) => {
       style={{ backgroundImage: `url(${item.cover.url})` }}
     >
       <Grid container className="modal__card modal--background">
-        <button className="modal__exit" onClick={handleClose}>
+        <button className="modal__exit modal__exit--card" onClick={handleClose}>
           {labels.modalCloseButton}
         </button>
         <Grid item xs={12} sm={7} md={4} className="layout__grid--central">
@@ -56,18 +57,7 @@ const CardModal = ({ open, handleClose, item }) => {
           </h3>
           <h3>
             {labels.modalSeenAt}
-            {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
-            {item.when.slice(0, 4)}
-          </h3>
-          <h2>{item.name}</h2>
-          <h3>
-            {labels.modalReleased}
-            {item.releaseYear} on {bigFirstLetter(item.platform)}
-          </h3>
-          <h3>
-            {labels.modalSeenAt}
-            {item.when.slice(6, 8)}/{item.when.slice(4, 6)}/
-            {item.when.slice(0, 4)}
+            {itemDate}
           </h3>
           {isWiki}
         </Grid>

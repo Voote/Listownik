@@ -14,7 +14,7 @@ $filmy: $yellow;
 $smallResponsiveGap: 5vh;
 $minElement: 2rem;
 $smallDistance: 5rem;
-$extremeMargin: 10vh;
+$mediumResponsiveGap: 10vh;
 $responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
 $gradientForm: linear-gradient(to left top, $lightGrey, $yellow);
@@ -40,15 +40,6 @@ a {
 
 .flexbox {
   display: flex;
-}
-
-.design {
-  //Nie wykorzystuje nigdzie
-  &__poster {
-    border-right: 2px solid yellow;
-    // border-bottom: 2px solid yellow;
-    padding-top: 0.1em;
-  }
 }
 
 .navbar {
@@ -97,7 +88,7 @@ a {
   }
   &__tiles {
     max-height: 47vh;
-    &--modal{
+    &--modal {
       max-height: 60vh;
       display: block;
       margin: auto;
@@ -136,14 +127,14 @@ a {
   &--second {
     background: $gradientForm;
   }
-  &--background{    
+  &--background {
     background: $greyRGBWithOpacity;
   }
-  
-  &__card{
+
+  &__card {
     justify-content: center;
     margin-top: $smallDistance;
-    padding: $smallDistance 0.7vh;
+    padding: $mediumResponsiveGap 0.7vh;
     height: fit-content;
   }
   &__content {
@@ -155,8 +146,17 @@ a {
   }
   &__exit {
     position: absolute;
-    top: 12vh;
-    right: $smallResponsiveGap;
+    padding-top: 2px;
+    border-radius: 10px;
+    background-color: $red;
+    &--card {
+      top: 12.5vh;
+      right: $smallResponsiveGap;
+    }
+    &--section {
+      top: $smallResponsiveGap;
+      right: $smallResponsiveGap;
+    }
   }
 }
 
@@ -177,17 +177,19 @@ a {
 }
 
 @media (min-width: 600px) {
-
   .modal {
     &__content {
       text-align: right;
     }
     &__exit {
-      top: 17vh;
-      right: $extremeMargin;
+      &--card {
+        top: 17vh;
+        right: $mediumResponsiveGap;
+      }
     }
   }
 }
+
 @media (min-width: 900px) {
   .image {
     &__logo {
@@ -211,9 +213,9 @@ a {
   }
 
   .modal {
-    &__card{
+    &__card {
       margin: $smallDistance 0rem;
-      padding: 7rem 0.7vh;
+      // padding: 4rem 0.7vh;
       height: auto;
     }
   }

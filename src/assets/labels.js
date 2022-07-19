@@ -21,5 +21,6 @@ module.exports = {
   modalCloseButton: 'CLOSE MODAL',
   modalReleased: 'Relased ',
   modalSeenAt: 'You seen it ',
-  modalItsPart: `It's part `
+  itemPart: 'Part ',
+  itemSeason: 'Season '
 };
