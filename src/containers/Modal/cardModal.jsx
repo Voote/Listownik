@@ -1,12 +1,14 @@
 import React from 'react';
 import { Grid, Modal } from '@mui/material';
 import { bigFirstLetter } from '../../components/helpers';
+import { monthChecker } from '../../components/month';
 import labels from '../../assets/labels';
 
 const CardModal = ({ open, handleClose, item }) => {
   const wikiLabel = `${item.name} wiki`;
-  const itemDate = `${item.when.slice(6, 8)}/${item.when.slice(4, 6)}/
-  ${item.when.slice(0, 4)}`;
+  const itemDate = `${item.when.slice(0, 4)} ${monthChecker(
+    item.when.slice(4, 6)
+  )} ${item.when.slice(6, 8)}`;
   const wikiALink = (
     <a
       href={item.wiki}
@@ -17,14 +19,6 @@ const CardModal = ({ open, handleClose, item }) => {
       <h4>{wikiLabel.toUpperCase()}</h4>
     </a>
   );
-  const noWiki = (
-    <p>
-      {labels.modalNoWiki}
-      {item.name}
-    </p>
-  );
-
-  const isWiki = item.wiki ? wikiALink : noWiki;
   const isImg =
     item.img || (item.cover ? item.cover.url : 'IMG/Placeholder.png');
   const isPart = item.part && (
@@ -59,7 +53,7 @@ const CardModal = ({ open, handleClose, item }) => {
             {labels.modalSeenAt}
             {itemDate}
           </h3>
-          {isWiki}
+          {wikiALink}
         </Grid>
       </Grid>
     </Modal>

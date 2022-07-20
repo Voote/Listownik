@@ -9,7 +9,7 @@ import labels from '../../assets/labels';
 import SingleShelf from './singleShelf';
 
 const ShelfContainer = ({ api }) => {
-  const currentApi = [...useCurrentApi(api)];
+  const currentApi = useCurrentApi(api);
   const concatApi = [...currentApi, ...useCommingSoonApi(api).reverse()];
   const filteredApi = concatApi.filter(
     (value, index, self) =>

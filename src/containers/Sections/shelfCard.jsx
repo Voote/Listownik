@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { monthChecker } from '../../components/month';
 import CardModal from '../Modal/cardModal';
 
 const ShelfCard = ({ item, seen }) => {
@@ -9,10 +10,10 @@ const ShelfCard = ({ item, seen }) => {
   const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
   const when = seen && {
     year: seen.slice(0, 4),
-    month: seen.slice(4, 6),
+    month: monthChecker(seen.slice(4, 6)),
     day: seen.slice(6, 8)
   };
-  const dateOfViewing = `Seen ${when.day}.${when.month}.${when.year}`;
+  const dateOfViewing = `Seen ${when.day} ${when.month} ${when.year}`;
 
   return (
     <div key={item.id}>
