@@ -10,7 +10,7 @@ import Footer from './components/footer';
 export const ApiContext = createContext();
 
 const DataProvider = () => {
-  const routeResult = useRoutes(routes);
+  const routeResult = useRoutes(routes);  
 
   const { loading, error, data } = useQuery(query, {
     variables: {

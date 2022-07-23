@@ -24,7 +24,6 @@ export const useCommingSoonApi = (data) => {
         (a.dateNext !== null ? a.dateNext : a.when) -
         (b.dateNext !== null ? b.dateNext : b.when)
     );
-  // .sort((a, b) => a.dateNext - b.dateNext);
 
   return commingSoonApi;
 };

@@ -1,23 +1,7 @@
 import React from 'react';
-import { A, usePath } from 'hookrouter';
 import Grid from '@mui/material/Grid';
 import labels from '../../assets/labels';
-
-const CustomA = (props) => {
-  const path = usePath();
-  let { href, getProps, ...anchorProps } = props;
-  const isCurrent = path === href;
-  return <A href={href} {...getProps({ isCurrent })} {...anchorProps} />;
-};
-
-const NavLink = (props) => (
-  <CustomA
-    {...props}
-    getProps={({ isCurrent }) => ({
-      className: isCurrent ? 'navbar--active' : 'navbar--inactive'
-    })}
-  />
-);
+import { NavLink } from './NavLink';
 
 const Navbar = () => (
   <Grid container spacing={1} className="navbar">
