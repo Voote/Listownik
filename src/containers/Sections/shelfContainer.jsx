@@ -16,7 +16,7 @@ const ShelfContainer = ({ api }) => {
       index ===
       self.findIndex((obj) => obj.id === value.id && obj.name === value.name)
   ); //ES6 magic
-  const isApiLengthShort = currentApi.length < 3 ? filteredApi : currentApi;
+  const isCurrentApiShort = currentApi.length < 3 ? filteredApi : currentApi;
 
   return (
     <div className="layout__line">
@@ -25,7 +25,7 @@ const ShelfContainer = ({ api }) => {
         label={labels.placeholderNavCatchUp}
       />
       <SingleShelf
-        data={isApiLengthShort}
+        data={isCurrentApiShort}
         label={labels.placeholderNavAktualne}
       />
       <SingleShelf

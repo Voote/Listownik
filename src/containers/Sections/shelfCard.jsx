@@ -7,13 +7,11 @@ const ShelfCard = ({ item, seen }) => {
   const handleOpenCardModal = () => setOpenCardModal(true);
   const handleCloseCardModal = () => setOpenCardModal(false);
 
-  const isCover = item.cover ? item.cover.url : 'IMG/Placeholder.png';
   const when = seen && {
     year: seen.slice(0, 4),
     month: monthChecker(seen.slice(4, 6)),
     day: seen.slice(6, 8)
   };
-  const dateOfViewing = `Seen ${when.day} ${when.month} ${when.year}`;
 
   return (
     <div key={item.id}>
@@ -23,14 +21,18 @@ const ShelfCard = ({ item, seen }) => {
         item={item}
       />
       <img
-        src={isCover}
+        src={item.cover.url}
         alt={item.name}
         className="image__tiles"
         onClick={handleOpenCardModal}
       />
       <div>
         <h3>{item.name}</h3>
-        {seen && <h3>{dateOfViewing}</h3>}
+        {seen && (
+          <h3>
+            Seen {when.day} {when.month} {when.year}
+          </h3>
+        )}
       </div>
     </div>
   );
