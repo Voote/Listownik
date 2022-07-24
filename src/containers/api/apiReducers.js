@@ -1,5 +1,5 @@
 export const useToDoApi = (data) => {
-  console.log('Zredukowane data', data);
+  // console.log('Zredukowane data', data);
   const toDoApi = [...data]
     .filter((item) => item.progress === 'todo' && item.commingSoon === '0')
     .sort((a, b) => a.releaseYear - b.releaseYear);
