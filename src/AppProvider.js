@@ -1,10 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ClientContext, GraphQLClient } from 'graphql-hooks';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateAdapter from '@mui/lab/AdapterMoment';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import DataProvider from './DataProvider';
 import myTheme from './assets/theme';
+import bgLocale from 'date-fns/locale/bg';
 
 const API_TOKEN_DATO = '07b49703bf60130695f727dff41a2c';
 
@@ -17,7 +18,10 @@ const AppProvider = ({ children }) => {
   });
   return (
     <ClientContext.Provider value={client}>
-      <LocalizationProvider dateAdapter={DateAdapter}>
+      <LocalizationProvider
+        dateAdapter={AdapterDateFns}
+        adapterLocale={bgLocale}
+      >
         <ThemeProvider theme={myTheme}>
           <DataProvider />
           {children}
