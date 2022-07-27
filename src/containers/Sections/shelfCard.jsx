@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import labels from '../../assets/labels';
 import { monthChecker } from '../../components/month';
 import CardModal from '../Modal/cardModal';
 
@@ -30,7 +31,7 @@ const ShelfCard = ({ item, seen }) => {
         <h3>{item.name}</h3>
         {seen && (
           <h3>
-            Seen {when.day} {when.month} {when.year}
+            {labels.shelfSeen} {when.day} {when.month} {when.year}
           </h3>
         )}
       </div>

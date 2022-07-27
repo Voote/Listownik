@@ -23,7 +23,7 @@ const SectionModal = ({ open, handleClose, api }) => (
         </Grid>
       ))}
       <Grid item lg={2}>
-        <div>Jakis tekst</div>
+        <div>{labels.posterText}</div>
       </Grid>
     </Grid>
   </Modal>

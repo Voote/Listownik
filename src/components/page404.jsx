@@ -1,10 +1,11 @@
 import React from 'react';
+import labels from '../assets/labels';
 
 const PageNotFound = () => (
   <div>
     <div>
-      <h1>Error 404 Page Not Happy</h1>
-      <h2>It's working anyway</h2>
+      <h1>{labels.error404}</h1>
+      <h2>{labels.errorDescribtion}</h2>
     </div>
   </div>
 );

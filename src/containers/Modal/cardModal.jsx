@@ -11,7 +11,7 @@ const CardModal = ({ open, handleClose, item }) => {
   )} ${item.when.slice(6, 8)}`;
   const isPart = item.part && (
     <h3>
-      {item.videoType === 'series' ? labels.itemSeason : labels.itemPart}
+      {item.videoType === 'series' ? labels.itemSeason : labels.itemPart}{' '}
       {item.part}
     </h3>
   );

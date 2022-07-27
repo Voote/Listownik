@@ -1,13 +1,13 @@
 module.exports = {
-  placeholderNavSeries: 'seriale',
+  placeholderNavSeries: 'shows',
   placeholderNavHome: 'home',
   placeholderNavVideo: 'video',
-  placeholderNavGames: 'gry',
-  placeholderNavRest: 'inne',
-  placeholderNavAktualne: 'aktualne',
-  placeholderNavCatchUp: 'kupka wstydu',
+  placeholderNavGames: 'games',
+  placeholderNavRest: 'other',
+  placeholderNavAktualne: 'current',
+  placeholderNavCatchUp: 'shame pile',
   placeholderNavCommingSoon: 'comming soon',
-  placeholderNavUkonczone: 'ukonczone',
+  placeholderNavUkonczone: 'finished',
   formModalHeader: 'Add new Poster',
   formShowButton: 'Show',
   formCloseButton: 'Close form',
@@ -22,5 +22,11 @@ module.exports = {
   modalReleased: 'Relased ',
   modalSeenAt: 'You seen it ',
   itemPart: 'Part ',
-  itemSeason: 'Season '
+  itemSeason: 'Season ',
+  footerCopyRights: '© 2022 Listownik by Kuba',
+  footerHere: 'Footer here',
+  error404: 'Error 404 Page Not Happy',
+  errorDescribtion: `It's working anyway`,
+  posterText: 'Jakis tekst',
+  shelfSeen: 'Seen'
 };
