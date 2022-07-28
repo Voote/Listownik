@@ -38,10 +38,6 @@ a {
   text-align: center;
 }
 
-.flexbox {
-  display: flex;
-}
-
 .navbar {
   background-color: $grey;
   position: fixed;
@@ -161,22 +157,24 @@ a {
 }
 
 .button {
-  min-width: $minElement;
-  min-height: $minElement;
-  &__position {
-    position: fixed;
-    right: 4em;
-    bottom: 7em;
-  }
-}
-
-.input {
-  &__autofill .MuiAutocomplete-inputRoot {
-    background-color: gray;
+  background-color: red;
+  top: 7.7vh;
+  z-index: 2;
+  &.MuiButton-root {
+    min-width: 2em;
   }
 }
 
 @media (min-width: 600px) {
+  .button {
+    position: absolute;
+    top: 1em;
+    left: 0.2em;
+    // &.MuiButton-root {
+    //   min-width: 64px;
+    // }
+  }
+
   .modal {
     &__content {
       text-align: right;
@@ -187,6 +185,10 @@ a {
         right: $mediumResponsiveGap;
       }
     }
+  }
+
+  .navbar {
+    top: -0.1vh;
   }
 }
 

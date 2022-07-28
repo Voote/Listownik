@@ -6,6 +6,7 @@ import { reduceHyphenses } from './components/helpers';
 import Navigation from './containers/Navigation';
 import routes from './components/router';
 import Footer from './components/footer';
+import LanguageButton from './containers/Language';
 
 export const ApiContext = createContext();
 
@@ -28,6 +29,7 @@ const DataProvider = () => {
 
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi }}>
+      <LanguageButton />
       <Navigation routeResult={routeResult} />
       <Footer />
     </ApiContext.Provider>
