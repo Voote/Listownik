@@ -18,6 +18,6 @@ module.exports = {
   footerHere: 'Footer here',
   error404: 'Error 404 Page Not Happy',
   errorDescribtion: `It's working anyway`,
-  posterText: 'Jakis tekst',
+  posterText: 'Some text',
   shelfSeen: 'Seen'
 };

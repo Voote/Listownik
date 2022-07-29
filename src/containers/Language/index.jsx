@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button } from '@mui/material';
-
-const colors = {
-  red: 'error',
-  green: 'success'
-};
-
-const setColor = (color, setter) =>
-  color === colors.red ? setter(colors.green) : setter(colors.red);
+import { LanguageContext } from '../../DataProvider';
+import { setColor } from './colors';
+import language from '../../assets/language';
 
 const LanguageButton = () => {
-  const [engColor, setEngColor] = useState(colors.red);
-  const [plColor, setPlColor] = useState(colors.green);
+  const { setLang } = useContext(LanguageContext);
+  const [engColor, setEngColor] = useState('secondary');
+  const [plColor, setPlColor] = useState('primary');
   const handleChangeColor = () => {
     setColor(engColor, setEngColor);
     setColor(plColor, setPlColor);
   };
+  const toggleLanguage = (label) => {
+    handleChangeColor();
+    setLang(label);
+  };
+  const isActive = (label) =>
+    label === language.eng
+      ? engColor === 'secondary' || toggleLanguage(label)
+      : plColor === 'secondary' || toggleLanguage(label);
 
   const SimpleButton = ({ label, color }) => (
     <Button
@@ -24,7 +28,7 @@ const LanguageButton = () => {
       variant="contained"
       color={color}
       className="button"
-      onClick={() => handleChangeColor()}
+      onClick={() => isActive(label)}
       // dodac logike zmiany label.js na labelPL.js
     >
       {label}
@@ -32,9 +36,9 @@ const LanguageButton = () => {
   );
 
   return (
-    <div style={{ display: 'block' }}>
-      <SimpleButton label={'ENG'} color={engColor} />
-      <SimpleButton label={'PL'} color={plColor} />
+    <div className="button__toggle">
+      <SimpleButton label={language.eng} color={engColor} />
+      <SimpleButton label={language.pl} color={plColor} />
     </div>
   );
 };
