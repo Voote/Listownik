@@ -11,11 +11,11 @@ $text: #fff;
 $blackText: #000;
 $seriale: $green;
 $filmy: $yellow;
-$smallResponsiveGap: 5vh;
 $minElement: 2rem;
 $smallDistance: 5rem;
+$tinyResponsiveGap: 1vh;
+$smallResponsiveGap: 5vh;
 $mediumResponsiveGap: 10vh;
-$responsiveHeightMargin: 10vh;
 $gradientVeryPeri: linear-gradient(to left, #4161b6, #435593);
 $gradientForm: linear-gradient(to left top, $lightGrey, $yellow);
 
@@ -34,26 +34,22 @@ a {
   color: inherit;
 }
 
-.App {
-  text-align: center;
-}
-
 .button {
-  top: 7.7vh;
+  top: 0.25vh;
   &.MuiButton-root {
-    min-width: 2em;
+    min-width: $minElement;
   }
   &__toggle {
-    position: fixed;
+    position: absolute;
+    left: $tinyResponsiveGap;
     z-index: 2;
   }
 }
 
 .image {
   &__logo {
-    &--dimensions {
-      max-width: 80vw;
-    }
+    padding-top: $tinyResponsiveGap;
+    max-width: 80vw;
   }
   &__tiles {
     max-height: 47vh;
@@ -67,13 +63,7 @@ a {
 }
 
 .labels {
-  &__center {
-    text-align: center;
-    &--left {
-      margin-left: 1vw;
-    }
-  }
-  &--dark {
+  &--yellow-line {
     color: black;
     background-color: $yellow;
     padding-top: 0.4rem;
@@ -91,9 +81,6 @@ a {
       justify-content: center;
     }
   }
-  &__groups {
-    padding-top: 1em;
-  }
   &__line {
     text-align: center;
     padding-top: 0.5em;
@@ -101,7 +88,7 @@ a {
   &__slider {
     max-width: 82vw;
     margin-left: 2em;
-    .slick-slide img {
+    img {
       display: inline;
     }
   }
@@ -113,10 +100,7 @@ a {
   color: $darkYellow;
   &--placeholder {
     background: $gradientVeryPeri;
-    padding: $responsiveHeightMargin 15vw;
-  }
-  &--second {
-    background: $gradientForm;
+    padding: $mediumResponsiveGap 15vw;
   }
   &--background {
     background: $greyRGBWithOpacity;
@@ -131,9 +115,6 @@ a {
   &__content {
     padding-top: $smallResponsiveGap;
     text-align: center;
-  }
-  &__size {
-    height: 52vh;
   }
   &__exit {
     position: absolute;
@@ -154,7 +135,7 @@ a {
 .navbar {
   background-color: $grey;
   position: fixed;
-  top: -0.1vh;
+  top: -0.01vh;
   z-index: 1;
   &--inactive {
     color: $blackText;
@@ -162,18 +143,17 @@ a {
   &--active {
     color: $yellow;
   }
-  &__gap {
-    padding-top: $responsiveHeightMargin;
+  &__position {
+    padding-top: $mediumResponsiveGap;
   }
 }
 
 @media (min-width: 600px) {
   .button {
-    position: absolute;
-    top: 1em;
-    left: 0.4em;
+    left: $minElement;
     &.MuiButton-root {
       min-width: 64px;
+      display: inline;
     }
   }
 
@@ -188,21 +168,15 @@ a {
       }
     }
   }
-
-  .navbar {
-    top: -0.1vh;
-  }
 }
 
 @media (min-width: 900px) {
   .image {
     &__logo {
-      &--dimensions {
-        max-width: 40vw;
-        display: flex;
-        justify-content: center;
-        padding-top: 0.1em;
-      }
+      max-width: 40vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.1em;
     }
     &__tiles {
       max-width: 30vw;
@@ -218,14 +192,16 @@ a {
 
   .modal {
     &__card {
-      margin: $smallDistance 0rem;
-      // padding: 4rem 0.7vh;
+      margin: $smallDistance 0;
       height: auto;
     }
   }
 }
 
 @media (min-width: 1200px) {
+  .button {
+    top: 0.5vh;
+  }
   .image {
     &__tiles {
       max-height: 32.8vw;
@@ -239,16 +215,14 @@ a {
   }
 
   .labels {
-    &__dark {
-      & h1 {
-        font-size: 3.4vh;
-      }
+    &--yellow-line {
+      font-size: 3.4vh;
     }
   }
 
   .modal {
     &--placeholder {
-      padding: $responsiveHeightMargin 10vw;
+      padding: $mediumResponsiveGap 10vw;
     }
   }
 }

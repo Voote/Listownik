@@ -8,13 +8,13 @@ const Navbar = () => {
 
   return (
     <Grid container spacing={1} className="navbar">
-      <Grid item xs={1} />
+      <Grid item xs={2} md={3} />
       <Grid item xs={3}>
         <NavLink href="/">
           <h2 className="labels__center">{labels.placeholderNavHome}</h2>
         </NavLink>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <NavLink href="/video">
           <h2 className="labels__center">{labels.placeholderNavVideo}</h2>
         </NavLink>

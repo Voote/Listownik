@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Button } from '@mui/material';
 import { LanguageContext } from '../../DataProvider';
 import { setColor } from './colors';
 import language from '../../assets/language';
+import ToggleButton from './languageButton';
 
-const LanguageButton = () => {
+const ColorToggle = () => {
   const { setLang } = useContext(LanguageContext);
   const [engColor, setEngColor] = useState('secondary');
   const [plColor, setPlColor] = useState('primary');
@@ -21,26 +21,12 @@ const LanguageButton = () => {
       ? engColor === 'secondary' || toggleLanguage(label)
       : plColor === 'secondary' || toggleLanguage(label);
 
-  const SimpleButton = ({ label, color }) => (
-    <Button
-      sx={{ p: 0.4 }}
-      size="small"
-      variant="contained"
-      color={color}
-      className="button"
-      onClick={() => isActive(label)}
-      // dodac logike zmiany label.js na labelPL.js
-    >
-      {label}
-    </Button>
-  );
-
   return (
     <div className="button__toggle">
-      <SimpleButton label={language.eng} color={engColor} />
-      <SimpleButton label={language.pl} color={plColor} />
+      <ToggleButton label={language.eng} color={engColor} func={isActive} />
+      <ToggleButton label={language.pl} color={plColor} func={isActive} />
     </div>
   );
 };
 
-export default LanguageButton;
+export default ColorToggle;

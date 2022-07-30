@@ -24,6 +24,7 @@ const ShelfContainer = ({ api }) => {
       <SingleShelf
         data={useToDoApi(api)}
         label={labels.placeholderNavCatchUp}
+        first
       />
       <SingleShelf
         data={isCurrentApiShort}

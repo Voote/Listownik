@@ -12,7 +12,7 @@ const Logo = () => (
     <Grid item xs={3}></Grid>
     <Grid item xs={1} className="layout__grid--central">
       <img
-        className="image__logo--dimensions"
+        className="image__logo"
         src="./IMG/Listownik-Placeholder04.png"
         alt="LISTOWNIK"
       />

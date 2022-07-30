@@ -3,7 +3,7 @@ import PageNotFound from '../../components/page404';
 import Navbar from './Navbar';
 
 const Navigation = ({ routeResult }) => (
-  <nav className="navbar__gap">
+  <nav className="navbar__position">
     <Navbar />
     {routeResult || <PageNotFound />}
   </nav>

@@ -4,20 +4,17 @@ import { useQuery } from 'graphql-hooks';
 import { query } from './containers/api/query';
 import { reduceHyphenses } from './components/helpers';
 import Navigation from './containers/Navigation';
-import routes from './components/router';
 import Footer from './components/footer';
-import LanguageButton from './containers/Language';
-import language from './assets/language';
+import routes from './components/router';
 import labelsENG from './assets/labelsENG';
 import labelsPL from './assets/labelsPL';
-
-const initialState = language.eng;
+import language from './assets/language';
 
 export const ApiContext = createContext();
 export const LanguageContext = createContext();
 
 const DataProvider = () => {
-  const [lang, setLang] = useState(initialState);
+  const [lang, setLang] = useState(language.eng);
   const routeResult = useRoutes(routes);
   const labels = lang === 'ENG' ? labelsENG : labelsPL;
 
@@ -38,7 +35,6 @@ const DataProvider = () => {
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi }}>
       <LanguageContext.Provider value={{ labels, lang, setLang }}>
-        <LanguageButton />
         <Navigation routeResult={routeResult} />
         <Footer />
       </LanguageContext.Provider>
