@@ -1,16 +1,22 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import { useRoutes } from 'hookrouter';
 import { useQuery } from 'graphql-hooks';
 import { query } from './containers/api/query';
 import { reduceHyphenses } from './components/helpers';
 import Navigation from './containers/Navigation';
-import routes from './components/router';
 import Footer from './components/footer';
+import routes from './components/router';
+import labelsENG from './assets/labelsENG';
+import labelsPL from './assets/labelsPL';
+import language from './assets/language';
 
 export const ApiContext = createContext();
+export const LanguageContext = createContext();
 
 const DataProvider = () => {
-  const routeResult = useRoutes(routes);  
+  const [lang, setLang] = useState(language.eng);
+  const routeResult = useRoutes(routes);
+  const labels = lang === 'ENG' ? labelsENG : labelsPL;
 
   const { loading, error, data } = useQuery(query, {
     variables: {
@@ -28,8 +34,10 @@ const DataProvider = () => {
 
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi }}>
-      <Navigation routeResult={routeResult} />
-      <Footer />
+      <LanguageContext.Provider value={{ labels, lang, setLang }}>
+        <Navigation routeResult={routeResult} />
+        <Footer />
+      </LanguageContext.Provider>
     </ApiContext.Provider>
   );
 };

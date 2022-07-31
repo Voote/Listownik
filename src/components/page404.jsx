@@ -1,13 +1,17 @@
-import React from 'react';
-import labels from '../assets/labels';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../DataProvider';
 
-const PageNotFound = () => (
-  <div>
+const PageNotFound = () => {
+  const { labels } = useContext(LanguageContext);
+
+  return (
     <div>
-      <h1>{labels.error404}</h1>
-      <h2>{labels.errorDescribtion}</h2>
+      <div>
+        <h1>{labels.error404}</h1>
+        <h2>{labels.errorDescribtion}</h2>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default PageNotFound;

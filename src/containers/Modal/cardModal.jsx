@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid, Modal } from '@mui/material';
 import { bigFirstLetter } from '../../components/helpers';
 import { monthChecker } from '../../components/month';
-import labels from '../../assets/labels';
+import { LanguageContext } from '../../DataProvider';
 
 const CardModal = ({ open, handleClose, item }) => {
+  const { labels } = useContext(LanguageContext);
   const wikiLabel = `${item.name} wiki`;
   const itemDate = `${item.when.slice(0, 4)} ${monthChecker(
     item.when.slice(4, 6)
