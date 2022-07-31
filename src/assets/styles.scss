@@ -40,7 +40,7 @@ a {
   }
   &__toggle {
     position: absolute;
-    left: $tinyResponsiveGap;
+    right: $tinyResponsiveGap;
     z-index: 2;
   }
 }
@@ -149,7 +149,7 @@ a {
 
 @media (min-width: 600px) {
   .button {
-    left: $minElement;
+    right: $minElement;
     &.MuiButton-root {
       min-width: 64px;
       display: inline;

@@ -8,12 +8,9 @@ const ColorToggle = () => {
   const { setLang } = useContext(LanguageContext);
   const [engColor, setEngColor] = useState('secondary');
   const [plColor, setPlColor] = useState('primary');
-  const handleChangeColor = () => {
+  const toggleLanguage = (label) => {
     setColor(engColor, setEngColor);
     setColor(plColor, setPlColor);
-  };
-  const toggleLanguage = (label) => {
-    handleChangeColor();
     setLang(label);
   };
   const isActive = (label) =>
