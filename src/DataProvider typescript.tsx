@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  Dispatch,
-  SetStateAction,
-  useState
-} from 'react';
+import { createContext, Dispatch, SetStateAction, useState } from 'react';
 import { useQuery } from 'graphql-hooks';
 import { query } from './containers/api/query';
 import { reduceHyphenses } from './components/helpers';
