@@ -27,8 +27,8 @@ const labelInitialState: {} = {
   setLang: (): void => {}
 };
 
-const ApiContext = createContext('');
-const LanguageContext = createContext(labelInitialState);
+export const ApiContext = createContext('');
+export const LanguageContext = createContext(labelInitialState);
 
 const DataProvider = () => {
   const [lang, setLang] = useState<Language>(initialState);
@@ -60,4 +60,5 @@ const DataProvider = () => {
   );
 };
 
-export { DataProvider, ApiContext, LanguageContext };
+export default DataProvider;
+// export { DataProvider, ApiContext, LanguageContext };
