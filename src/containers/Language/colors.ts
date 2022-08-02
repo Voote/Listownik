@@ -3,5 +3,5 @@ const colors = {
   grey: 'secondary'
 };
 
-export const setColor = (color, setter) =>
+export const setColor = (color: string, setter: any) =>
   color === colors.grey ? setter(colors.yellow) : setter(colors.grey);

@@ -5,7 +5,7 @@ import ShelfContainer from '../Sections/shelfContainer';
 import Logo from '../../components/logo';
 
 const Games = () => {
-  const { gamesApi } = useContext(ApiContext);
+  const { gamesApi }: any = useContext(ApiContext);
 
   return (
     <Box>

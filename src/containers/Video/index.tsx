@@ -5,7 +5,7 @@ import ShelfContainer from '../Sections/shelfContainer';
 import Logo from '../../components/logo';
 
 const Videos = () => {
-  const { videoApi } = useContext(ApiContext);
+  const { videoApi }: any = useContext(ApiContext);
 
   return (
     <Box>

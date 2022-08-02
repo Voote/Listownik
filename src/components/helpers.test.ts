@@ -2,7 +2,7 @@ import { bigFirstLetter, reduceHyphenses } from './helpers';
 
 describe('helpers reducers', () => {
   it('returns array with no hyphenses', () => {
-    const someArr = [
+    const someArr: any = [
       { id: 0, when: '10-10-2020' },
       { id: 1, when: '07-07-2017' }
     ];

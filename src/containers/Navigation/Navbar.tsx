@@ -4,7 +4,7 @@ import { NavLink } from './NavLink';
 import { LanguageContext } from '../../DataProvider';
 
 const Navbar = () => {
-  const { labels } = useContext(LanguageContext);
+  const { labels }: any = useContext(LanguageContext);
 
   return (
     <Grid container spacing={1} className="navbar">

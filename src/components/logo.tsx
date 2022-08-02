@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {ReactElement, FC} from 'react';
 import { Grid } from '@mui/material';
 
-const Logo = () => (
+const Logo: FC<any> = (): ReactElement => (
   <Grid
     container
     spacing={0}

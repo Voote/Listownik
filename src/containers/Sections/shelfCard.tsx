@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { monthChecker } from '../../components/month';
 import { LanguageContext } from '../../DataProvider';
+import { monthChecker } from '../../components/month';
 import CardModal from '../Modal/cardModal';
 
-const ShelfCard = ({ item, seen }) => {
-  const { labels } = useContext(LanguageContext);
+const ShelfCard = ({ item, seen }: any) => {
+  const { labels }: any = useContext(LanguageContext);
   const [openCardModal, setOpenCardModal] = useState(false);
   const handleOpenCardModal = () => setOpenCardModal(true);
   const handleCloseCardModal = () => setOpenCardModal(false);

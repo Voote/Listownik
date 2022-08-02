@@ -1,4 +1,4 @@
-module.exports = {
+export const labelsPL = {
   placeholderNavSeries: 'seriale',
   placeholderNavHome: 'home',
   placeholderNavVideo: 'wideo',

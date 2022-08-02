@@ -1,27 +1,31 @@
 import React, { useContext, useState } from 'react';
+import { languageLabel } from '../../assets/language';
 import { LanguageContext } from '../../DataProvider';
 import { setColor } from './colors';
-import language from '../../assets/language';
 import ToggleButton from './languageButton';
 
 const ColorToggle = () => {
-  const { setLang } = useContext(LanguageContext);
+  const { setLang }: any = useContext(LanguageContext);
   const [engColor, setEngColor] = useState('secondary');
   const [plColor, setPlColor] = useState('primary');
-  const toggleLanguage = (label) => {
+  const toggleLanguage = (label: string) => {
     setColor(engColor, setEngColor);
     setColor(plColor, setPlColor);
     setLang(label);
   };
-  const isActive = (label) =>
-    label === language.eng
+  const isActive = (label: string) =>
+    label === languageLabel.eng
       ? engColor === 'secondary' || toggleLanguage(label)
       : plColor === 'secondary' || toggleLanguage(label);
 
   return (
     <div className="button__toggle">
-      <ToggleButton label={language.eng} color={engColor} func={isActive} />
-      <ToggleButton label={language.pl} color={plColor} func={isActive} />
+      <ToggleButton
+        label={languageLabel.eng}
+        color={engColor}
+        func={isActive}
+      />
+      <ToggleButton label={languageLabel.pl} color={plColor} func={isActive} />
     </div>
   );
 };

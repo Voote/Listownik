@@ -1,4 +1,4 @@
-export const useToDoApi = (data) => {
+export const useToDoApi = (data: any) => {
   // console.log('Zredukowane data', data);
   const toDoApi = [...data]
     .filter((item) => item.progress === 'todo' && item.commingSoon === '0')
@@ -7,7 +7,7 @@ export const useToDoApi = (data) => {
   return toDoApi;
 };
 
-export const useCurrentApi = (data) => {
+export const useCurrentApi = (data: any) => {
   const currentApi = [...data]
     .filter((item) => item.progress === 'now')
     .sort((a, b) => a.when - b.when)
@@ -16,7 +16,7 @@ export const useCurrentApi = (data) => {
   return currentApi;
 };
 
-export const useCommingSoonApi = (data) => {
+export const useCommingSoonApi = (data: any) => {
   const commingSoonApi = [...data]
     .filter((item) => item.commingSoon === '1')
     .sort(
@@ -28,7 +28,7 @@ export const useCommingSoonApi = (data) => {
   return commingSoonApi;
 };
 
-export const useFinishedApi = (data) => {
+export const useFinishedApi = (data: any) => {
   const finishedApi = [...data]
     .filter((item) => item.progress === 'done')
     .sort((a, b) => a.when - b.when)

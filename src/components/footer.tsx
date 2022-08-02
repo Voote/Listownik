@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { LanguageContext } from '../DataProvider';
 
 const Footer = () => {
-  const { labels } = useContext(LanguageContext);
+  const { labels }: any = useContext(LanguageContext);
 
   return (
     <div>

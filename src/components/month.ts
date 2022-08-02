@@ -13,5 +13,5 @@ const months = [
   'December'
 ];
 
-export const monthChecker = (month) =>
+export const monthChecker = (month: any) =>
   month > 9 ? months[month - 1] : months[month.slice(1, 2) - 1];

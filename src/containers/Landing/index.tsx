@@ -5,7 +5,7 @@ import ShelfContainer from '../Sections/shelfContainer';
 import Logo from '../../components/logo';
 
 const Landing = () => {
-  const { gamesApi, videoApi } = useContext(ApiContext);
+  const { gamesApi, videoApi }: any = useContext(ApiContext);
   const combinedApi = gamesApi.concat(videoApi);
 
   return (
