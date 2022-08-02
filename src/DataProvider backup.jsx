@@ -10,8 +10,10 @@ import RouteProvider from './RouteProvider';
 export const ApiContext = createContext();
 export const LanguageContext = createContext();
 
+const initialState = languageLabel.eng;
+
 const DataProvider = () => {
-  const [lang, setLang] = useState(languageLabel.eng);
+  const [lang, setLang] = useState(initialState);
   const labels = lang === 'ENG' ? labelsENG : labelsPL;
 
   const { loading, error, data } = useQuery(query, {
@@ -30,7 +32,7 @@ const DataProvider = () => {
 
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi }}>
-      <LanguageContext.Provider value={{ labels, lang, setLang }}>
+      <LanguageContext.Provider value={{ labels, setLang }}>
         <RouteProvider />
       </LanguageContext.Provider>
     </ApiContext.Provider>

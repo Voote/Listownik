@@ -22,7 +22,7 @@ const labelInitialState: {} = {
   setLang: (): void => {}
 };
 
-export const ApiContext = createContext('');
+export const ApiContext: any = createContext('');
 export const LanguageContext = createContext(labelInitialState);
 
 const DataProvider = () => {
@@ -36,18 +36,16 @@ const DataProvider = () => {
     }
   });
 
-  console.log(data);
+  if (loading) return 'Loading, please wait...';
+  if (error) return 'Something Bad Happened';
 
   const initialGamesApi = data.allGames;
   const initinalVideoApi = data.allVideos;
   const gamesApi: any = reduceHyphenses(initialGamesApi);
   const videoApi: any = reduceHyphenses(initinalVideoApi);
 
-  if (loading) return 'Loading, please wait...';
-  if (error) return 'Something Bad Happened';
-
   return (
-    <ApiContext.Provider value={{ ...gamesApi, ...videoApi }}>
+    <ApiContext.Provider value={{ gamesApi, videoApi }}>
       <LanguageContext.Provider value={{ labels, setLang }}>
         <RouteProvider />
       </LanguageContext.Provider>
@@ -56,4 +54,3 @@ const DataProvider = () => {
 };
 
 export default DataProvider;
-// export { DataProvider, ApiContext, LanguageContext };
