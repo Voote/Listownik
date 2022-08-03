@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@mui/material';
 
 const ToggleButton = ({ label, color, func }: string | any) => (

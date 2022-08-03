@@ -1,4 +1,3 @@
-import React from 'react';
 import PageNotFound from '../../components/page404';
 import Navbar from './Navbar';
 

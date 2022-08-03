@@ -11,17 +11,17 @@ const Navbar = () => {
       <Grid item xs={2} md={3} />
       <Grid item xs={3}>
         <NavLink href="/">
-          <h2 className="labels__center">{labels.placeholderNavHome}</h2>
+          <h2 className="labels__center">{labels.navHome}</h2>
         </NavLink>
       </Grid>
       <Grid item xs={3}>
         <NavLink href="/video">
-          <h2 className="labels__center">{labels.placeholderNavVideo}</h2>
+          <h2 className="labels__center">{labels.navVideo}</h2>
         </NavLink>
       </Grid>
       <Grid item xs={3}>
         <NavLink href="/games">
-          <h2 className="labels__center">{labels.placeholderNavGames}</h2>
+          <h2 className="labels__center">{labels.navGames}</h2>
         </NavLink>
       </Grid>
     </Grid>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import {
   useCommingSoonApi,
   useCurrentApi,
@@ -6,10 +6,15 @@ import {
   useToDoApi
 } from '../api/apiReducers';
 import SingleShelf from './singleShelf';
-import { LanguageContext } from '../../DataProvider';
+import {
+  ApiInterface,
+  LabelsInterface,
+  LanguageContext
+} from '../../DataProvider';
 
-const ShelfContainer = ({ api }: any) => {
-  const { labels }: any = useContext(LanguageContext);
+const ShelfContainer = ({ api }: ApiInterface[] | any) => {
+  const { labels }: LabelsInterface | any = useContext(LanguageContext);
+  // console.log(labels);
   const currentApi = useCurrentApi(api);
   const concatApi = [...currentApi, ...useCommingSoonApi(api).reverse()];
   const filteredApi = concatApi.filter(
@@ -23,25 +28,25 @@ const ShelfContainer = ({ api }: any) => {
     <div className="layout__line">
       <SingleShelf
         data={useToDoApi(api)}
-        label={labels.placeholderNavCatchUp}
+        label={labels.navCatchUp}
         first={true}
         finished={false}
       />
       <SingleShelf
         data={isCurrentApiShort}
-        label={labels.placeholderNavAktualne}
+        label={labels.navCurrent}
         first={false}
         finished={false}
       />
       <SingleShelf
         data={useCommingSoonApi(api)}
-        label={labels.placeholderNavCommingSoon}
+        label={labels.navCommingSoon}
         first={false}
         finished={false}
       />
       <SingleShelf
         data={useFinishedApi(api)}
-        label={labels.placeholderNavUkonczone}
+        label={labels.navFinished}
         first={false}
         finished={true}
       />

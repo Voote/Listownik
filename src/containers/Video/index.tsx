@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Box } from '@mui/material';
 import { ApiContext } from '../../DataProvider';
 import ShelfContainer from '../Sections/shelfContainer';

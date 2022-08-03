@@ -12,6 +12,44 @@ type Language = {
   setLang: Dispatch<SetStateAction<Language>>;
 };
 
+export interface ApiInterface {
+  commingSoon: string;
+  cover: { url: string };
+  dateNext: boolean | number;
+  id: string;
+  name: string;
+  part: boolean | number;
+  platform: string;
+  progress: string;
+  releaseYear: number;
+  videoType?: string;
+  when: string;
+  wiki: string;
+}
+
+export interface LabelsInterface {
+  navSeries: string;
+  navHome: string;
+  navVideo: string;
+  navGames: string;
+  navCurrent: string;
+  navCatchUp: string;
+  navCommingSoon: string;
+  navFinished: string;
+  modalNoWiki: string;
+  modalCloseButton: string;
+  modalReleased: string;
+  modalSeenAt: string;
+  itemPart: string;
+  itemSeason: string;
+  footerCopyRights: string;
+  footerHere: string;
+  error404: string;
+  errorDescribtion: string;
+  posterText: string;
+  shelfSeen: string;
+}
+
 const initialState: Language = {
   lang: languageLabel.eng,
   setLang: (): void => {}
@@ -41,8 +79,8 @@ const DataProvider = () => {
 
   const initialGamesApi = data.allGames;
   const initinalVideoApi = data.allVideos;
-  const gamesApi: any = reduceHyphenses(initialGamesApi);
-  const videoApi: any = reduceHyphenses(initinalVideoApi);
+  const gamesApi: ApiInterface[] = reduceHyphenses(initialGamesApi);
+  const videoApi: ApiInterface[] = reduceHyphenses(initinalVideoApi);
 
   return (
     <ApiContext.Provider value={{ gamesApi, videoApi }}>

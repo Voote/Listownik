@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { languageLabel } from '../../assets/language';
 import { LanguageContext } from '../../DataProvider';
 import { setColor } from './colors';

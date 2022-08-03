@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Grid, Modal } from '@mui/material';
 import { bigFirstLetter } from '../../components/helpers';
 import { monthChecker } from '../../components/month';
