@@ -1,20 +1,20 @@
 import { useContext } from 'react';
 import {
+  ApiInterface,
+  LabelsInterface,
+  LanguageContext
+} from '../../DataProvider';
+import {
   useCommingSoonApi,
   useCurrentApi,
   useFinishedApi,
   useToDoApi
 } from '../api/apiReducers';
 import SingleShelf from './singleShelf';
-import {
-  ApiInterface,
-  LabelsInterface,
-  LanguageContext
-} from '../../DataProvider';
 
 const ShelfContainer = ({ api }: ApiInterface[] | any) => {
   const { labels }: LabelsInterface | any = useContext(LanguageContext);
-  // console.log(labels);
+  console.log(labels);
   const currentApi = useCurrentApi(api);
   const concatApi = [...currentApi, ...useCommingSoonApi(api).reverse()];
   const filteredApi = concatApi.filter(

@@ -1,11 +1,16 @@
-import React, { useContext, useState } from 'react';
-import { LanguageContext } from '../../DataProvider';
+import { useContext, useState } from 'react';
+import { ApiInterface, LanguageContext } from '../../DataProvider';
 import { monthChecker } from '../../components/month';
 import CardModal from '../Modal/cardModal';
 
-const ShelfCard = ({ item, seen }: any) => {
+type ShelfCardType = {
+  item: ApiInterface;
+  seen: string | false;
+};
+
+const ShelfCard = ({ item, seen }: ShelfCardType) => {
   const { labels }: any = useContext(LanguageContext);
-  const [openCardModal, setOpenCardModal] = useState(false);
+  const [openCardModal, setOpenCardModal] = useState<boolean>(false);
   const handleOpenCardModal = () => setOpenCardModal(true);
   const handleCloseCardModal = () => setOpenCardModal(false);
 
@@ -30,7 +35,7 @@ const ShelfCard = ({ item, seen }: any) => {
       />
       <div>
         <h3>{item.name}</h3>
-        {seen && (
+        {when && (
           <h3>
             {labels.shelfSeen} {when.day} {when.month} {when.year}
           </h3>

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Grid, Modal } from '@mui/material';
-import { LanguageContext } from '../../DataProvider';
+import { ApiInterface, LanguageContext } from '../../DataProvider';
 
 const SectionModal = ({ open, handleClose, api }: any) => {
   const { labels }: any = useContext(LanguageContext);
@@ -18,13 +18,10 @@ const SectionModal = ({ open, handleClose, api }: any) => {
         >
           {labels.modalCloseButton}
         </button>
-        {api.map((item: any) => (
+        {api.map((item: ApiInterface) => (
           <Grid item key={item.id} xs={12} sm={6} md={4} xl={3}>
             <img
-              src={
-                item.img ||
-                (item.cover ? item.cover.url : 'IMG/Placeholder.png')
-              }
+              src={item.cover ? item.cover.url : 'IMG/Placeholder.png'}
               alt={item.name}
               className="image__tiles"
             />

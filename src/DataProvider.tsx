@@ -15,10 +15,10 @@ type Language = {
 export interface ApiInterface {
   commingSoon: string;
   cover: { url: string };
-  dateNext: boolean | number;
+  dateNext: number | null;
   id: string;
   name: string;
-  part: boolean | number;
+  part: number | null;
   platform: string;
   progress: string;
   releaseYear: number;
@@ -27,28 +27,7 @@ export interface ApiInterface {
   wiki: string;
 }
 
-export interface LabelsInterface {
-  navSeries: string;
-  navHome: string;
-  navVideo: string;
-  navGames: string;
-  navCurrent: string;
-  navCatchUp: string;
-  navCommingSoon: string;
-  navFinished: string;
-  modalNoWiki: string;
-  modalCloseButton: string;
-  modalReleased: string;
-  modalSeenAt: string;
-  itemPart: string;
-  itemSeason: string;
-  footerCopyRights: string;
-  footerHere: string;
-  error404: string;
-  errorDescribtion: string;
-  posterText: string;
-  shelfSeen: string;
-}
+export type LabelsInterface = typeof labelsENG;
 
 const initialState: Language = {
   lang: languageLabel.eng,
@@ -60,7 +39,7 @@ const labelInitialState: {} = {
   setLang: (): void => {}
 };
 
-export const ApiContext: any = createContext('');
+export const ApiContext: any = createContext([]);
 export const LanguageContext = createContext(labelInitialState);
 
 const DataProvider = () => {

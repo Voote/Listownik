@@ -2,9 +2,15 @@ import { useContext } from 'react';
 import { Grid, Modal } from '@mui/material';
 import { bigFirstLetter } from '../../components/helpers';
 import { monthChecker } from '../../components/month';
-import { LanguageContext } from '../../DataProvider';
+import { ApiInterface, LanguageContext } from '../../DataProvider';
 
-const CardModal = ({ open, handleClose, item }: any) => {
+type CardModalType = {
+  open: boolean;
+  handleClose: () => void;
+  item: ApiInterface;
+};
+
+const CardModal = ({ open, handleClose, item }: CardModalType) => {
   const { labels }: any = useContext(LanguageContext);
   const wikiLabel = `${item.name} wiki`;
   const itemDate = `${item.when.slice(0, 4)} ${monthChecker(

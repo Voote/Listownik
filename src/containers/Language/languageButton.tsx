@@ -1,6 +1,13 @@
 import { Button } from '@mui/material';
+import { ColorType } from './toggle';
 
-const ToggleButton = ({ label, color, func }: string | any) => (
+type ToggleButtonType = {
+  label: string;
+  color?: ColorType | any;
+  func: any;
+};
+
+const ToggleButton = ({ label, color, func }: ToggleButtonType) => (
   <Button
     sx={{ p: 0.4 }}
     size="small"

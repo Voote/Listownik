@@ -4,9 +4,19 @@ import { LanguageContext } from '../../DataProvider';
 import { setColor } from './colors';
 import ToggleButton from './languageButton';
 
+export type ColorType =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'error'
+  | 'info'
+  | 'warning';
+
+const initialColor: ColorType = 'secondary';
+
 const ColorToggle = () => {
   const { setLang }: any = useContext(LanguageContext);
-  const [engColor, setEngColor] = useState('secondary');
+  const [engColor, setEngColor] = useState(initialColor);
   const [plColor, setPlColor] = useState('primary');
   const toggleLanguage = (label: string) => {
     setColor(engColor, setEngColor);

@@ -1,8 +1,15 @@
-import React from 'react';
+import { DataInterface } from '../api/apiReducers';
 import ColorToggle from '../Language/toggle';
 import Shelf from './shelf';
 
-const SingleShelf = ({ data, label, finished, first }: any) => (
+type ShelfType = {
+  data: DataInterface[];
+  label: string;
+  first: boolean;
+  finished: boolean;
+};
+
+const SingleShelf = ({ data, label, first, finished }: ShelfType) => (
   <div>
     <div>
       {first && <ColorToggle />}

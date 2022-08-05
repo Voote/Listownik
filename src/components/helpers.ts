@@ -1,6 +1,6 @@
 type ItemType = {
-  when: string
-}
+  when: string;
+};
 
 export const reduceHyphenses = (arr: []) => {
   arr.map((item: ItemType) => {
@@ -10,4 +10,5 @@ export const reduceHyphenses = (arr: []) => {
   return arr;
 };
 
-export const bigFirstLetter = (word: string) => word[0].toUpperCase() + word.slice(1);
+export const bigFirstLetter = (word: string) =>
+  word[0].toUpperCase() + word.slice(1);
