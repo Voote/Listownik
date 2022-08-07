@@ -43,6 +43,9 @@ a {
     right: $tinyResponsiveGap;
     z-index: 2;
   }
+  &--yellow.MuiIconButton-root {
+    background-color: $red;
+  }
 }
 
 .image {
