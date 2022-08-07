@@ -23,22 +23,20 @@ const ScrollUp = () => {
   };
 
   return (
-    <div styles={{ textAlign: 'center' }}>
-      <IconButton
-        // className="button--yellow"
-        variant="contained"
-        color="secondary"
-        style={{
-          position: 'fixed',
-          bottom: 10,
-          right: 10,
-          display: showScrollTop ? 'block' : 'none'
-        }}
-        onClick={scrollToTop}
-      >
-        <ArrowCircleUpTwoToneIcon sx={{ fontSize: 45 }} />
-      </IconButton>
-    </div>
+    <IconButton
+      //   className="button--yellow"
+      color="secondary"
+      style={{
+        position: 'fixed',
+        bottom: 10,
+        right: 10,
+        zIndex: 1,
+        display: showScrollTop ? 'block' : 'none'
+      }}
+      onClick={scrollToTop}
+    >
+      <ArrowCircleUpTwoToneIcon sx={{ fontSize: 45 }} />
+    </IconButton>
   );
 };
 

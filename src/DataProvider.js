@@ -9,6 +9,7 @@ import routes from './components/router';
 import labelsENG from './assets/labelsENG';
 import labelsPL from './assets/labelsPL';
 import language from './assets/language';
+import ScrollUp from './components/scrollUp';
 
 export const ApiContext = createContext();
 export const LanguageContext = createContext();
@@ -36,6 +37,7 @@ const DataProvider = () => {
     <ApiContext.Provider value={{ gamesApi, videoApi }}>
       <LanguageContext.Provider value={{ labels, lang, setLang }}>
         <Navigation routeResult={routeResult} />
+        <ScrollUp />
         <Footer />
       </LanguageContext.Provider>
     </ApiContext.Provider>
