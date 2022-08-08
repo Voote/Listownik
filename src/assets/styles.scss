@@ -58,6 +58,7 @@ a {
   }
   &__tiles {
     max-height: 47vh;
+    cursor: pointer;
     &--modal {
       max-height: 60vh;
       display: block;

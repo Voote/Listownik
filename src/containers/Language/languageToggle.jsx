@@ -4,7 +4,7 @@ import { setColor } from './colors';
 import language from '../../assets/language';
 import ToggleButton from './languageButton';
 
-const ColorToggle = () => {
+const LanguageToggle = () => {
   const { setLang } = useContext(LanguageContext);
   const [engColor, setEngColor] = useState('secondary');
   const [plColor, setPlColor] = useState('primary');
@@ -26,4 +26,4 @@ const ColorToggle = () => {
   );
 };
 
-export default ColorToggle;
+export default LanguageToggle;

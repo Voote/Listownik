@@ -25,10 +25,10 @@ const ScrollUp = () => {
   return (
     <IconButton
       //   className="button--yellow"
-      color="secondary"
+      color="warning"
       style={{
         position: 'fixed',
-        bottom: 10,
+        bottom: 12,
         right: 10,
         zIndex: 1,
         display: showScrollTop ? 'block' : 'none'
