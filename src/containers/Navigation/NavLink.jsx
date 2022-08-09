@@ -1,4 +1,3 @@
-import React from 'react';
 import { A, usePath } from 'hookrouter';
 
 const CustomA = (props) => {

@@ -1,0 +1,23 @@
+export const labelsENG = {
+  navSeries: 'shows',
+  navHome: 'home',
+  navVideo: 'video',
+  navGames: 'games',
+  navCurrent: 'current',
+  navCatchUp: 'shame pile',
+  navCommingSoon: 'comming soon',
+  navFinished: 'finished',
+  formModalHeader: 'Add new Poster',
+  modalNoWiki: 'No wiki for ',
+  modalCloseButton: 'CLOSE MODAL',
+  modalReleased: 'Relased ',
+  modalSeenAt: 'You seen it ',
+  itemPart: 'Part ',
+  itemSeason: 'Season ',
+  footerCopyRights: '© 2022 Listownik by Kuba',
+  footerHere: 'Footer',
+  error404: 'Error 404 Page Not Happy',
+  errorDescribtion: `It's working anyway`,
+  posterText: 'Some text',
+  shelfSeen: 'Seen'
+};
