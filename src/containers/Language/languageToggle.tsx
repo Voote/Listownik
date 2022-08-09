@@ -2,19 +2,11 @@ import { useContext, useState } from 'react';
 import { languageLabel } from '../../assets/language';
 import { LanguageContext } from '../../DataProvider';
 import { setColor } from './colors';
-import ToggleButton from './languageButton';
-
-export type ColorType =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'error'
-  | 'info'
-  | 'warning';
+import ToggleButton, { ColorType } from './languageButton';
 
 const initialColor: ColorType = 'secondary';
 
-const ColorToggle = () => {
+const LanguageToggle = () => {
   const { setLang }: any = useContext(LanguageContext);
   const [engColor, setEngColor] = useState(initialColor);
   const [plColor, setPlColor] = useState('primary');
@@ -40,4 +32,4 @@ const ColorToggle = () => {
   );
 };
 
-export default ColorToggle;
+export default LanguageToggle;

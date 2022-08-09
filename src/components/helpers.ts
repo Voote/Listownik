@@ -1,9 +1,11 @@
-type ItemType = {
-  when: string;
-};
+import { ApiInterface } from '../DataProvider';
 
-export const reduceHyphenses = (arr: []) => {
-  arr.map((item: ItemType) => {
+interface ItemInterface {
+  when: string;
+}
+
+export const reduceHyphenses = (arr: ApiInterface[]) => {
+  arr.map((item: ItemInterface) => {
     item.when = item.when.replace(/-/g, '');
     return item;
   });

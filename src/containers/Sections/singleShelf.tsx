@@ -1,9 +1,9 @@
 import { DataInterface } from '../api/apiReducers';
-import ColorToggle from '../Language/toggle';
+import LanguageToggle from '../Language/languageToggle';
 import Shelf from './shelf';
 
 type ShelfType = {
-  data: DataInterface[];
+  data: DataInterface[] | any;
   label: string;
   first: boolean;
   finished: boolean;
@@ -12,7 +12,7 @@ type ShelfType = {
 const SingleShelf = ({ data, label, first, finished }: ShelfType) => (
   <div>
     <div>
-      {first && <ColorToggle />}
+      {first && <LanguageToggle />}
       <h1 className="labels--yellow-line">{label.toUpperCase()}</h1>
     </div>
     <div>

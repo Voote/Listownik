@@ -3,6 +3,7 @@ import { Grid, Modal } from '@mui/material';
 import { bigFirstLetter } from '../../components/helpers';
 import { monthChecker } from '../../components/month';
 import { ApiInterface, LanguageContext } from '../../DataProvider';
+import CloseButton from '../../components/closeButton';
 
 type CardModalType = {
   open: boolean;
@@ -31,9 +32,11 @@ const CardModal = ({ open, handleClose, item }: CardModalType) => {
       style={{ backgroundImage: `url(${item.cover.url})` }}
     >
       <Grid container className="modal__card modal--background">
-        <button className="modal__exit modal__exit--card" onClick={handleClose}>
-          {labels.modalCloseButton}
-        </button>
+        <CloseButton
+          closeLabel={labels.modalCloseButton}
+          handleClose={handleClose}
+          isCropped={true}
+        />
         <Grid item xs={12} sm={7} md={4} className="layout__grid--central">
           <img
             src={item.cover.url}

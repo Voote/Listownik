@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ClientContext, GraphQLClient } from 'graphql-hooks';
 import { LocalizationProvider } from '@mui/x-date-pickers';

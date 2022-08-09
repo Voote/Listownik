@@ -6,8 +6,14 @@ import settings from './settings';
 import lastCard from '../../components/lastCard';
 import SectionModal from '../Modal/sectionModal';
 import ShelfCard from './shelfCard';
+import { ApiInterface } from '../../DataProvider';
 
-const Shelf = ({ api, finished }) => {
+type ShelfPropsType = {
+  api: ApiInterface[];
+  finished: boolean;
+};
+
+const Shelf = ({ api, finished }: ShelfPropsType) => {
   const [openCollectionModal, setOpenCollectionModal] = useState(false);
   const handleOpenCollectionModal = () => setOpenCollectionModal(true);
   const handleCloseCollectionModal = () => setOpenCollectionModal(false);
@@ -21,7 +27,7 @@ const Shelf = ({ api, finished }) => {
         api={api}
       />
       <Slider {...settings}>
-        {sliderReducedApi.map((item) => (
+        {sliderReducedApi.map((item: ApiInterface) => (
           <ShelfCard
             item={item}
             key={item.id}

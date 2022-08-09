@@ -1,8 +1,15 @@
 import { useContext } from 'react';
 import { Grid, Modal } from '@mui/material';
 import { ApiInterface, LanguageContext } from '../../DataProvider';
+import CloseButton from '../../components/closeButton';
 
-const SectionModal = ({ open, handleClose, api }: any) => {
+type SectionModalPropsType = {
+  open: boolean;
+  handleClose: () => void;
+  api: ApiInterface[];
+};
+
+const SectionModal = ({ open, handleClose, api }: SectionModalPropsType) => {
   const { labels }: any = useContext(LanguageContext);
 
   return (
@@ -12,12 +19,11 @@ const SectionModal = ({ open, handleClose, api }: any) => {
       className="modal modal--placeholder"
     >
       <Grid container>
-        <button
-          className="modal__exit modal__exit--section"
-          onClick={handleClose}
-        >
-          {labels.modalCloseButton}
-        </button>
+        <CloseButton
+          closeLabel={labels.modalCloseButton}
+          handleClose={handleClose}
+          isCropped={false}
+        />
         {api.map((item: ApiInterface) => (
           <Grid item key={item.id} xs={12} sm={6} md={4} xl={3}>
             <img

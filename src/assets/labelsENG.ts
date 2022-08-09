@@ -15,7 +15,7 @@ export const labelsENG = {
   itemPart: 'Part ',
   itemSeason: 'Season ',
   footerCopyRights: '© 2022 Listownik by Kuba',
-  footerHere: 'Footer here',
+  footerHere: 'Footer',
   error404: 'Error 404 Page Not Happy',
   errorDescribtion: `It's working anyway`,
   posterText: 'Some text',

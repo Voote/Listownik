@@ -15,7 +15,7 @@ export const labelsPL = {
   itemPart: 'Czesc',
   itemSeason: 'Sezon',
   footerCopyRights: '© 2022 Listownik by Kuba',
-  footerHere: 'Footer here',
+  footerHere: 'Footer',
   error404: 'Blad 404 Strona nie zadowolona',
   errorDescribtion: `It's working anyway`,
   posterText: 'Jakis tekst',

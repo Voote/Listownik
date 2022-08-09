@@ -1,10 +1,18 @@
 import { Button } from '@mui/material';
-import { ColorType } from './toggle';
+
+export type ColorType =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'error'
+  | 'info'
+  | 'warning'
+  | any;
 
 type ToggleButtonType = {
   label: string;
-  color?: ColorType | any;
-  func: any;
+  color?: ColorType;
+  func: (label: string) => void;
 };
 
 const ToggleButton = ({ label, color, func }: ToggleButtonType) => (

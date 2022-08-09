@@ -1,4 +1,3 @@
-import React from 'react';
 import Landing from '../containers/Landing';
 import Video from '../containers/Video';
 import Games from '../containers/Games';
