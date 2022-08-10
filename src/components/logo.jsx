@@ -3,6 +3,7 @@ import { Grid } from '@mui/material';
 
 const Logo = () => (
   <Grid
+    className="layout__logo"
     container
     spacing={0}
     direction="column"
@@ -13,7 +14,7 @@ const Logo = () => (
     <Grid item xs={1} className="layout__grid--central">
       <img
         className="image__logo"
-        src="./IMG/Listownik-Placeholder04.png"
+        src="./IMG/Listownik_Logo.png"
         alt="LISTOWNIK"
       />
     </Grid>

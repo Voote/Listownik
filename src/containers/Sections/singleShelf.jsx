@@ -2,8 +2,8 @@ import React from 'react';
 import LanguageToggle from '../Language/languageToggle';
 import Shelf from './shelf';
 
-const SingleShelf = ({ data, label, finished, first }) => (
-  <div>
+const SingleShelf = ({ data, finished, first, label, light }) => (
+  <div className={light ? '' : 'layout__section--grey'}>
     <div>
       {first && <LanguageToggle />}
       <h1 className="labels--yellow-line">{label.toUpperCase()}</h1>

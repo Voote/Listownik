@@ -20,24 +20,28 @@ const ShelfContainer = ({ api }) => {
   const isCurrentApiShort = currentApi.length < 3 ? filteredApi : currentApi;
 
   return (
-    <div className="layout__line">
+    <div className="layout__section">
       <SingleShelf
         data={useToDoApi(api)}
-        label={labels.placeholderNavCatchUp}
         first
+        label={labels.placeholderNavCatchUp}
+        light={true}
       />
       <SingleShelf
         data={isCurrentApiShort}
         label={labels.placeholderNavAktualne}
+        light={false}
       />
       <SingleShelf
         data={useCommingSoonApi(api)}
         label={labels.placeholderNavCommingSoon}
+        light={true}
       />
       <SingleShelf
         data={useFinishedApi(api)}
-        label={labels.placeholderNavUkonczone}
         finished
+        label={labels.placeholderNavUkonczone}
+        light={false}
       />
     </div>
   );
