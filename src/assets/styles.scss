@@ -42,6 +42,7 @@ a {
     position: absolute;
     right: $tinyResponsiveGap;
     z-index: 2;
+    margin-top: 1vh;
   }
   &--yellow {
     position: fixed;
@@ -110,6 +111,14 @@ a {
   &__logo {
     padding: 0.5rem;
   }
+  &__line {
+    margin: inherit 0;
+    padding: 1.5vh;
+    &--yellow {
+      color: black;
+      background-color: $yellow;
+    }
+  }
 }
 
 .modal {
@@ -155,6 +164,7 @@ a {
   position: fixed;
   top: -0.01vh;
   z-index: 7;
+  border-bottom: 1px solid $black;
   &--inactive {
     color: $blackText;
   }

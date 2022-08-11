@@ -6,7 +6,9 @@ const SingleShelf = ({ data, finished, first, label, light }) => (
   <div className={light ? '' : 'layout__section--grey'}>
     <div>
       {first && <LanguageToggle />}
-      <h1 className="labels--yellow-line">{label.toUpperCase()}</h1>
+      <h1 className="layout__line layout__line--yellow">
+        {label.toUpperCase()}
+      </h1>
     </div>
     <div>{finished ? <Shelf api={data} finished /> : <Shelf api={data} />}</div>
   </div>
