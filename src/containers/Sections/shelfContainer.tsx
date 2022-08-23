@@ -21,34 +21,38 @@ const ShelfContainer = ({ api }: ApiInterface[] | any) => {
     (value, index, self) =>
       index ===
       self.findIndex((obj) => obj.id === value.id && obj.name === value.name)
-  ); //ES6 magic
+  );
   const isCurrentApiShort = currentApi.length < 3 ? filteredApi : currentApi;
 
   return (
-    <div className="layout__line">
+    <div className="layout__section">
       <SingleShelf
         data={useToDoApi(api)}
-        label={labels.navCatchUp}
-        first={true}
         finished={false}
+        first={true}
+        label={labels.navCatchUp}
+        light={true}
       />
       <SingleShelf
         data={isCurrentApiShort}
-        label={labels.navCurrent}
-        first={false}
         finished={false}
+        first={false}
+        label={labels.navCurrent}
+        light={false}
       />
       <SingleShelf
         data={useCommingSoonApi(api)}
-        label={labels.navCommingSoon}
-        first={false}
         finished={false}
+        first={false}
+        label={labels.navCommingSoon}
+        light={true}
       />
       <SingleShelf
         data={useFinishedApi(api)}
-        label={labels.navFinished}
-        first={false}
         finished={true}
+        first={false}
+        label={labels.navFinished}
+        light={false}
       />
     </div>
   );

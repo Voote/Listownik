@@ -5,7 +5,7 @@ const Footer = () => {
   const { labels }: any = useContext(LanguageContext);
 
   return (
-    <div>
+    <div className="layout__section--bottom">
       <div style={{ textAlign: 'center', padding: '1em' }}>
         <h1 style={{ color: 'gold' }}>{labels.footerHere}</h1>
         <h3>{labels.footerCopyRights}</h3>

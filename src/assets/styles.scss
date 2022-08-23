@@ -1,11 +1,11 @@
 $black: #111;
 $red: #da563c;
 $green: #8bd89b;
-$yellow: #fae12c;
+$yellow: #ffe94c;
 $darkYellow: #e9d11bde;
-$grey: #606569;
+$lightGrey: #bebebe;
 $greyRGBWithOpacity: rgb(96, 101, 105, 0.92);
-$lightGrey: #71767a;
+$grey: #71767a;
 $greyDark: #505458;
 $text: #fff;
 $blackText: #000;
@@ -24,7 +24,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: $grey;
+  background-color: $text;
   color: $text;
 }
 
@@ -42,6 +42,7 @@ a {
     position: absolute;
     right: $tinyResponsiveGap;
     z-index: 2;
+    margin-top: 1vh;
   }
   &--yellow {
     position: fixed;
@@ -87,15 +88,35 @@ a {
       justify-content: center;
     }
   }
-  &__line {
+  &__section {
     text-align: center;
-    padding-top: 0.5em;
+    background-color: $lightGrey;
+    &--grey {
+      background-color: $grey;
+      padding-bottom: 1vh;
+      margin-bottom: -3vh;
+    }
+    &--bottom {
+      margin-top: 1rem;
+      background-color: $greyDark;
+    }
   }
   &__slider {
     max-width: 82vw;
     margin-left: 2em;
     img {
       display: inline;
+    }
+  }
+  &__logo {
+    padding: 0.5rem;
+  }
+  &__line {
+    margin: inherit 0;
+    padding: 1.5vh;
+    &--yellow {
+      color: black;
+      background-color: $yellow;
     }
   }
 }
@@ -139,10 +160,11 @@ a {
 }
 
 .navbar {
-  background-color: $grey;
+  background-color: $greyDark;
   position: fixed;
   top: -0.01vh;
-  z-index: 1;
+  z-index: 7;
+  border-bottom: 1px solid $black;
   &--inactive {
     color: $blackText;
   }

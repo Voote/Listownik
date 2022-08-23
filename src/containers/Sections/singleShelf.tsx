@@ -4,16 +4,19 @@ import Shelf from './shelf';
 
 type ShelfType = {
   data: DataInterface[] | any;
-  label: string;
   first: boolean;
   finished: boolean;
+  label: string;
+  light: boolean;
 };
 
-const SingleShelf = ({ data, label, first, finished }: ShelfType) => (
-  <div>
+const SingleShelf = ({ data, finished, first, label, light }: ShelfType) => (
+  <div className={light ? '' : 'layout__section--grey'}>
     <div>
       {first && <LanguageToggle />}
-      <h1 className="labels--yellow-line">{label.toUpperCase()}</h1>
+      <h1 className="layout__line layout__line--yellow">
+        {label.toUpperCase()}
+      </h1>
     </div>
     <div>
       {finished ? (

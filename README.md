@@ -5,7 +5,7 @@
 Listownik is personal tracker of your favorite games, movies and series.
 It's connected to dedicated project at DatoCMS.com (headless CMS). User need to change API token for his DatoCMS project.
 
-This project helps me understand how to create responsive web app with mui and how to connect app to headless CMS or custom components like slick-carousel or hookrouter. It's helped me to understood graphQL and unit tests.
+## Instruction
 
 ### Query required from database
 It's necessary to create query at your project ( settings -> model)
@@ -79,6 +79,10 @@ Open [http://localhost:3000](http://localhost:3000) (with API [http://localhost:
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+## Reflection
+
+This project helps me understand how to create responsive web app with MUI, unit tests and graphQL. I've learned how to connect app to headless CMS or custom components like slick-carousel and hookrouter. 
 
 ## Authors:
 
