@@ -1,5 +1,5 @@
 export const query = `{
-    allGames {
+    allGames(first: 50) {
         id
         when
         releaseYear
@@ -14,7 +14,7 @@ export const query = `{
           url
         }
     }
-    allVideos {
+    allVideos(first: 50) {
         id
         when
         videoType

@@ -19,11 +19,7 @@ const DataProvider = () => {
   const routeResult = useRoutes(routes);
   const labels = lang === 'ENG' ? labelsENG : labelsPL;
 
-  const { loading, error, data } = useQuery(query, {
-    variables: {
-      limit: 10
-    }
-  });
+  const { loading, error, data } = useQuery(query);
 
   if (loading) return 'Loading, please wait...';
   if (error) return 'Something Bad Happened';
