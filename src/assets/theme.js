@@ -10,6 +10,9 @@ const myTheme = createTheme({
       main: '#ffe94c',
       dark: '#a2a200'
     },
+    warning: {
+      main: '#dec82b'
+    },
     black: {
       main: '#000000'
     },

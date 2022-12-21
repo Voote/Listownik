@@ -20,6 +20,7 @@
     "react-slick": "^0.28.1",
     "react-swipeable-views": "^0.14.0",
     "sass": "^1.42.1",
+    "scss-tokenizer": "^0.4.3",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {

@@ -2,8 +2,57 @@
 
 ## Description
 
-Listownik is personal tracker of your favorite games, movies and series.
+Listownik is responsive personal web tracker of your favorite games, movies and series.
 It's connected to dedicated project at DatoCMS.com (headless CMS). User need to change API token for his DatoCMS project.
+
+## Screenshots 
+
+### Mobile 
+
+|![Mobile Home](IMG/../public/IMG/screenshots/Mobile_ENG_top.png)|
+|:--:|
+|*Home View*|
+
+|![Mobile PL](IMG/../public/IMG/screenshots/Mobile_PL_top.png)|
+|:--:|
+|*Home PL version*|
+
+|![Mobile Video](IMG/../public/IMG/screenshots/Mobile_ENG_video.png)|
+|:--:|
+|*Video Category*|
+
+|![Mobile Games](IMG/../public/IMG/screenshots/Mobile_ENG_games.png)|
+|:--:|
+|*Games Category*|
+
+|![Mobile Section](IMG/../public/IMG/screenshots/Mobile_ENG_bottom.png)|
+|:--:|
+|*Finished Section*|
+
+|![Mobile Modal](IMG/../public/IMG/screenshots/Mobile_ENG_info.png)|
+|:--:|
+|*Modal view*|
+
+|![Mobile List](IMG/../public/IMG/screenshots/Mobile_ENG_list.png)|
+|:--:|
+|List view|
+
+### Desktop 
+|![Desktop Home](IMG/../public/IMG/screenshots/Desktop_ENG_top.png)|
+|:--:|
+|Home page|
+
+|![Desktop Section](IMG/../public/IMG/screenshots/Desktop_ENG_bottom.png)|
+|:--:|
+|Finished Section|
+
+|![Desktop Modal](IMG/../public/IMG/screenshots/Desktop_ENG_info.png)|
+|:--:|
+|Modal view|
+
+|![Desktop List](IMG/../public/IMG/screenshots/Desktop_ENG_list.png)|
+|:--:|
+|List view|
 
 ## Instruction
 
@@ -53,13 +102,13 @@ This project is currently in development. Visitors can check current posters of 
 >
 > - Adding posters in app
 >
-> - sitemap
+> - Sitemap
 >
-> - footer
+> - Footer
 >
-> - external source for posters
+> - External source for posters
 >
-> - design upgrade
+> - Design upgrade
 
 ## Available Scripts
 
