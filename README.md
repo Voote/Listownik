@@ -135,6 +135,6 @@ This project helps me understand how to create responsive web app with MUI, unit
 
 ## Authors:
 
-### Jakub Krzywanski code
+#### **Jakub Krzywanski** code
 
-### Kinga Kindraczuk design
+#### **Kinga Kindraczuk** design
